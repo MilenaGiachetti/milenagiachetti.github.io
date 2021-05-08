@@ -1,0 +1,134 @@
+h1 {
+	color: #0E1428;
+	cursor: crosshair;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 7rem;
+	letter-spacing: 0.3rem;
+	line-height: 8rem;
+	text-transform: uppercase;
+}
+
+.title {
+    padding: 2rem;
+    .titleGreeting {
+        text-align: right;
+        font-size: 4rem;
+        line-height: 4rem;
+    }
+    .titlePosition {
+        font-size: 2rem;
+        text-transform: uppercase;		
+    }
+    .titleEmail {
+        display: inline-block;
+        color: #D95D39;
+        padding: 0.5rem 0 1rem 0;
+    }
+    .titleArrow {
+        background-color: #D95D39;
+        height: 4px;
+        margin-top: 1rem;
+        position: relative;
+        width: 100%;
+        &::after, &::before {
+            background-color: #D95D39;
+            content: '';
+            height: 4px;
+            left: -4px;
+            position: absolute;
+            width: 21px;
+        }
+        &::after {
+            top: -6px;
+            transform: rotate(135deg);
+        }	
+        &::before {
+            top: 6px;
+            transform: rotate(-135deg);
+        }
+    }
+    .titleCta {
+        align-items: center;
+        display: flex;
+        justify-content: flex-end;
+        padding: 2rem;
+        position: relative;
+        &:hover .arrow, &:hover .arrow::after, &:hover .arrow::before {
+            animation-play-state: paused;
+            background-color: #D95D39;
+        }
+        .titleCtaArrow {
+            animation: moveArrow .8s infinite ease-in-out alternate;
+            background-color: #0E1428;
+            height: 2px;
+            position: relative;
+            transform: translateX(0px);
+            transition: background-color .3s;
+            width: 18rem;
+            &::after, &::before {
+                background-color: #0E1428;
+                content: '';
+                height: 2px;
+                position: absolute;
+                right: -2px;
+                transition: background-color .3s;
+                width: 10px;
+            }
+            &::after {
+                top: -3px;
+                transform: rotate(45deg);
+            }	
+            &::before {
+                top: 3px;
+                transform: rotate(-45deg);
+            }
+        }
+        .titleCtaContent {
+            padding-left: 3rem;
+        }
+    }
+}
+
+// Arrow animation
+@keyframes moveArrow {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(1.2rem);
+	}
+}
+
+@media (max-width: 575px) { 
+	h1 {
+		font-size: 3.2rem;
+		letter-spacing: 0.3rem;
+		line-height: 5rem;
+	}
+	
+    .title {
+        .titleGreeting {
+            font-size: 2rem;
+            line-height: 2rem;
+        }
+        .titlePosition {
+            font-size: 1.8rem;
+        }
+        .titleArrow {
+            &::after, &::before {
+                width: 15px;
+            }
+            &::after {
+                top: -4px;
+            }	
+            &::before {
+                top: 4px;
+            }
+        }
+        .titleCta {
+            .titleCtaArrow {
+                width: 6rem;
+            }
+        }
+    }
+}

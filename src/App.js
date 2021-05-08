@@ -1,34 +1,35 @@
 import classes from './App.module.scss';
+import { Route, NavLink, Switch, Redirect, Link} from 'react-router-dom';
+import Home from './Components/Home/Home';
 
 function App() {
 	return (
 		<>
 			<header>
-				<div className={classes.logo}>
+				<Link to={{pathname: "/"}} className={classes.logo}>
 					<p className={classes.logoText}>g_</p>
-				</div>
+				</Link>
 				<nav className={classes.nav}>
 					<ul className={classes.navList}>
-						<li><a href="./home" className={classes.navLink}>Home</a></li>
-						<li><a href="./projects" className={classes.navLink}>Proyectos</a></li>
-						<li><a href="./tech" className={classes.navLink}>Tech</a></li>
+						<li>
+							<NavLink to="/" exact activeClassName={classes.currentNavLink} className={classes.navLink}>Home</NavLink>
+						</li>
+						<li>
+							<NavLink to="/projects" exact activeClassName={classes.currentNavLink} className={classes.navLink}>Proyectos</NavLink>
+						</li>
+						<li>
+							<NavLink to="/tech" exact activeClassName={classes.currentNavLink} className={classes.navLink}>Tech</NavLink>
+						</li>
 					</ul>
 				</nav>
 			</header>
 			<main>
-				<section className={classes.title}>
-					<p className={classes.titleGreeting}>hola! soy</p>
-					<h1>Milena Giachetti</h1>
-					<p className={classes.titlePosition}>Desarrolladora Web</p>
-					<a href="mailto:giachettimilena@gmail.com?Subject=Contacto%20desde%20portfolio" target="_blank" rel="noreferrer" className={classes.titleEmail}>giachettimilena@gmail.com</a>
-					<div className={classes.titleArrow}></div>
-					<div>
-						<a href="./projects" className={classes.titleCta}>
-							<div className={classes.titleCtaArrow}></div>
-							<p className={classes.titleCtaContent}>Ver Proyectos</p>
-						</a>
-					</div>
-				</section>
+				<Switch>
+					<Route path="/" exact component={Home}/>
+					<Route path="/projects" exact component={Home}/>
+					<Route path="/tech" exact component={Home}/>
+					<Redirect to="/" />
+				</Switch>
 			</main>
 			<footer>
 				<a href="mailto:giachettimilena@gmail.com?Subject=Contacto%20desde%20portfolio" target="_blank" rel="noreferrer" className={classes.socialLink}>

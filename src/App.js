@@ -9,18 +9,18 @@ function App() {
 				</div>
 				<nav className={classes.nav}>
 					<ul className={classes.navList}>
-						<li><a href="./tech">Tech</a></li>
-						<li><a href="./projects">Proyectos</a></li>
-						<li><a href="./home">Home</a></li>
+						<li><a href="./home" className={classes.navLink}>Home</a></li>
+						<li><a href="./projects" className={classes.navLink}>Proyectos</a></li>
+						<li><a href="./tech" className={classes.navLink}>Tech</a></li>
 					</ul>
 				</nav>
 			</header>
 			<main>
-				<div className={classes.title}>
-					<p className={classes.titleGreeting}>hola, soy</p>
+				<section className={classes.title}>
+					<p className={classes.titleGreeting}>hola! soy</p>
 					<h1>Milena Giachetti</h1>
 					<p className={classes.titlePosition}>Desarrolladora Web</p>
-					<p className={classes.titleEmail}>giachettimilena@gmail.com</p>
+					<a href="mailto:giachettimilena@gmail.com?Subject=Contacto%20desde%20portfolio" target="_blank" rel="noreferrer" className={classes.titleEmail}>giachettimilena@gmail.com</a>
 					<div className={classes.titleArrow}></div>
 					<div>
 						<a href="./projects" className={classes.titleCta}>
@@ -28,7 +28,7 @@ function App() {
 							<p className={classes.titleCtaContent}>Ver Proyectos</p>
 						</a>
 					</div>
-				</div>
+				</section>
 			</main>
 			<footer>
 				<a href="mailto:giachettimilena@gmail.com?Subject=Contacto%20desde%20portfolio" target="_blank" rel="noreferrer" className={classes.socialLink}>

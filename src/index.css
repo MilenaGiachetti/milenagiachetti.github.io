@@ -46,11 +46,33 @@ code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
-p {
-	font-size: 1.6rem;
+p, a {
+	font-size: 1.8rem;
 }
 
 .root {	
 	display: flex;
 	flex-flow: row;
 }
+
+@media (max-width: 767px) { 
+	.root {	
+		flex-flow: column;
+	}
+}
+
+@media (max-width: 575px) { 
+	p, a {
+		font-size: 1.6rem;
+	}
+}
+
+/* 
+// Medium devices (tablets, 768px and up)
+@media (max-width: 767px) { ... }
+
+// Large devices (desktops, 992px and up)
+@media (max-width: 991px) { ... }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (max-width: 1199px) { ... } */

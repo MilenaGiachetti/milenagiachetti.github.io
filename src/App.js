@@ -1,9 +1,11 @@
 import classes from './App.module.scss';
 import {useState, useEffect} from 'react';
-import {Route, NavLink, Switch, Redirect, Link} from 'react-router-dom';
-import Home from './Components/Home/Home';
-import Projects from './Components/Projects/Projects';
-import Tech from './Components/Tech/Tech';
+import {Route, Switch, Redirect, Link} from 'react-router-dom';
+import Home from './pages/Home/Home';
+import Projects from './pages/Projects/Projects';
+import Tech from './pages/Tech/Tech';
+import Nav from './Components/Nav/Nav';
+import SocialLinks from './Components/SocialLinks/SocialLinks';
 
 function App() {
 	const [theme, setTheme] = useState("light");
@@ -45,24 +47,7 @@ function App() {
 					:
 					null
 				}
-				{
-					!isMobile || menuOpen ?
-					<nav className={isMobile ? classes.mobileNav : classes.nav}>
-						<ul className={classes.navList}>
-							<li>
-								<NavLink to="/" exact activeClassName={classes.currentNavLink} className={classes.navLink}>Home</NavLink>
-							</li>
-							<li>
-								<NavLink to="/projects" exact activeClassName={classes.currentNavLink} className={classes.navLink}>Proyectos</NavLink>
-							</li>
-							<li>
-								<NavLink to="/tech" exact activeClassName={classes.currentNavLink} className={classes.navLink}>Tech</NavLink>
-							</li>
-						</ul>
-					</nav>
-					:
-					null
-				}
+				{ !isMobile || menuOpen ? <Nav isMobile={isMobile}/> : null }
 			</header>
 			<main>
 				<Switch>
@@ -82,20 +67,7 @@ function App() {
 						}
 					</button>
 				</div>
-				<div className={classes.socialLinkCtn}>
-					<a href="mailto:giachettimilena@gmail.com?Subject=Contacto%20desde%20portfolio" target="_blank" rel="noreferrer" className={classes.socialLink} aria-label="Mail">
-						<p className={classes.socialLinkExtra}>Email</p>
-						<i className={`${classes.smallIcon} fas fa-envelope`}></i>
-					</a>
-					<a href="https://www.linkedin.com/in/milena-giachetti-7640a21b8/" target="_blank" rel="noreferrer" className={classes.socialLink} aria-label="Linkedin">
-						<p className={classes.socialLinkExtra}>Linkedin</p>
-						<i className={`${classes.smallIcon} fab fa-linkedin-in`}></i>
-					</a>
-					<a href="https://github.com/MilenaGiachetti" target="_blank" rel="noreferrer" className={classes.socialLink} aria-label="Gihub">
-						<p className={classes.socialLinkExtra}>Github</p>
-						<i className={`${classes.smallIcon} fab fa-github`}></i>
-					</a>
-				</div>
+				<SocialLinks/>
 			</footer>
 		</>
 	);

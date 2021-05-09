@@ -81,7 +81,7 @@ function Projects() {
                         </div>
                     </div>
                 </div>
-                <div class={classes.changeProyectBtnCtn}>
+                <div className={classes.changeProyectBtnCtn}>
                     <button onClick={() => clickHandler(-1)} title='Ver proyecto anterior' className={classes.changeProyect}>
                         <span className={`${classes.titleCtaArrow} ${classes.left}`}></span>
                     </button>

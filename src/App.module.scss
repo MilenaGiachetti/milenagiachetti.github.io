@@ -111,7 +111,10 @@ header {
 		align-items: center;
 		display: flex;
 		height: 5rem;
+		position: fixed;
 		width: 100vw;
+		z-index: 2;
+		padding-right: 2rem;
 		.logo {
 			height: 5rem;
 			width: 5rem;
@@ -153,7 +156,7 @@ main {
 	display: flex;
 	height: 100vh;
 	justify-content: center;
-	padding-right: 10rem;
+	padding: 5rem 10rem 5rem 0;
 	width: calc(100vw - 10rem);
 }
 
@@ -161,7 +164,7 @@ main {
 	main {
 		height: unset;
 		min-height: calc(100vh - 5rem - 8rem);
-		padding-right: unset;
+		padding: 5rem 2rem 5rem 0;
 		width: 100vw;
 	}
 }
@@ -185,99 +188,19 @@ footer {
 		}
 		
 	}
-	.socialLinkCtn {
-		.socialLink {
-			background-color: $accent_color_secondary;
-			border-radius: 2rem;
-			display: block;
-			margin: 3rem 1rem;
-			position: relative;
-			&:hover{
-				background-color: $accent_color;
-				border-radius: 0 2rem 2rem 0;
-				transition: background-color .3s;
-			}
-			&:hover .socialLinkExtra {
-				background-color: $accent_color;
-				border-color: $accent_color;
-				border-radius: 2rem 0 0 2rem;
-				color: $light_color;
-				display: block;
-				font-weight: bold;
-				height: 4rem;
-				opacity: 1;
-				padding: 1rem 1.5rem;
-				pointer-events: unset;
-				width: 8rem;
-			}
-			.socialLinkExtra {
-				background-color: $accent_color_secondary;
-				color: transparent;
-				font-size: 1.4rem;
-				height: 4rem;
-				opacity: 0;
-				padding: 1.5rem;
-				pointer-events: none;
-				position: absolute;
-				right: 4rem;
-				text-align: left;
-				transform-origin: 100% 0;
-				transition: width .3s, color .7s, background-color .3s;
-				width: 0;
-			}
-			.smallIcon {
-				border: var(--backgroundColor);
-				border-radius: 1rem;
-				color: $light_color;
-				display: inline-block;
-				font-size: 1.6rem;
-				height: 4rem;
-				margin:0;
-				padding: 1.25rem 0.5rem;
-				text-align: center;
-				width: 4rem;
-			}
-		}
-	}
 }
 
 @media (max-width: 767px) { 
 	footer {
-		padding: 7rem 3rem 3rem 3rem;
-	}	
-}
-
-@media (max-width: 575px) { 
-	footer {
 		bottom: 0;
 		display: block;
 		height: unset;
-		padding: 1rem;
+		padding: 2rem 3rem 2rem 2rem;
 		top: unset;
 		min-height: 6rem;
 		position: relative;
 		.pageBtnCtn {
 			display: none;			
-		}
-		.socialLinkCtn { 
-			align-items: center;
-			display: flex;
-			flex-flow: row;
-			justify-content: space-between;
-			.socialLink {
-				margin: 1rem;
-				&:hover{
-					background-color: $accent_color;
-					border-radius: 2rem;
-					transition: background-color .3s;
-				}
-				&:hover .socialLinkExtra {
-					display: none;
-				}
-				.socialLinkExtra {
-					display: none;
-				}
-			}
 		}
 	}
 }

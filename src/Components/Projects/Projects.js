@@ -1,6 +1,6 @@
 import classes from './Projects.module.scss';
 import {useState} from 'react';
-import asset from './../../assets/images/old_computer.png';
+import asset from './../../assets/images/projectsScreens/old_computer.png';
 import React from 'react';
 
 const projectsData = [

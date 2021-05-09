@@ -101,3 +101,32 @@
         }
 	}
 }
+
+@media (max-width: 575px) { 
+    .Proyects {
+        .content {
+            h2 {
+                text-align: center;
+            }
+            .proyect {
+                .proyectTextContent {
+                    max-width: unset;
+                    padding: 2rem;
+                    .proyectBtnCtn {
+                        padding: 2rem 0;
+                        .proyectBtn {
+                            margin-right: 1rem;
+                            padding: 0.5rem 0.75rem;
+                        }
+                    }
+                }
+                .proyectNumber { 
+                    &:after {
+                        bottom: -50%;
+                        font-size: 18rem;
+                    }
+                }
+            }
+        }
+    }    
+}

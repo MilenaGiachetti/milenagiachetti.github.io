@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@react-three/fiber": "^6.0.17",
     "@testing-library/jest-dom": "^5.12.0",

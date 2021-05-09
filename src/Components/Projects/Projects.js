@@ -1,15 +1,13 @@
 import classes from './Projects.module.scss';
-
+import asset from './../../assets/images/old_computer.png';
 import React from 'react';
 
 function Projects() {
-    var style = { "--bg-image": "url('https://upload.wikimedia.org/wikipedia/commons/1/1a/Tatung-einstein-computer.png')"};
+    var style = { "--bg-image": `url(${asset})`};
 
 	return (
         <section className={classes.Proyects}>
-            <div className={classes.title} data-point="ProyectosProyectosProyectosProyectosProyectosProyectosProyectosProyectosProyectosProyectosProyectosProyectosProyectosProyectos">
-            
-            </div>
+            <div className={classes.title} data-point="ProyectosProyectosProyectosProyectosProyectosProyectosProyectosProyectosProyectosProyectosProyectosProyectosProyectosProyectos"></div>
             <div className={classes.content}>
                 <h2>Proyectos</h2>
                 <div className={classes.proyect}>

@@ -55,7 +55,7 @@ function App() {
 				</div>
 				<div className={classes.socialLinkCtn}>
 					<a href="mailto:giachettimilena@gmail.com?Subject=Contacto%20desde%20portfolio" target="_blank" rel="noreferrer" className={classes.socialLink} aria-label="Mail">
-						<p className={classes.socialLinkExtra}>E-mail</p>
+						<p className={classes.socialLinkExtra}>Email</p>
 						<i className={`${classes.smallIcon} fas fa-envelope`}></i>
 					</a>
 					<a href="https://www.linkedin.com/in/milena-giachetti-7640a21b8/" target="_blank" rel="noreferrer" className={classes.socialLink} aria-label="Linkedin">

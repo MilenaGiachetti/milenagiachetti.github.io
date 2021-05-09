@@ -25,6 +25,8 @@
         }
     }
     .content {
+        display: flex;
+        flex-flow: column;
         height: 100vh;
         margin: 0 auto;
         max-width: 1100px;
@@ -49,7 +51,6 @@
                 z-index: -1;
             }
             .proyectTextContent {
-                background-color: rgba($accent_color_secondary, .25);
                 max-width: 45rem;
                 padding: 2rem;
                 position: relative;
@@ -135,45 +136,63 @@
     }    
 }
 
-.changeProyect {
-    cursor: pointer;
-    padding: 2rem;
-    .titleCtaArrow {
-        background-color: var(--color);
-        display: block;
-        height: 2px;
-        position: relative;
-        width: 8rem;
-        &::after, &::before {
+.changeProyectBtnCtn {
+    margin-top: auto;
+    max-width: 45rem;
+    .changeProyect {
+        cursor: pointer;
+        padding: 2rem;
+        width: 50%;
+        &:hover .titleCtaArrow, &:hover .titleCtaArrow::after, &:hover .titleCtaArrow::before {
+            background-color: $accent_color;   
+        }
+        &:hover .titleCtaArrow {
+            animation: moveArrow .8s infinite ease-in-out alternate;
+            transform: translateX(1.2rem);
+        }
+        &:hover .titleCtaArrow.left {
+            animation: moveArrow .8s infinite ease-in-out alternate;
+            transform: translateX(-1.2rem);
+        }
+        .titleCtaArrow {
             background-color: var(--color);
-            content: '';
+            display: block;
             height: 2px;
-            position: absolute;
-            right: -2px;
-            transition: background-color .3s;
-            width: 10px;
+            position: relative;
+            transform: translateX(0);
+            transition: transform .3s, background-color .3s;
+            width: 100%;
+            &::after, &::before {
+                background-color: var(--color);
+                content: '';
+                height: 2px;
+                position: absolute;
+                right: -2px;
+                transition: background-color .3s;
+                width: 10px;
+            }
+            &::after {
+                top: -3px;
+                transform: rotate(45deg);
+            }
+            &::before {
+                top: 3px;
+                transform: rotate(-45deg);
+            }
         }
-        &::after {
-            top: -3px;
-            transform: rotate(45deg);
-        }
-        &::before {
-            top: 3px;
-            transform: rotate(-45deg);
-        }
-    }
-    .titleCtaArrow.left {
-        margin-right: 2rem;
-        &::after, &::before {
-            left: -2px;
-        }
-        &::after {
-            top: -3px;
-            transform: rotate(135deg);
-        }
-        &::before {
-            top: 3px;
-            transform: rotate(-135deg);
+        .titleCtaArrow.left {
+            margin-right: 2rem;
+            &::after, &::before {
+                left: -2px;
+            }
+            &::after {
+                top: -3px;
+                transform: rotate(135deg);
+            }
+            &::before {
+                top: 3px;
+                transform: rotate(-135deg);
+            }
         }
     }
 }

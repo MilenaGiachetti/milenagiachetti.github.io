@@ -14,7 +14,7 @@ a {
 
 button:active, button:focus {
 	border: none;
-	outline: none;
+	/* outline: none; */
 }
 
 ul {
@@ -22,18 +22,29 @@ ul {
 }
 
 /* Base styles */
+/* Theme variables */
 html {
 	font-size: 62.5%;
+	--backgroundColor: #F3F6F4;
+	--color: #0E1428;
+}
+
+html[data-theme='dark'] {
+	--backgroundColor: #0E1428;
+	--color: #F3F6F4;
 }
 
 body {
-	background-color: #F3F6F4;
-	color: #0E1428;
+	background-color: var(--backgroundColor);
+	color: var(--color);
+	font-size: 1.6rem;
 	font-family: 'Open Sans', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	margin: 0;
 	max-height: 100vh;
+	-webkit-transition: color 1.2s ease, background-color 1s ease;
+	transition: color 1.2s ease, background-color 1s ease;
 	overflow-x: hidden;
 	width: 100vw;
 }

@@ -1,16 +1,18 @@
+@import './assets/variables/scss_variables';
+
 /* Header */
 header {
 	height: 100vh;
 	width: 10rem;
 	.logo {
-		background-color: #1C7293;
+		background-color: $accent_color_secondary;
 		border-radius: 0 0 50% 0;
 		display: block;
 		height: 7rem;
 		text-align: center;
 		width: 7rem;
 		.logoText {
-			color: #F3F6F4;
+			color: var(--backgroundColor);
 			font-size: 4rem;
 		}
 	}
@@ -30,7 +32,7 @@ header {
 			.navLink {
 				position: relative;
 				&:before, &.currentNavLink:before {
-					background-color: rgba(217, 92, 57, 0.5);
+					background-color: rgba($accent_color, .5);
 					border-radius: 50%;
 					content: '';
 					height: 0;
@@ -47,11 +49,11 @@ header {
 					width: 4rem;
 				}
 				&.currentNavLink:before {
-					background-color: rgba(28, 113, 147, 0.25);
+					background-color: rgba($accent_color_secondary, .25);
 					transition: all .3s;
 				}
 				&.currentNavLink:hover:before {
-					background-color: rgba(217, 92, 57, 0.5);
+					background-color: rgba($accent_color, .5);
 				}
 			}
 		}
@@ -129,21 +131,21 @@ footer {
 	position: absolute;
 	right: 0;
 	.socialLink {
-		background-color: #1C7293;
+		background-color: $accent_color_secondary;
 		border-radius: 2rem;
 		display: block;
 		margin: 3rem 1rem;
 		position: relative;
 		&:hover{
-			background-color: #D95D39;
+			background-color: $accent_color;
 			border-radius: 0 2rem 2rem 0;
 			transition: background-color .3s;
 		}
 		&:hover .socialLinkExtra {
-			background-color: #D95D39;
-			border-color: #D95D39;
+			background-color: $accent_color;
+			border-color: $accent_color;
 			border-radius: 2rem 0 0 2rem;
-			color: #F3F6F4;
+			color: var(--backgroundColor);
 			display: block;
 			height: 4rem;
 			opacity: 1;
@@ -152,7 +154,7 @@ footer {
 			width: 8rem;
 		}
 		.socialLinkExtra {
-			background-color: #1C7293;
+			background-color: $accent_color_secondary;
 			color: transparent;
 			font-size: 1.4rem;
 			height: 4rem;
@@ -167,9 +169,9 @@ footer {
 			width: 0;
 		} 
 		.smallIcon {
-			border: #F3F6F4;
+			border: var(--backgroundColor);
 			border-radius: 1rem;
-			color: #F3F6F4;
+			color: var(--backgroundColor);
 			display: inline-block;
 			font-size: 1.6rem;
 			height: 4rem;
@@ -192,7 +194,7 @@ footer {
 		.socialLink {
 			margin: 1rem;
 			&:hover{
-				background-color: #D95D39;
+				background-color: $accent_color;
 				border-radius: 2rem;
 				transition: background-color .3s;
 			}

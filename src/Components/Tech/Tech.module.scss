@@ -1,8 +1,10 @@
+@import '../../assets/variables/scss_variables';
+
 .Tech {
     height: 100%;
     width: 100%;
     .title {
-        color: rgba(217, 92, 57, 0.5);
+        color: rgba($accent_color, .5);
         height: 100%;
         left: 7rem;
         position: absolute;

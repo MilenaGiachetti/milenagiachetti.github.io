@@ -1,10 +1,19 @@
 import classes from './App.module.scss';
+import {useState} from 'react';
 import {Route, NavLink, Switch, Redirect, Link} from 'react-router-dom';
 import Home from './Components/Home/Home';
 import Projects from './Components/Projects/Projects';
 import Tech from './Components/Tech/Tech';
 
 function App() {
+	const [theme, setTheme] = useState("light");
+
+	const toggleTheme = () => {
+        var newTheme = (theme === "dark" ? "light" : "dark");
+        setTheme(newTheme);
+        document.documentElement.setAttribute('data-theme', newTheme)
+    }
+	
 	return (
 		<>
 			<header>
@@ -23,6 +32,7 @@ function App() {
 						<li>
 							<NavLink to="/tech" exact activeClassName={classes.currentNavLink} className={classes.navLink}>Tech</NavLink>
 						</li>
+						<li><button onClick={toggleTheme}>THEME</button></li>
 					</ul>
 				</nav>
 			</header>

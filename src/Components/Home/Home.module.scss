@@ -1,5 +1,7 @@
+@import '../../assets/variables/scss_variables';
+
 h2 {
-	color: #0E1428;
+	color: var(--color);
 	cursor: crosshair;
 	font-family: 'Open Sans Condensed', sans-serif;
 	font-size: 7rem;
@@ -18,7 +20,7 @@ h2 {
         padding: 2rem;
         position: relative;
         &:after {
-            background-color: rgba(28, 113, 147, 0.05);
+            background-color: rgba($accent_color_secondary, .05);
             border-radius: 50%;
             content: '';
             display: block;
@@ -40,18 +42,18 @@ h2 {
             text-transform: uppercase;		
         }
         .titleEmail {
-            color: #D95D39;
+            color: $accent_color;
             display: inline-block;
             padding: 0.5rem 0 1rem 0;
         }
         .titleArrow {
-            background-color: #D95D39;
+            background-color: $accent_color;
             height: 4px;
             margin-top: 1rem;
             position: relative;
             width: 100%;
             &::after, &::before {
-                background-color: #D95D39;
+                background-color: $accent_color;
                 content: '';
                 height: 4px;
                 left: -4px;
@@ -75,18 +77,18 @@ h2 {
             position: relative;
             &:hover .arrow, &:hover .arrow::after, &:hover .arrow::before {
                 animation-play-state: paused;
-                background-color: #D95D39;
+                background-color: $accent_color;
             }
             .titleCtaArrow {
                 animation: moveArrow .8s infinite ease-in-out alternate;
-                background-color: #0E1428;
+                background-color: var(--color);
                 height: 2px;
                 position: relative;
                 transform: translateX(0px);
                 transition: background-color .3s;
                 width: 18rem;
                 &::after, &::before {
-                    background-color: #0E1428;
+                    background-color: var(--color);
                     content: '';
                     height: 2px;
                     position: absolute;

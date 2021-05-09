@@ -27,7 +27,7 @@
     .content {
         display: flex;
         flex-flow: column;
-        height: 100vh;
+        height: 100%;
         margin: 0 auto;
         max-width: 1100px;
         padding: 2rem 2rem 2rem 12rem;
@@ -76,7 +76,7 @@
                 }
             }
             .proyectNumber { 
-                bottom: 0;
+                bottom: 1rem;
                 font-size: 13rem;
                 position: absolute;
                 right: 0;

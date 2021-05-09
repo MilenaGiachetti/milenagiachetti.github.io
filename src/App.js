@@ -32,7 +32,6 @@ function App() {
 						<li>
 							<NavLink to="/tech" exact activeClassName={classes.currentNavLink} className={classes.navLink}>Tech</NavLink>
 						</li>
-						<li><button onClick={toggleTheme}>THEME</button></li>
 					</ul>
 				</nav>
 			</header>
@@ -45,18 +44,29 @@ function App() {
 				</Switch>
 			</main>
 			<footer>
-				<a href="mailto:giachettimilena@gmail.com?Subject=Contacto%20desde%20portfolio" target="_blank" rel="noreferrer" className={classes.socialLink} aria-label="Mail">
-					<p className={classes.socialLinkExtra}>E-mail</p>
-					<i className={`${classes.smallIcon} fas fa-envelope`}></i>
-				</a>
-				<a href="https://www.linkedin.com/in/milena-giachetti-7640a21b8/" target="_blank" rel="noreferrer" className={classes.socialLink} aria-label="Linkedin">
-					<p className={classes.socialLinkExtra}>Linkedin</p>
-					<i className={`${classes.smallIcon} fab fa-linkedin-in`}></i>
-				</a>
-				<a href="https://github.com/MilenaGiachetti" target="_blank" rel="noreferrer" className={classes.socialLink} aria-label="Gihub">
-					<p className={classes.socialLinkExtra}>Github</p>
-					<i className={`${classes.smallIcon} fab fa-github`}></i>
-				</a>
+				<div className={classes.pageBtnCtn}>
+					<button type="button" className={classes.themeBtn}
+						onClick={toggleTheme}>{
+							theme === "dark" ? 
+							<i className="fas fa-sun" aria-hidden="true"></i> : 
+							<i className="fas fa-moon" aria-hidden="true"></i>
+						}
+					</button>
+				</div>
+				<div className={classes.socialLinkCtn}>
+					<a href="mailto:giachettimilena@gmail.com?Subject=Contacto%20desde%20portfolio" target="_blank" rel="noreferrer" className={classes.socialLink} aria-label="Mail">
+						<p className={classes.socialLinkExtra}>E-mail</p>
+						<i className={`${classes.smallIcon} fas fa-envelope`}></i>
+					</a>
+					<a href="https://www.linkedin.com/in/milena-giachetti-7640a21b8/" target="_blank" rel="noreferrer" className={classes.socialLink} aria-label="Linkedin">
+						<p className={classes.socialLinkExtra}>Linkedin</p>
+						<i className={`${classes.smallIcon} fab fa-linkedin-in`}></i>
+					</a>
+					<a href="https://github.com/MilenaGiachetti" target="_blank" rel="noreferrer" className={classes.socialLink} aria-label="Gihub">
+						<p className={classes.socialLinkExtra}>Github</p>
+						<i className={`${classes.smallIcon} fab fa-github`}></i>
+					</a>
+				</div>
 			</footer>
 		</>
 	);

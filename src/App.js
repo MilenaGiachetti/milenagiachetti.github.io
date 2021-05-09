@@ -1,11 +1,13 @@
 import classes from './App.module.scss';
-import { Route, NavLink, Switch, Redirect, Link} from 'react-router-dom';
+import {Route, NavLink, Switch, Redirect, Link} from 'react-router-dom';
 import Home from './Components/Home/Home';
+import Projects from './Components/Projects/Projects';
 
 function App() {
 	return (
 		<>
 			<header>
+				<h1>Milena Giachetti</h1>
 				<Link to={{pathname: "/"}} className={classes.logo}>
 					<p className={classes.logoText}>g_</p>
 				</Link>
@@ -26,7 +28,7 @@ function App() {
 			<main>
 				<Switch>
 					<Route path="/" exact component={Home}/>
-					<Route path="/projects" exact component={Home}/>
+					<Route path="/projects" exact component={Projects}/>
 					<Route path="/tech" exact component={Home}/>
 					<Redirect to="/" />
 				</Switch>

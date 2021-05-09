@@ -46,8 +46,19 @@ code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
-p, a {
+a {
 	font-size: 1.8rem;
+}
+
+p {
+	font-size: 1.6rem;
+}
+
+h1, .srOnly {
+	height: 0;
+	text-indent: -1000rem;
+	visibility: hidden;
+	width: 0;
 }
 
 .root {	

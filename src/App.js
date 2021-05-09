@@ -1,5 +1,5 @@
 import classes from './App.module.scss';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import {Route, NavLink, Switch, Redirect, Link} from 'react-router-dom';
 import Home from './Components/Home/Home';
 import Projects from './Components/Projects/Projects';
@@ -7,13 +7,25 @@ import Tech from './Components/Tech/Tech';
 
 function App() {
 	const [theme, setTheme] = useState("light");
+	const [menuOpen, setMenuOpen] = useState(false);
+	const [isMobile, setIsMobile] = useState(window.innerWidth <= 767);
 
-	const toggleTheme = () => {
+	useEffect(() => {
+		window.addEventListener("resize", () => setIsMobile(window.innerWidth <= 767));
+	}, []);
+
+	const toggleThemeHandler = () => {
         var newTheme = (theme === "dark" ? "light" : "dark");
         setTheme(newTheme);
         document.documentElement.setAttribute('data-theme', newTheme)
     }
 	
+	const menuHandler = () => {
+		setMenuOpen(prevState => {
+			return !prevState;
+		})
+	}
+
 	return (
 		<>
 			<header>
@@ -21,19 +33,36 @@ function App() {
 				<Link to={{pathname: "/"}} className={classes.logo}>
 					<p className={classes.logoText}>g_</p>
 				</Link>
-				<nav className={classes.nav}>
-					<ul className={classes.navList}>
-						<li>
-							<NavLink to="/" exact activeClassName={classes.currentNavLink} className={classes.navLink}>Home</NavLink>
-						</li>
-						<li>
-							<NavLink to="/projects" exact activeClassName={classes.currentNavLink} className={classes.navLink}>Proyectos</NavLink>
-						</li>
-						<li>
-							<NavLink to="/tech" exact activeClassName={classes.currentNavLink} className={classes.navLink}>Tech</NavLink>
-						</li>
-					</ul>
-				</nav>
+				{
+					isMobile ?
+					<button className={`${classes.burgerBtn} ${menuOpen ? classes.opened : ''}`} onClick={menuHandler} aria-label="Main Menu">
+						<svg width="100" height="100" viewBox="0 0 100 100">
+							<path className={`${classes.line} ${classes.line1}`} d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" aria-expanded={menuOpen ? 'true': 'false'}/>
+							<path className={`${classes.line} ${classes.line2}`} d="M 20,50 H 80" aria-expanded={menuOpen ? 'true': 'false'}/>
+							<path className={`${classes.line} ${classes.line3}`} d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" aria-expanded={menuOpen ? 'true': 'false'}/>
+						</svg>
+					</button>
+					:
+					null
+				}
+				{
+					!isMobile || menuOpen ?
+					<nav className={isMobile ? classes.mobileNav : classes.nav}>
+						<ul className={classes.navList}>
+							<li>
+								<NavLink to="/" exact activeClassName={classes.currentNavLink} className={classes.navLink}>Home</NavLink>
+							</li>
+							<li>
+								<NavLink to="/projects" exact activeClassName={classes.currentNavLink} className={classes.navLink}>Proyectos</NavLink>
+							</li>
+							<li>
+								<NavLink to="/tech" exact activeClassName={classes.currentNavLink} className={classes.navLink}>Tech</NavLink>
+							</li>
+						</ul>
+					</nav>
+					:
+					null
+				}
 			</header>
 			<main>
 				<Switch>
@@ -46,7 +75,7 @@ function App() {
 			<footer>
 				<div className={classes.pageBtnCtn}>
 					<button type="button" className={classes.themeBtn}
-						onClick={toggleTheme}>{
+						onClick={toggleThemeHandler}>{
 							theme === "dark" ? 
 							<i className="fas fa-sun" aria-hidden="true"></i> : 
 							<i className="fas fa-moon" aria-hidden="true"></i>

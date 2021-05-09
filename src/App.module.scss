@@ -12,7 +12,7 @@ header {
 		text-align: center;
 		width: 7rem;
 		.logoText {
-			color: var(--backgroundColor);
+			color: $light_color;
 			font-size: 4rem;
 		}
 	}

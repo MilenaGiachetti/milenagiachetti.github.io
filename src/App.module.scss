@@ -29,20 +29,26 @@ header {
 			text-transform: uppercase;
 			.navLink {
 				position: relative;
-				&:hover:before, &.currentNavLink:before {
+				&:before, &.currentNavLink:before {
 					background-color: rgba(217, 92, 57, 0.5);
 					border-radius: 50%;
 					content: '';
-					height: 4rem;
+					height: 0;
 					left: 50%;
 					position: absolute;
 					top: 50%;
 					transform: translate(-50%, -50%);
-					width: 4rem;
+					transition: all .3s;
+					width: 0;
 					z-index: -1;
+				}
+				&:hover:before, &.currentNavLink:before {
+					height: 4rem;
+					width: 4rem;
 				}
 				&.currentNavLink:before {
 					background-color: rgba(28, 113, 147, 0.25);
+					transition: all .3s;
 				}
 				&.currentNavLink:hover:before {
 					background-color: rgba(217, 92, 57, 0.5);

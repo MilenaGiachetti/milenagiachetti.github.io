@@ -50,6 +50,16 @@ body {
 	width: 100vw;
 }
 
+::-moz-selection { /* Code for Firefox */
+	color: #F3F6F4;
+	background: #1C7293;
+}
+
+::selection {
+	color: #F3F6F4;
+	background: rgba(28, 114, 147, 0.7);
+}
+
 button {
 	font-family: 'Open Sans', sans-serif;
 }

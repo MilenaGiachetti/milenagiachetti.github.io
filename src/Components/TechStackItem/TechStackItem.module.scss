@@ -1,0 +1,40 @@
+.techItem {
+    display: flex;
+    grid-column-end: span 1;
+    grid-row-end: span 1;
+    text-align: center;
+    .techItemWrapper {
+        margin-left: auto;
+        .techItemImg {
+            filter: grayscale(100%) contrast(150%);
+            height: 8rem;
+            margin-bottom: 1rem;
+            transition: filter .3s;
+            width: auto;
+            &:hover {
+                filter: grayscale(0%) contrast(100%);
+            }
+        }
+        .techItemImg + .techItemName {
+            font-weight: bold;
+            margin-top: auto;
+            opacity: 0;
+            transition: opacity .3s;
+        }
+        .techItemImg:hover + .techItemName {
+            opacity: 1;
+        }
+    }
+}
+
+@media (max-width: 767px) { 
+    .techItem {
+        display: unset;
+        .techItemWrapper {
+            .techItemImg {
+                height: 8rem;
+                margin-bottom: 2rem;
+            }
+        }
+    }
+}

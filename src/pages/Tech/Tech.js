@@ -1,52 +1,6 @@
 import classes from './Tech.module.scss';
-import css from './../../assets/images/techIcons/css.svg';
-import git from './../../assets/images/techIcons/git.svg';
-import github from './../../assets/images/techIcons/github.svg';
-import html from './../../assets/images/techIcons/html.svg';
-import javascript from './../../assets/images/techIcons/javascript.svg';
-import jquery from './../../assets/images/techIcons/jquery.svg';
-import react from './../../assets/images/techIcons/react.svg';
-import sass from './../../assets/images/techIcons/sass.svg';
-import threejs from './../../assets/images/techIcons/threejs.svg';
-
-const techStack = [
-    {
-        icon: css,
-        name: 'CSS'
-    },
-    {
-        icon: git,
-        name: 'Git'
-    },
-    {
-        icon: github,
-        name: 'Github'
-    },
-    {
-        icon: html,
-        name: 'HTML'
-    },
-    {
-        icon: javascript,
-        name: 'JavaScript'
-    },
-    {
-        icon: jquery,
-        name: 'JQuery'
-    },
-    {
-        icon: react,
-        name: 'React'
-    },
-    {
-        icon: sass,
-        name: 'SCSS'
-    },
-    {
-        icon: threejs,
-        name: 'ThreeJS'
-    }
-]
+import techStackData from './techContentData';
+import TechStackItem from '../../Components/TechStackItem/TechStackItem';
 
 function Tech() {
 	return (
@@ -56,14 +10,9 @@ function Tech() {
                 <h2>Tech</h2>
                 <div className={classes.techCtn}>
                     {
-                        techStack.map((tech) => {
+                        techStackData.map((tech) => {
                             return (
-                                <div key={tech.name} className={classes.techItem}>
-                                    <div className={classes.techItemWrapper}>
-                                        <img src={tech.icon} alt={tech.name} className={classes.techItemImg}></img>
-                                        <p className={classes.techItemName}>{tech.name}</p>
-                                    </div>
-                                </div>
+                                <TechStackItem key={tech.name} tech={tech}/>
                             )
                         })
                     }

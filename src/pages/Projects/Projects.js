@@ -1,6 +1,8 @@
 import classes from './Projects.module.scss';
 import {useState} from 'react';
 import asset from './../../assets/images/projectsScreens/old_computer.png';
+import screen from './../../assets/images/projectsScreens/screens/guifos.png';
+import mixamo from './../../assets/images/projectsScreens/screens/mixamo.png';
 import React from 'react';
 
 const projectsData = [
@@ -11,7 +13,8 @@ const projectsData = [
         proyectDescription: 'Experiencia Web 3D construída con three.js y cannon-es y modelo y animaciones de mixamo. En proceso.',
         liveLink: 'https://milenagiachetti.github.io/mixamo-three.js/',
         githubLink: 'https://github.com/MilenaGiachetti/mixamo-three.js',
-        imagePath: asset
+        imagePath: asset,
+        screenPath: mixamo
     },
     {
         number: '02',
@@ -20,7 +23,8 @@ const projectsData = [
         proyectDescription: 'Proyecto construído con la API de giphy, librería RecordRTC y Media Capture and Streams API.',
         liveLink: 'https://milenagiachetti.github.io/guifos/',
         githubLink: 'https://github.com/MilenaGiachetti/guifos',
-        imagePath: asset
+        imagePath: asset,
+        screenPath: screen
     },
     {
         number: '03',
@@ -28,15 +32,17 @@ const projectsData = [
         proyectTech: 'REACT | NODE | EXPRESS | MySQL | SOCKET.IO',
         proyectDescription: 'Proyecto chat en React para aprender sobre WebSockets y Socket.io',
         liveLink: 'https://github.com/MilenaGiachetti/react-chat',
-        imagePath: asset
+        imagePath: asset,
+        screenPath: screen
     },
     {
         number: '04',
         proyectName: 'Delilah Resto Backend',
         proyectTech: 'NODE | EXPRESS | MySQL',
-        proyectDescription: 'Desarrollo de un backend para un restaurante ficticio utilizando NodeJS, Express y MySQL. CRUD de usuarios, productos y ordenes, login y un sistema de autorización y autenticación de usuarios realizado con Json Web Tokens.',
+        proyectDescription: 'Desarrollo de un backend para un restaurante ficticio utilizando NodeJS, Express y MySQL. CRUD de usuarios, productos y ordenes, login y sistema de autorización y autenticación de usuarios realizado con Json Web Tokens.',
         githubLink: 'https://github.com/MilenaGiachetti/delilahresto_back',
-        imagePath: asset
+        imagePath: asset,
+        screenPath: screen
     }
 ];
 
@@ -61,24 +67,29 @@ function Projects() {
             <div className={classes.content}>
                 <h2>Proyectos</h2>
                 <div className={classes.proyect}>
-                    <div style={style} className={classes.proyectImage}></div>
-                    <p className={classes.proyectNumber} data-number={projectsData[proyect].number}>{projectsData[proyect].number}</p>
-                    <div className={classes.proyectTextContent}>
-                        <h3 className={classes.proyectName}>{projectsData[proyect].proyectName}</h3>
-                        <p className={classes.proyectTech}>{projectsData[proyect].proyectTech}</p>
-                        <p className={classes.proyectDescription}>{projectsData[proyect].proyectDescription}</p>
-                        <div className={classes.proyectBtnCtn}>
-                            {
-                                projectsData[proyect].liveLink !== undefined ?
-                                <a href={projectsData[proyect].liveLink} target='_blank' rel='noreferrer' className={classes.proyectBtn}>
-                                    Ver en vivo
-                                </a> :
-                                ''
-                            }
-                            <a href={projectsData[proyect].githubLink} target='_blank' rel='noreferrer' className={classes.proyectBtn}>
-                                Ver código
-                            </a>
+                    <div className={classes.proyectContent}>
+                        <img src={projectsData[proyect].screenPath} alt={`Screenshot de ${projectsData[proyect].proyectName}`} className={classes.proyectScreen}/>
+                        <div className={classes.proyectTextContent}>
+                            <h3 className={classes.proyectName}>{projectsData[proyect].proyectName}</h3>
+                            <p className={classes.proyectTech}>{projectsData[proyect].proyectTech}</p>
+                            <p className={classes.proyectDescription}>{projectsData[proyect].proyectDescription}</p>
+                            <div className={classes.proyectBtnCtn}>
+                                {
+                                    projectsData[proyect].liveLink !== undefined ?
+                                    <a href={projectsData[proyect].liveLink} target='_blank' rel='noreferrer' className={classes.proyectBtn}>
+                                        Ver en vivo
+                                    </a> :
+                                    ''
+                                }
+                                <a href={projectsData[proyect].githubLink} target='_blank' rel='noreferrer' className={classes.proyectBtn}>
+                                    Ver código
+                                </a>
+                            </div>
                         </div>
+                    </div>
+                    <div className={classes.proyectBg}>
+                        <div style={style} className={classes.proyectImage}></div>
+                        <p className={classes.proyectNumber} data-number={projectsData[proyect].number}>{projectsData[proyect].number}</p>
                     </div>
                 </div>
                 <div className={classes.changeProyectBtnCtn}>

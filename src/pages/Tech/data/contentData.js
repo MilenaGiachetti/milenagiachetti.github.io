@@ -1,4 +1,4 @@
-import images from './techImagesData';
+import images from './imagesData';
 
 const techStack = [
     {

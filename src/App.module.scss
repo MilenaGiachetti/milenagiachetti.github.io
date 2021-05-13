@@ -4,6 +4,8 @@
 header {
 	background-color: var(--backgroundColor);
 	height: 100vh;
+	-webkit-transition: background-color 1s ease;
+	transition: background-color 1s ease;
 	width: 10rem;
 	.logo {
 		background-color: $accent_color_secondary;

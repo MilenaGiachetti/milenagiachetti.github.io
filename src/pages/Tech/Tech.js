@@ -1,5 +1,5 @@
 import classes from './Tech.module.scss';
-import techStackData from './techContentData';
+import techStackData from './data/contentData';
 import TechStackItem from '../../Components/TechStackItem/TechStackItem';
 
 function Tech() {

@@ -1,54 +1,11 @@
 import classes from './Projects.module.scss';
 import {useState} from 'react';
-import asset from './../../assets/images/projectsScreens/old_computer.png';
-import screen from './../../assets/images/projectsScreens/screens/guifos.png';
-import mixamo from './../../assets/images/projectsScreens/screens/mixamo.png';
 import React from 'react';
-
-const projectsData = [
-    {
-        number: '01',
-        proyectName: 'Experiencia 3D',
-        proyectTech: 'THREE.JS | CANNON-ES | WEBPACK',
-        proyectDescription: 'Experiencia Web 3D construída con three.js y cannon-es y modelo y animaciones de mixamo. En proceso.',
-        liveLink: 'https://milenagiachetti.github.io/mixamo-three.js/',
-        githubLink: 'https://github.com/MilenaGiachetti/mixamo-three.js',
-        imagePath: asset,
-        screenPath: mixamo
-    },
-    {
-        number: '02',
-        proyectName: 'Gif.OS',
-        proyectTech: 'JS | CSS | API | RecordRTC',
-        proyectDescription: 'Proyecto construído con la API de giphy, librería RecordRTC y Media Capture and Streams API.',
-        liveLink: 'https://milenagiachetti.github.io/guifos/',
-        githubLink: 'https://github.com/MilenaGiachetti/guifos',
-        imagePath: asset,
-        screenPath: screen
-    },
-    {
-        number: '03',
-        proyectName: 'React Chat',
-        proyectTech: 'REACT | NODE | EXPRESS | MySQL | SOCKET.IO',
-        proyectDescription: 'Proyecto chat en React para aprender sobre WebSockets y Socket.io',
-        liveLink: 'https://github.com/MilenaGiachetti/react-chat',
-        imagePath: asset,
-        screenPath: screen
-    },
-    {
-        number: '04',
-        proyectName: 'Delilah Resto Backend',
-        proyectTech: 'NODE | EXPRESS | MySQL',
-        proyectDescription: 'Desarrollo de un backend para un restaurante ficticio utilizando NodeJS, Express y MySQL. CRUD de usuarios, productos y ordenes, login y sistema de autorización y autenticación de usuarios realizado con Json Web Tokens.',
-        githubLink: 'https://github.com/MilenaGiachetti/delilahresto_back',
-        imagePath: asset,
-        screenPath: screen
-    }
-];
+import projectsData from './data/contentData';
 
 function Projects() {
     const [proyect, setProyect] = useState(0);
-    var style = { '--bg-image': `url(${projectsData[proyect].imagePath})`};
+    var style = { '--bg-image': `url(${projectsData[proyect].bgPath})`};
 
     const clickHandler = (n) => {
         setProyect(previousState => {

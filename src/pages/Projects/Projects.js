@@ -5,7 +5,7 @@ import projectsData from './data/contentData';
 
 function Projects() {
     const [proyect, setProyect] = useState(0);
-    var style = { '--bg-image': `url(${projectsData[proyect].bgPath})`};
+    // var style = { '--bg-image': `url(${projectsData[proyect].bgPath})`};
 
     const clickHandler = (n) => {
         setProyect(previousState => {
@@ -25,7 +25,10 @@ function Projects() {
                 <h2>Proyectos</h2>
                 <div className={classes.proyect}>
                     <div className={classes.proyectContent}>
-                        <img src={projectsData[proyect].screenPath} alt={`Screenshot de ${projectsData[proyect].proyectName}`} className={classes.proyectScreen}/>
+                        {projectsData[proyect].screenPath ?
+                            <img src={projectsData[proyect].screenPath} alt={`Screenshot de ${projectsData[proyect].proyectName}`} className={classes.proyectScreen}/> :
+                            null
+                        }
                         <div className={classes.proyectTextContent}>
                             <h3 className={classes.proyectName}>{projectsData[proyect].proyectName}</h3>
                             <p className={classes.proyectTech}>{projectsData[proyect].proyectTech}</p>
@@ -45,7 +48,7 @@ function Projects() {
                         </div>
                     </div>
                     <div className={classes.proyectBg}>
-                        <div style={style} className={classes.proyectImage}></div>
+                        {/* <div style={style} className={classes.proyectImage}></div> */}
                         <p className={classes.proyectNumber} data-number={projectsData[proyect].number}>{projectsData[proyect].number}</p>
                     </div>
                 </div>

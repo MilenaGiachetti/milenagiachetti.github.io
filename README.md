@@ -1,3 +1,21 @@
+Lista de por hacer
+- general: 
+    - agregar animaciones de agregado de componentes:
+        - carga inicial home
+        - cambio de páginas
+        - apertura y cierre nav mobile
+    - hacer funcion cambio de idioma en - es
+    - cambiar boton cambio idioma y tema de lugar en mobile (poner dentro del nav)
+    - guardar preferencia de theme color e idioma
+    - nav mobile, que se cierre al cliquear un link y que se cierre al cliquear el backdrop
+- seccion proyectos:
+    - hacer el resto de las imagenes
+        - imagen mas abstracta - bg image, se va en mobile
+        - screen (excepto para delilah que no tiene, tal vez una screen del codigo ?) - arriba de la descripcion
+- seccion tech:  
+    - agregar fondo del color del fondo claro a logo github y threejs
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

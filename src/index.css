@@ -86,6 +86,9 @@ h1, .srOnly {
 .root {	
 	display: flex;
 	flex-flow: row;
+    margin: 0 auto;
+	max-width: 1400px;
+    position: relative;
 }
 
 @media (max-width: 767px) { 

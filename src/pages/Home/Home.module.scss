@@ -93,10 +93,12 @@ h2 {
                 }
             }
             .titleCtaContent {
-                background: #fff;
+                background: var(--backgroundColor);
                 border-radius: 5px;
+                color: var(--color);
                 letter-spacing: 1.2px;
                 padding: 1rem 2rem;
+                transition: color 1.2s ease, background-color 1s ease;
             }
         }
     }
@@ -221,6 +223,9 @@ h2 {
         font-size: 6rem;
         letter-spacing: 0.3rem;
         line-height: 7rem;
+        &.lined {
+            text-shadow: -1px -2px 0 var(--backgroundColor), 1px -2px 0 var(--backgroundColor), -1px 2px 0 var(--backgroundColor), 1px 2px 0 var(--backgroundColor);
+        }
 	}
     .Home {
         .title {

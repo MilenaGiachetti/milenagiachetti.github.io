@@ -51,7 +51,9 @@ function App() {
 			</header>
 			<main>
 				<Switch>
-					<Route path="/" exact component={Home}/>
+					<Route path="/" exact component={(props) => (
+						<Home {...props} theme={theme} />
+					)}/>
 					<Route path="/projects" exact component={Projects}/>
 					<Route path="/tech" exact component={Tech}/>
 					<Redirect to="/" />
@@ -59,7 +61,9 @@ function App() {
 			</main>
 			<footer>
 				<div className={classes.pageBtnCtn}>
-					<button type="button" className={classes.themeBtn}
+					<button 
+						type="button" 
+						className={classes.themeBtn}
 						onClick={toggleThemeHandler}>{
 							theme === "dark" ? 
 							<i className="fas fa-sun" aria-hidden="true"></i> : 

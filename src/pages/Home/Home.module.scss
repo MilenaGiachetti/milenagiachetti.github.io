@@ -22,7 +22,7 @@ h2 {
         cursor: crosshair;
     }
     .title {
-        padding: 2rem;
+        margin: 2rem;
         position: relative;
         .titlePosition {
             font-size: 2rem;
@@ -88,7 +88,7 @@ h2 {
         z-index: -1;
         .sunset {
             background: $accent_color;
-            background: radial-gradient(circle, rgba(217,93,57,1) 0%, rgba(217,93,57,1) 30%, rgba(217,93,57,0.8) 31%, rgba(217,93,57,0.8) 40%, rgba(217,93,57,0.6) 41%, rgba(217,93,57,0.6) 50%, rgba(217,93,57,0.4) 51%, rgba(217,93,57,0.4) 61%, rgba(217,93,57,0.2) 60%, rgba(217,93,57,0.2) 70%, rgba(217,93,57,0) 100%);
+            background: radial-gradient(circle, rgba($accent_color, 1) 0%, rgba($accent_color, 1) 30%, rgba($accent_color, .8) 31%, rgba($accent_color, .8) 40%, rgba($accent_color, .6) 41%, rgba($accent_color, .6) 50%, rgba($accent_color, .4) 51%, rgba($accent_color, .4) 61%, rgba($accent_color, .2) 60%, rgba($accent_color, .2) 70%, rgba($accent_color, .0) 100%);
             border-radius: 50%;
             margin-left: auto;
             padding-bottom: 50%;

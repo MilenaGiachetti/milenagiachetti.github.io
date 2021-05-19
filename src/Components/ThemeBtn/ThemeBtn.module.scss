@@ -1,0 +1,43 @@
+@import '../../assets/variables/scss_variables';
+
+.pageBtnCtn {
+    margin-bottom: auto;
+    text-align: center;
+    &:hover .themeBtn:after {
+        height: 10rem;
+        width: 10rem;
+    }
+    .themeBtn {
+        padding: 2rem 1rem;
+        position: relative;
+        color: var(--color);
+        font-size: 2rem;
+        &:after {
+            background-color: rgba($accent_color, .5);
+            background: radial-gradient(circle, rgba($accent_color, 1) 0%, rgba($accent_color, 1) 30%, rgba($accent_color, .8) 31%, rgba($accent_color, .8) 40%, rgba($accent_color, .6) 41%, rgba($accent_color, .6) 50%, rgba($accent_color, .4) 51%, rgba($accent_color, .4) 61%, rgba($accent_color, .2) 60%, rgba($accent_color, .2) 70%, rgba($accent_color, .0) 100%);
+            border-radius: 50%;
+            content: '';
+            height: 0;
+            left: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            transition: all .3s;
+            width: 0;
+            z-index: -1;
+        }
+    }
+    
+}
+
+@media (max-width: 767px) { 
+    .pageBtnCtn {
+        position: absolute;
+        bottom: 3rem;
+        right: 3rem;
+        &:hover .themeBtn:after {
+            height: 6rem;
+            width: 6rem;
+        }        
+    }
+}

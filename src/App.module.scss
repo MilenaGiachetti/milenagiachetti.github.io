@@ -181,16 +181,6 @@ footer {
 	position: absolute;
 	right: 0;
 	top: 0;
-	.pageBtnCtn {
-		margin-bottom: auto;
-		text-align: center;
-		.themeBtn {
-			padding: 2rem 1rem;
-			color: var(--color);
-			font-size: 2rem;
-		}
-		
-	}
 }
 
 @media (max-width: 767px) { 
@@ -202,8 +192,5 @@ footer {
 		top: unset;
 		min-height: 6rem;
 		position: relative;
-		.pageBtnCtn {
-			display: none;			
-		}
 	}
 }

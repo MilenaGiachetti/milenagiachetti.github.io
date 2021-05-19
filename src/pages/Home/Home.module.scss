@@ -33,27 +33,17 @@ h2 {
             display: inline-block;
             padding: 0.5rem 0 1rem 0;
         }
-        .titleArrow {
+        .titleLine {
             background-color: $accent_color;
-            height: 4px;
+            border-radius: 3px;
+            height: 8px;
             margin-top: 1rem;
             position: relative;
             width: 100%;
-            &::after, &::before {
-                background-color: $accent_color;
-                content: '';
-                height: 4px;
-                left: -4px;
-                position: absolute;
-                width: 21px;
-            }
-            &::after {
-                top: -6px;
-                transform: rotate(135deg);
-            }
-            &::before {
-                top: 6px;
-                transform: rotate(-135deg);
+            &:first-of-type {
+                margin-bottom: 3rem;
+                margin-left: auto;
+                width: 60%;
             }
         }
         .titleCta {
@@ -66,31 +56,15 @@ h2 {
                 animation-play-state: paused;
                 background-color: $accent_color;
             }
-            .titleCtaArrow {
-                animation: moveArrow .8s infinite ease-in-out alternate;
+            .titleCtaLine {
+                animation: moveArrow 1.8s infinite ease-in-out alternate;
                 background-color: var(--color);
-                height: 2px;
+                border-radius: 3px;
+                height: 8px;
                 position: relative;
                 transform: translateX(0px);
                 transition: background-color .3s;
                 width: 18rem;
-                &::after, &::before {
-                    background-color: var(--color);
-                    content: '';
-                    height: 2px;
-                    position: absolute;
-                    right: -2px;
-                    transition: background-color .3s;
-                    width: 10px;
-                }
-                &::after {
-                    top: -3px;
-                    transform: rotate(45deg);
-                }
-                &::before {
-                    top: 3px;
-                    transform: rotate(-45deg);
-                }
             }
             .titleCtaContent {
                 background: var(--backgroundColor);

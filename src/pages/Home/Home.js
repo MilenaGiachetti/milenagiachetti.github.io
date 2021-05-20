@@ -22,15 +22,19 @@ function Home(props) {
                     </Link>
                 </div>
             </div>
+            <div className={classes.backgroundMobile}>
+                <CloudBig className={classes.cloudBig} color="rgba(28, 114, 147, 0.1)" id="mob-big-0"/>
+                <CloudMedium className={classes.cloudMedium} color="rgba(28, 114, 147, 0.2)" id="mob-med-0"/>
+            </div>
             <div className={classes.background}>
                 <div className={classes.sunset}>
                     <div className={classes.sun}></div>
-                    <CloudBig className={classes.cloudBig} color={props.theme === 'light' ? 'rgba(243, 246, 244, 0.5)' : 'rgba(14, 20, 40, 0.5)'} id="1"/>
-                    <CloudBig className={classes.cloudBig} color={props.theme === 'light' ? 'rgba(243, 246, 244, 0.75)' : 'rgba(14, 20, 40, 0.75)'} id="2"/>
-                    <CloudBig className={classes.cloudBig} color={props.theme === 'light' ? 'rgba(243, 246, 244, 0.95)' : 'rgba(14, 20, 40, 0.95)'} id="3"/>
-                    <CloudBig className={classes.cloudBig} color={props.theme === 'light' ? 'rgba(243, 246, 244, 0.25)' : 'rgba(14, 20, 40, 0.25)'} id="4"/>
-                    <CloudMedium className={classes.cloudMedium} color={props.theme === 'light' ? 'rgba(243, 246, 244, 0.25)' : 'rgba(14, 20, 40, 0.25)'} id="1"/>
-                    <CloudSmall className={classes.cloudSmall} color={props.theme === 'light' ? 'rgba(243, 246, 244, 0.65)' : 'rgba(14, 20, 40, 0.65)'} id="1"/>
+                    <CloudBig className={classes.cloudBig} color={props.theme === 'light' ? 'rgba(243, 246, 244, 0.5)' : 'rgba(14, 20, 40, 0.5)'} id="desk-big-1"/>
+                    <CloudBig className={classes.cloudBig} color={props.theme === 'light' ? 'rgba(243, 246, 244, 0.75)' : 'rgba(14, 20, 40, 0.75)'} id="desk-big-2"/>
+                    <CloudBig className={classes.cloudBig} color={props.theme === 'light' ? 'rgba(243, 246, 244, 0.95)' : 'rgba(14, 20, 40, 0.95)'} id="desk-big-3"/>
+                    <CloudBig className={classes.cloudBig} color={props.theme === 'light' ? 'rgba(243, 246, 244, 0.25)' : 'rgba(14, 20, 40, 0.25)'} id="desk-big-4"/>
+                    <CloudMedium className={classes.cloudMedium} color={props.theme === 'light' ? 'rgba(243, 246, 244, 0.25)' : 'rgba(14, 20, 40, 0.25)'} id="desk-med-1"/>
+                    <CloudSmall className={classes.cloudSmall} color={props.theme === 'light' ? 'rgba(243, 246, 244, 0.65)' : 'rgba(14, 20, 40, 0.65)'} id="desk-sm-1"/>
                 </div>
             </div>
         </section>

@@ -2,7 +2,7 @@
 
 /* Header */
 header {
-	background-color: var(--backgroundColor);
+	// background-color: var(--backgroundColor);
 	height: 100vh;
 	-webkit-transition: background-color 1s ease;
 	transition: background-color 1s ease;
@@ -166,8 +166,9 @@ main {
 @media (max-width: 767px) { 
 	main {
 		height: unset;
-		min-height: calc(100vh - 5rem - 8rem);
-		padding: 5rem 2rem;
+		min-height: calc(100vh - 5rem - 10rem);
+		overflow: hidden;
+		padding: 5rem 2rem 0 2rem;
 		width: 100vw;
 	}
 }

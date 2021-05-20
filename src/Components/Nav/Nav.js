@@ -15,9 +15,13 @@ function Nav(props) {
                 <li>
                     <NavLink to="/tech" exact activeClassName={classes.currentNavLink} className={classes.navLink}>Tech</NavLink>
                 </li>
-                <li>
-                    <ThemeBtn theme={props.theme} toggleThemeHandler={props.toggleThemeHandler}/>
-                </li>
+                {
+                    props.isMobile 
+                    ? <li>
+                        <ThemeBtn theme={props.theme} toggleThemeHandler={props.toggleThemeHandler}/>
+                    </li>
+                    : null
+                }
             </ul>
         </nav>
 	);

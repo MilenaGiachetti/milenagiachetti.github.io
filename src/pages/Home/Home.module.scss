@@ -52,10 +52,6 @@ h2 {
             justify-content: flex-end;
             padding: 2rem;
             position: relative;
-            &:hover .arrow, &:hover .arrow::after, &:hover .arrow::before {
-                animation-play-state: paused;
-                background-color: $accent_color;
-            }
             .titleCtaLine {
                 animation: moveArrow 1.8s infinite ease-in-out alternate;
                 background-color: var(--color);
@@ -75,6 +71,9 @@ h2 {
                 transition: color 1.2s ease, background-color 1s ease;
             }
         }
+    }
+    .backgroundMobile {
+        display: none;
     }
     .background {
         align-items: center;
@@ -161,33 +160,53 @@ h2 {
 
 @media (max-width: 767px) { 
 	.Home {
-        align-items: flex-end;
+        align-items: center;
         justify-content: center;
-        min-height: calc(100vh - 5rem - 8rem);
-        .background {
-            justify-content: center;
-            .sunset {
-                padding-bottom: 90%;
-                width: 90%; 
-            }
-        }
+        min-height: calc(100vh - 5rem - 10rem);
+        position: relative;
         .title {
+            text-align: center;
+            width: 100%;
+            .titleLine {
+                display: none;
+            }
             .titleEmail {
-                color: $accent_color_secondary;
                 font-size: 1.8rem;
                 font-weight: bolder;
                 text-decoration: underline;
             }
-            .titleArrow {
-                &::after, &::before {
+            .titleCta {
+                justify-content: center;
+                .titleCtaLine {
                     display: none;
                 }
-            }
-            .titleCta {
                 .titleCtaContent {
-                    background: rgba($accent_color_secondary, 0.3);
+                    background-color: $accent_color;
+                    color: $light_color;
                 }
             }
+        }
+        .backgroundMobile {
+            display: block;
+            .cloudBig {
+                left: -5%;
+                max-width: 300px;
+                position: absolute;
+                top: -5%;
+                width: 95%;
+                z-index: -1;
+            }
+            .cloudMedium {
+                bottom: 0;
+                max-width: 175px;
+                position: absolute;
+                right: -5%;
+                width: 55%;
+                z-index: -1;
+            }
+        }
+        .background {
+            display: none;
         }
 	}
 }
@@ -213,10 +232,15 @@ h2 {
             .titlePosition {
                 font-size: 1.8rem;
             }
-            .titleCta {
-                .titleCtaArrow {
-                    width: 6rem;
-                }
+        }
+        .backgroundMobile {
+            .cloudBig {
+                left: -35%;
+                top: -5%;
+            }
+            .cloudMedium {
+                bottom: 0;
+                right: -15%;
             }
         }
     }

@@ -50,8 +50,13 @@ h2 {
             align-items: center;
             display: flex;
             justify-content: flex-end;
-            padding: 2rem;
+            padding: 1.5rem 0;
             position: relative;
+            &:hover {
+                .titleCtaContent {
+                    color: $accent_color_secondary;
+                }
+            }
             .titleCtaLine {
                 animation: moveArrow 1.8s infinite ease-in-out alternate;
                 background-color: var(--color);
@@ -63,7 +68,6 @@ h2 {
                 width: 18rem;
             }
             .titleCtaContent {
-                background: var(--backgroundColor);
                 border-radius: 5px;
                 color: var(--color);
                 letter-spacing: 1.2px;
@@ -177,12 +181,20 @@ h2 {
             }
             .titleCta {
                 justify-content: center;
+                &:hover {
+                    .titleCtaContent {
+                        color: $light_color;
+                    }
+                }
                 .titleCtaLine {
                     display: none;
                 }
                 .titleCtaContent {
                     background-color: $accent_color;
                     color: $light_color;
+                    &:hover {
+                        background-color: rgba($accent_color, 0.85);
+                    }
                 }
             }
         }

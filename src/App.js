@@ -1,10 +1,8 @@
 import classes from './App.module.scss';
 import {useState, useEffect} from 'react';
-import {Route, Switch, Redirect, Link} from 'react-router-dom';
-import Home from './pages/Home/Home';
-import Projects from './pages/Projects/Projects';
-import Tech from './pages/Tech/Tech';
+import {Route, Link} from 'react-router-dom';
 import Nav from './Components/Nav/Nav';
+import Routes from './routes/routes';
 import ThemeBtn from './Components/ThemeBtn/ThemeBtn';
 import SocialLinks from './Components/SocialLinks/SocialLinks';
 
@@ -50,14 +48,9 @@ function App() {
 				{ !isMobile || menuOpen ? <Nav isMobile={isMobile} theme={theme} toggleThemeHandler={toggleThemeHandler}/> : null }
 			</header>
 			<main>
-				<Switch>
-					<Route path="/" exact component={(props) => (
-						<Home {...props} theme={theme} />
-					)}/>
-					<Route path="/projects" exact component={Projects}/>
-					<Route path="/tech" exact component={Tech}/>
-					<Redirect to="/" />
-				</Switch>
+				<Route path="/" component={(props) => (
+					<Routes {...props} theme={theme} />
+				)}/>
 			</main>
 			<footer>
 				{

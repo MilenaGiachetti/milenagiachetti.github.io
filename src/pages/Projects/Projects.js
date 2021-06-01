@@ -20,7 +20,7 @@ function Projects() {
 
 	return (
         <section className={classes.Proyects}>
-            <div className={classes.title} data-point='ProyectosProyectosProyectosProyectos'></div>
+            {/* <div className={classes.title} data-point='ProyectosProyectosProyectosProyectos'></div> */}
             <div className={classes.content}>
                 <h2>Proyectos</h2>
                 <div className={classes.proyect}>

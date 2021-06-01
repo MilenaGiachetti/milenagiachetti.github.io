@@ -6,18 +6,18 @@ function Nav(props) {
 	return (
         <nav className={props.isMobile ? classes.mobileNav : classes.nav}>
 			<ul className={classes.navList}>
-                <li>
+                <li {...(props.isMobile && {onClick: props.menuHandler})}>
                     <NavLink to="/" exact activeClassName={classes.currentNavLink} className={classes.navLink}>Home</NavLink>
                 </li>
-                <li>
+                <li {...(props.isMobile && {onClick: props.menuHandler})}>
                     <NavLink to="/projects" exact activeClassName={classes.currentNavLink} className={classes.navLink}>Proyectos</NavLink>
                 </li>
-                <li>
+                <li {...(props.isMobile && {onClick: props.menuHandler})}>
                     <NavLink to="/tech" exact activeClassName={classes.currentNavLink} className={classes.navLink}>Tech</NavLink>
                 </li>
                 {
                     props.isMobile 
-                    ? <li>
+                    ? <li onClick={props.menuHandler}>
                         <ThemeBtn theme={props.theme} toggleThemeHandler={props.toggleThemeHandler}/>
                     </li>
                     : null

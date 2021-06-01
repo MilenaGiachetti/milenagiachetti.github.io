@@ -5,7 +5,7 @@ import TechStackItem from '../../Components/TechStackItem/TechStackItem';
 function Tech() {
 	return (
         <section className={classes.Tech}>
-            <div className={classes.title} data-point='TechTechTechTechTechTechTech'></div>
+            {/* <div className={classes.title} data-point='TechTechTechTechTechTechTech'></div> */}
             <div className={classes.content}>
                 <h2>Tech</h2>
                 <div className={classes.techCtn}>

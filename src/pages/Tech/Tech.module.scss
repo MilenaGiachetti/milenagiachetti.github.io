@@ -2,7 +2,9 @@
 
 .Tech {
     height: 100%;
+    min-height: 100vh;
     width: 100%;
+    z-index: 3;
     .title {
         color: rgba($accent_color, .5);
         height: 100%;
@@ -27,7 +29,7 @@
         height: 100%;
         margin: 0 auto;
         max-width: 1100px;
-        padding: 2rem 2rem 2rem 12rem;
+        padding: 2rem 0;
         width: 100%;    
         h2 {
             text-align: right;

@@ -1,10 +1,12 @@
 import classes from './App.module.scss';
 import {useState, useEffect} from 'react';
-import {Route, Link} from 'react-router-dom';
+import {Route, Link, Switch, Redirect} from 'react-router-dom';
 import Nav from './Components/Nav/Nav';
-import Routes from './routes/routes';
 import ThemeBtn from './Components/ThemeBtn/ThemeBtn';
 import SocialLinks from './Components/SocialLinks/SocialLinks';
+import Home from './pages/Home/Home';
+import Projects from './pages/Projects/Projects';
+import Tech from './pages/Tech/Tech';
 
 function App() {
 	const [theme, setTheme] = useState("light");
@@ -45,12 +47,21 @@ function App() {
 					</button>
 					: null
 				}
-				{ !isMobile || menuOpen ? <Nav isMobile={isMobile} theme={theme} toggleThemeHandler={toggleThemeHandler}/> : null }
+				{ !isMobile || menuOpen ? <Nav isMobile={isMobile} theme={theme} toggleThemeHandler={toggleThemeHandler}  menuHandler={menuHandler}/> : null }
 			</header>
 			<main>
-				<Route path="/" component={(props) => (
-					<Routes {...props} theme={theme} />
-				)}/>
+				<Switch>
+					<Route path="/" exact>
+						<Home theme={theme} />
+					</Route>
+					<Route path="/projects" exact>
+						<Projects />
+					</Route>
+					<Route path="/tech" exact>
+						<Tech />
+					</Route>
+					<Redirect to="/"/>
+				</Switch>
 			</main>
 			<footer>
 				{

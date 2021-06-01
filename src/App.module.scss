@@ -5,8 +5,10 @@ header {
 	// background-color: var(--backgroundColor);
 	height: 100vh;
 	-webkit-transition: background-color 1s ease;
+	position: fixed;
 	transition: background-color 1s ease;
 	width: 10rem;
+	z-index: 2;
 	.logo {
 		background-color: $accent_color_secondary;
 		border-radius: 0 0 50% 0;
@@ -114,10 +116,8 @@ header {
 		align-items: center;
 		display: flex;
 		height: 5rem;
-		position: fixed;
-		width: 100vw;
-		z-index: 2;
 		padding-right: 2rem;
+		width: 100vw;
 		.logo {
 			height: 5rem;
 			width: 5rem;
@@ -157,31 +157,36 @@ header {
 /* Main */
 main {
 	display: flex;
-	height: 100vh;
+	flex-direction: column;
 	justify-content: center;
-	padding: 5rem 10rem 5rem 5rem;
-	width: calc(100vw - 15rem);
+	margin: 0 auto;
+	min-height: 100vh;
+	overflow-x: hidden;
+	padding: 0 10rem;
+	width: 100vw;
+	z-index: 1;
 }
 
 @media (max-width: 767px) { 
 	main {
 		height: unset;
-		min-height: calc(100vh - 5rem - 10rem);
-		overflow: hidden;
-		padding: 5rem 2rem 0 2rem;
+		// min-height: calc(100vh - 5rem - 10rem);
+		// overflow: hidden;
+		padding: 0 2rem;
 		width: 100vw;
 	}
 }
 
 /* Footer */
 footer {
+    align-items: flex-end;
 	display: flex;
 	flex-flow: column;
 	height: 100vh;
 	padding: 3rem;
 	position: absolute;
 	right: 0;
-	top: 0;
+	z-index: 1;
 }
 
 @media (max-width: 767px) { 

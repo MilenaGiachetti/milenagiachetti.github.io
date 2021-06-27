@@ -7,7 +7,6 @@ h3 {
     letter-spacing: 0.3rem;
     line-height: 8rem;
     padding: 1.5rem 0;
-    text-transform: uppercase;
     transition: color 1.2s ease;
 }
 
@@ -88,7 +87,7 @@ h3 {
                 width: 100%;
                 .proyectName {
                     color: $accent_color;
-                    font-size: 6rem;
+                    font-size: 4rem;
                     left: -25%;
                     position: relative;
                     width: 125%;
@@ -208,13 +207,39 @@ h3 {
     }
     .otherProjects {
         .otherProject {
-            align-items: center;
             border-bottom: 2px solid rgba(#000, .15);
-            display: flex;
-            justify-content: space-between;
             margin-left: auto;
-            padding: 2.5rem 0;
             width: 80%;
+            .otherProjectPanelHeading {
+                align-items: center;
+                color: var(--color);
+                cursor: pointer;
+                display: flex;
+                justify-content: space-between;
+                padding: 2.5rem 0;
+                text-align: left;
+                transition: color 1.2s ease;
+                width: 100%;
+                &:focus, &:active {
+                    outline: none;
+                }
+            }
+            .otherProjectPanelContent {
+                height: 0;
+                padding: 0 5rem;
+                p {
+                    transform: scaleY(0);
+                    transform-origin: top;
+                }
+            }
+            .otherProjectPanelOpen {
+                height: auto;
+                padding: 0 10rem 2.5rem 5rem;
+                p {
+                    transform: scaleY(1);
+                    transition: transform .3s ease;
+                }
+            }
         }
     }
 }

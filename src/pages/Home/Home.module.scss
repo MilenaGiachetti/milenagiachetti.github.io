@@ -38,7 +38,7 @@ h2 {
         .titleLine {
             background-color: $accent_color;
             border-radius: 3px;
-            height: 8px;
+            height: 3px;
             margin-top: 1rem;
             position: relative;
             width: 100%;
@@ -63,7 +63,7 @@ h2 {
                 animation: moveArrow 1.8s infinite ease-in-out alternate;
                 background-color: var(--color);
                 border-radius: 3px;
-                height: 8px;
+                height: 3px;
                 position: relative;
                 transform: translateX(0px);
                 transition: background-color .3s;

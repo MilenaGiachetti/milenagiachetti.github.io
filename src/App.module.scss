@@ -169,10 +169,11 @@ main {
 
 @media (max-width: 767px) { 
 	main {
-		height: unset;
+		height: auto;
+		min-height: unset;
 		// min-height: calc(100vh - 5rem - 10rem);
 		// overflow: hidden;
-		padding: 0 2rem;
+		padding: 3rem 2rem 0 3rem;
 		width: 100vw;
 	}
 }
@@ -194,6 +195,7 @@ footer {
 		bottom: 0;
 		display: block;
 		height: unset;
+		margin-top: auto;
 		padding: 2rem 3rem 2rem 2rem;
 		top: unset;
 		min-height: 6rem;

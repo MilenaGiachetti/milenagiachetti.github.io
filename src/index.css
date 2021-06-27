@@ -88,6 +88,7 @@ h1, .srOnly {
 	flex-flow: row;
     margin: 0 auto;
 	max-width: 1400px;
+	min-height: 100vh;
     position: relative;
 }
 

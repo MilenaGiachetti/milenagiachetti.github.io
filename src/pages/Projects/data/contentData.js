@@ -28,16 +28,16 @@ const projectsData = [
         proyectDescription: 'Proyecto chat en React para aprender sobre WebSockets y Socket.io',
         liveLink: 'https://github.com/MilenaGiachetti/react-chat',
         bgPath: images.guifoBg,
-        screenPath: null
+        screenPath: images.mixamoBg
     },
     {
         number: '04',
-        proyectName: 'Delilah Resto Backend',
+        proyectName: 'Resto Backend',
         proyectTech: 'NODE | EXPRESS | MySQL',
         proyectDescription: 'Desarrollo de un backend para un restaurante ficticio utilizando NodeJS, Express y MySQL. CRUD de usuarios, productos y ordenes, login y sistema de autorización y autenticación de usuarios realizado con Json Web Tokens.',
         githubLink: 'https://github.com/MilenaGiachetti/delilahresto_back',
         bgPath: images.guifoBg,
-        screenPath: null
+        screenPath: images.mixamoBg
     }
 ];
 

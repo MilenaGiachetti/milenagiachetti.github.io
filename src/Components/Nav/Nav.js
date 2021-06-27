@@ -1,5 +1,5 @@
 import classes from './Nav.module.scss';
-import {NavLink} from 'react-router-dom';
+import {NavHashLink} from 'react-router-hash-link';
 import ThemeBtn from '../ThemeBtn/ThemeBtn';
 
 function Nav(props) {
@@ -7,13 +7,13 @@ function Nav(props) {
         <nav className={props.isMobile ? classes.mobileNav : classes.nav}>
 			<ul className={classes.navList}>
                 <li {...(props.isMobile && {onClick: props.menuHandler})}>
-                    <NavLink to="/" exact activeClassName={classes.currentNavLink} className={classes.navLink}>Home</NavLink>
+                    <NavHashLink to="#home" smooth activeClassName={classes.currentNavLink} className={classes.navLink}>Home</NavHashLink>
                 </li>
                 <li {...(props.isMobile && {onClick: props.menuHandler})}>
-                    <NavLink to="/projects" exact activeClassName={classes.currentNavLink} className={classes.navLink}>Proyectos</NavLink>
+                    <NavHashLink to="#projects" smooth activeClassName={classes.currentNavLink} className={classes.navLink}>Proyectos</NavHashLink>
                 </li>
                 <li {...(props.isMobile && {onClick: props.menuHandler})}>
-                    <NavLink to="/tech" exact activeClassName={classes.currentNavLink} className={classes.navLink}>Tech</NavLink>
+                    <NavHashLink to="#tech" smooth activeClassName={classes.currentNavLink} className={classes.navLink}>Tech</NavHashLink>   
                 </li>
                 {
                     props.isMobile 

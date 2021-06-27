@@ -1,9 +1,8 @@
 import classes from './Projects.module.scss';
-import {useState, useRef, useEffect} from 'react';
+import {useState} from 'react';
 import React from 'react';
 import projectsData from './data/contentData';
 import ScreenImage from '../../Components/ScreenImage/ScreenImage';
-import { gsap } from "gsap";
 
 function Projects() {
     const [proyect, setProyect] = useState(0);
@@ -26,15 +25,7 @@ function Projects() {
             <div className={classes.content}>
                 <h2>Proyectos</h2>
                 <div className={classes.proyect}>
-                    {/* <div style={style} className={classes.proyectImage}></div> */}
                     <div className={classes.proyectContent}>
-                        {/* <Canvas>
-                            <ambientLight />
-                            <pointLight position={[10, 10, 10]} />
-                            <Box position={[0, 0, 0]} innerSize={3.5} outerSize={4} baseColor="red"/>
-                            <Box position={[0, 0, -0.1]} innerSize={3} outerSize={4.1} baseColor="yellow"/>
-                            <Box position={[0, 0, -0.2]} innerSize={2.5} outerSize={4.2} baseColor="blue"/>
-                        </Canvas> */}
                         {projectsData[proyect].screenPath ?
                             <ScreenImage screenPath={projectsData[proyect].screenPath} proyectName={projectsData[proyect].proyectName}/> :
                             null

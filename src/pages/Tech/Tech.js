@@ -4,7 +4,7 @@ import TechStackItem from '../../Components/TechStackItem/TechStackItem';
 
 function Tech() {
 	return (
-        <section className={classes.Tech}>
+        <section className={classes.Tech} id="tech">
             {/* <div className={classes.title} data-point='TechTechTechTechTechTechTech'></div> */}
             <div className={classes.content}>
                 <h2>Tech</h2>

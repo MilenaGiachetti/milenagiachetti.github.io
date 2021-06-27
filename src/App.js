@@ -1,6 +1,6 @@
 import classes from './App.module.scss';
 import {useState, useEffect} from 'react';
-import {Route, Link, Switch, Redirect} from 'react-router-dom';
+import {HashLink} from 'react-router-hash-link';
 import Nav from './Components/Nav/Nav';
 import ThemeBtn from './Components/ThemeBtn/ThemeBtn';
 import SocialLinks from './Components/SocialLinks/SocialLinks';
@@ -33,9 +33,9 @@ function App() {
 		<>
 			<header>
 				<h1>Milena Giachetti</h1>
-				<Link to={{pathname: "/"}} className={classes.logo}>
+				<HashLink to="#top" smooth className={classes.logo}>
 					<p className={classes.logoText}>g_</p>
-				</Link>
+				</HashLink>
 				{
 					isMobile 
 					? <button className={`${classes.burgerBtn} ${menuOpen ? classes.opened : ''}`} onClick={menuHandler} aria-label="Main Menu">
@@ -50,18 +50,9 @@ function App() {
 				{ !isMobile || menuOpen ? <Nav isMobile={isMobile} theme={theme} toggleThemeHandler={toggleThemeHandler}  menuHandler={menuHandler}/> : null }
 			</header>
 			<main>
-				<Switch>
-					<Route path="/" exact>
-						<Home theme={theme} />
-					</Route>
-					<Route path="/projects" exact>
-						<Projects />
-					</Route>
-					<Route path="/tech" exact>
-						<Tech />
-					</Route>
-					<Redirect to="/"/>
-				</Switch>
+				<Home theme={theme} />
+				<Projects />
+				<Tech />
 			</main>
 			<footer>
 				{

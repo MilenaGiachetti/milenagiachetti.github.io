@@ -4,8 +4,8 @@
     margin-bottom: auto;
     text-align: center;
     &:hover .themeBtn:after {
-        height: 10rem;
-        width: 10rem;
+        height: 5rem;
+        width: 5rem;
     }
     .themeBtn {
         padding: 2rem;
@@ -14,7 +14,6 @@
         font-size: 2rem;
         &:after {
             background-color: rgba($accent_color, .5);
-            background: radial-gradient(circle, rgba($accent_color, 1) 0%, rgba($accent_color, 1) 30%, rgba($accent_color, .8) 31%, rgba($accent_color, .8) 40%, rgba($accent_color, .6) 41%, rgba($accent_color, .6) 50%, rgba($accent_color, .4) 51%, rgba($accent_color, .4) 61%, rgba($accent_color, .2) 60%, rgba($accent_color, .2) 70%, rgba($accent_color, .0) 100%);
             border-radius: 50%;
             content: '';
             height: 0;

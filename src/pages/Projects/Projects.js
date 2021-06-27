@@ -36,16 +36,16 @@ function Projects() {
                         <p className={classes.proyectTech}>{projectsData[proyect].proyectTech}</p>
                         <p className={classes.proyectDescription}>{projectsData[proyect].proyectDescription}</p>
                         <div className={classes.proyectBtnCtn}>
-                            {
-                                projectsData[proyect].liveLink !== undefined ?
-                                <a href={projectsData[proyect].liveLink} target='_blank' rel='noreferrer' className={classes.proyectBtn}>
-                                    Ver en vivo
-                                </a> :
-                                ''
-                            }
                             <a href={projectsData[proyect].githubLink} target='_blank' rel='noreferrer' className={classes.proyectBtn}>
                                 Ver código
                             </a>
+                            {
+                                projectsData[proyect].liveLink !== undefined ?
+                                <a href={projectsData[proyect].liveLink} target='_blank' rel='noreferrer' className={classes.codeLink}>
+                                    <span></span>
+                                </a> :
+                                ''
+                            }
                         </div>
                     </div>
                     <div className={classes.changeProyectBtnCtn}>
@@ -56,10 +56,31 @@ function Projects() {
                             <span className={classes.titleCtaArrow}></span>
                         </button>
                     </div>
-                    <div className={classes.proyectBg}>
-                        <p className={classes.proyectNumber} data-number={projectsData[proyect].number}>{projectsData[proyect].number}</p>
-                    </div>
                 </div>
+            </div>
+            <div className={classes.otherProjects}>
+                <h3>Otros Proyectos</h3>
+                <a href="/#home" target="_blank" rel="noreferrer" className={classes.otherProject}>
+                    <div>
+                        <p>Proyecto 1</p>
+                        <small>JS | CSS | HTML</small>
+                    </div>
+                    <button type="button" className={classes.codeLink}><span></span></button>
+                </a>
+                <a href="/#home" target="_blank" rel="noreferrer" className={classes.otherProject}>
+                    <div>
+                        <p>Proyecto 2</p>
+                        <small>JS | CSS | HTML</small>
+                    </div>
+                    <button type="button" className={classes.codeLink}><span></span></button>
+                </a>
+                <a href="/#home" target="_blank" rel="noreferrer" className={classes.otherProject}>
+                    <div>
+                        <p>Proyecto 3</p>
+                        <small>JS | CSS | HTML</small>
+                    </div>
+                    <button type="button" className={classes.codeLink}><span></span></button>
+                </a>
             </div>
         </section>
 	);

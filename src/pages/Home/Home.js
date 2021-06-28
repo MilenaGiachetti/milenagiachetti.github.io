@@ -1,6 +1,7 @@
 import classes from './Home.module.scss';
-import React from 'react';
-import {Link} from 'react-router-dom';
+import React, { Suspense } from 'react';
+import {Canvas} from '@react-three/fiber';
+import Porfolio from '../../Components/Mesh/Portfolio';
 
 function Home(props) {
 	return (
@@ -9,15 +10,12 @@ function Home(props) {
                 <h2 className={props.theme === 'dark' ? classes.lined : ''}>Milena Giachetti</h2>
                 <p className={classes.titlePosition}>Desarrolladora Web</p>
                 <a href="mailto:giachettimilena@gmail.com?Subject=Contacto%20desde%20portfolio" target="_blank" rel="noreferrer" className={classes.titleEmail}aria-label="Mail">giachettimilena@gmail.com</a>
-                <div className={classes.titleLine}></div>
-                <div className={classes.titleLine}></div>
-                <div>
-                    <Link to={{pathname: "/projects"}} className={classes.titleCta}>
-                        <div className={classes.titleCtaLine}></div>
-                        <p className={classes.titleCtaContent}>Ver Proyectos</p>
-                    </Link>
-                </div>
             </div>
+            <Canvas camera={{ position: [0, 2, 10] }}  className={classes.Canvas}>
+                <ambientLight intensity={0.5} />
+                <spotLight intensity={0.8} color={0x00ff00} position={[3, 3, 4]} />
+                <Suspense fallback={null}>{<Porfolio />}</Suspense>
+            </Canvas>
         </section>
 	);
 }

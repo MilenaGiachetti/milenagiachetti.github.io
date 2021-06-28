@@ -7,7 +7,7 @@ function Nav(props) {
         <nav className={props.isMobile ? classes.mobileNav : classes.nav}>
 			<ul className={classes.navList}>
                 <li {...(props.isMobile && {onClick: props.menuHandler})}>
-                    <NavHashLink to="#home" smooth activeClassName={classes.currentNavLink} className={classes.navLink}>Home</NavHashLink>
+                    <NavHashLink to="#top" smooth activeClassName={classes.currentNavLink} className={classes.navLink}>Home</NavHashLink>
                 </li>
                 <li {...(props.isMobile && {onClick: props.menuHandler})}>
                     <NavHashLink to="#projects" smooth activeClassName={classes.currentNavLink} className={classes.navLink}>Proyectos</NavHashLink>

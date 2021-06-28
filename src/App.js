@@ -40,41 +40,42 @@ function App(props) {
 	}
 
 	
-    useEffect(() => {
+    // useEffect(() => {
  
-        revealRefs.current.forEach((el, index) => {
-			// gsap.to(el, {
-			// 	scrollTrigger: el, 
-			// 	duration: 2, 
-			// 	onStart: () => {
-			// 		history.push("/#" + el.id);
-			// 		history.push("/#" + el.id);
-			// 		history.goBack();
-			// 	},
-			// 	toggleActions: "restart pause reverse pause"
-			// });
+    //     revealRefs.current.forEach((el, index) => {
+	// 		// gsap.to(el, {
+	// 		// 	scrollTrigger: el, 
+	// 		// 	duration: 2, 
+	// 		// 	onStart: () => {
+	// 		// 		history.push("/#" + el.id);
+	// 		// 		history.push("/#" + el.id);
+	// 		// 		history.goBack();
+	// 		// 	},
+	// 		// 	toggleActions: "restart pause reverse pause"
+	// 		// });
 			
-            gsap.from(el,  {
-                scrollTrigger: {
-					markers: true,
-                    trigger: el,
-                },
-				onStart: () => {
-					history.push("/#" + el.id);
-					history.push("/#" + el.id);
-					history.goBack();
-				}
-            });
-        });
+    //         gsap.from(el,  {
+    //             scrollTrigger: {
+    //                 trigger: el,
+    //             },
+	// 			onStart: () => {
+	// 				if(history.location.hash !== "#" + el.id) {
+	// 					history.push("/#" + el.id);
+	// 					history.push("/#" + el.id);
+	// 					history.goBack();
+	// 				}
+	// 			}
+    //         });
+    //     });
      
-    }, [props.history]);
+    // }, [props.history]);
 
 
 	return (
 		<>
 			<header>
 				<h1>Milena Giachetti</h1>
-				<HashLink to="#home" smooth className={classes.logo}>
+				<HashLink to="#top" smooth className={classes.logo}>
 					<p className={classes.logoText}>g_</p>
 				</HashLink>
 				{

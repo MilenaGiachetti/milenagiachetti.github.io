@@ -9,7 +9,7 @@ import Projects from './pages/Projects/Projects';
 import Tech from './pages/Tech/Tech';
 import { gsap } from "gsap";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import history from './history';
+// import history from './history';
 gsap.registerPlugin(ScrollTrigger);
 
 function App(props) {

@@ -25,14 +25,14 @@ ul {
 /* Base styles */
 /* Theme variables */
 html {
-	--backgroundColor: #F3F6F4;
-	--color: #0E1428;
+	--backgroundColor: #e4e6eb;
+	--color: #18191a;
 	font-size: 62.5%;
 }
 
 html[data-theme='dark'] {
-	--backgroundColor: #0E1428;
-	--color: #F3F6F4;
+	--backgroundColor: #18191a;
+	--color: #e4e6eb;
 }
 
 body {
@@ -51,12 +51,12 @@ body {
 }
 
 ::-moz-selection { /* Code for Firefox */
-	color: #F3F6F4;
+	color: #e4e6eb;
 	background: #1C7293;
 }
 
 ::selection {
-	color: #F3F6F4;
+	color: #e4e6eb;
 	background: rgba(28, 114, 147, 0.7);
 }
 

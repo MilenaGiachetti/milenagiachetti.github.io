@@ -1,7 +1,7 @@
 import classes from './Home.module.scss';
 import React, { Suspense } from 'react';
 import {Canvas} from '@react-three/fiber';
-import Porfolio from '../../Components/Mesh/Portfolio';
+import Porfolio from '../../Components/HomeMesh/HomeMesh';
 
 function Home(props) {
 	return (

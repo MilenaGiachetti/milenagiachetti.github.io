@@ -207,6 +207,8 @@ h3 {
         }
     }
     .otherProjects {
+        position: relative;
+        min-height: 100vh;
         .otherProject {
             border-bottom: 2px solid #b0b3bb;
             margin-left: auto;

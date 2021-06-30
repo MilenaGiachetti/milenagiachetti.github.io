@@ -1,16 +1,18 @@
 import classes from './Projects.module.scss';
-import {useState} from 'react';
-import React from 'react';
+import {useState, useRef} from 'react';
 import projectsData from './data/contentData';
 import ScreenImage from '../../Components/ScreenImage/ScreenImage';
+import CustomCanvas from '../../Components/ImageCanvas/ImageCanvas';
 
 function Projects(props) {
+    const canvasCtn = useRef()
     const [proyect, setProyect] = useState(0);
     const [panel, setPanel] = useState(false);
+    const [otherProyect, setOtherProyect] = useState("image1");
+    const [otherProyectFading, setOtherProyectFading] = useState(true);
+    const [cursor, setCursor] = useState({x: 0, y:0});
 
     // var style = { '--bg-image': `url(${projectsData[proyect].screenPath})`};
-
-
     const clickHandler = (n) => {
         setProyect(previousState => {
             if (n === 1 && previousState === (projectsData.length - 1)) {
@@ -30,6 +32,28 @@ function Projects(props) {
                 return panel;
             }
         })
+    }
+
+    const otherProjectsMouseEnterHandler = (image) => {
+        setOtherProyect(image);
+        setOtherProyectFading(false);
+    }
+
+
+    const otherProjectsMouseLeaveHandler = (image) => {
+        setOtherProyect(image)
+        setOtherProyectFading(true);
+    }
+
+    const mouseMoveHandler = (e) => {
+        // const x = e.clientX / canvasCtn.current.clientWidth - 0.5;
+        // const y = -(e.clientY  / canvasCtn.current.clientHeight - 0.5);
+        
+        const x = e.clientX / window.innerWidth - 0.5;
+        const y = -(e.clientY  / window.innerHeight - 0.5);
+        // const x = (e.clientX / canvasCtn.current.clientWidth) * 2 - 1; 
+        // const y = -(e.clientY / canvasCtn.current.clientHeight) * 2 + 1;
+        setCursor({x,y});
     }
 
 	return (
@@ -71,10 +95,11 @@ function Projects(props) {
                     </div>
                 </div>
             </div>
-            <div className={classes.otherProjects}>
+            <div className={classes.otherProjects} ref={canvasCtn} onMouseMove={(e)=>mouseMoveHandler(e)}>
+                <CustomCanvas otherProyect={otherProyect} cursor={cursor} otherProyectFading={otherProyectFading}/>
                 <h3>Otros Proyectos</h3>
                 {/* onClick open text with more info -> link shouldnt activate button */}
-                <div className={classes.otherProject}>
+                <div className={classes.otherProject} onMouseEnter={()=>otherProjectsMouseEnterHandler("image1")} onMouseLeave={()=>otherProjectsMouseLeaveHandler("image1")}>
                     <button type="button" className={classes.otherProjectPanelHeading} onClick={()=>togglePanelHandler('1')}>
                         <div>
                             <p>Resto Backend</p>
@@ -86,7 +111,7 @@ function Projects(props) {
                         <p>Desarrollo de un backend para un restaurante ficticio utilizando NodeJS, Express y MySQL. CRUD de usuarios, productos y ordenes, login y sistema de autorización y autenticación de usuarios realizado con Json Web Tokens.</p>
                     </div>
                 </div>
-                <div className={classes.otherProject}>
+                <div className={classes.otherProject} onMouseEnter={()=>otherProjectsMouseEnterHandler("image2")} onMouseLeave={()=>otherProjectsMouseLeaveHandler("image2")}>
                     <button type="button" className={classes.otherProjectPanelHeading} onClick={()=>togglePanelHandler('2')}>
                         <div>
                             <p>Resto Backend</p>
@@ -98,7 +123,7 @@ function Projects(props) {
                         <p>Desarrollo de un backend para un restaurante ficticio utilizando NodeJS, Express y MySQL. CRUD de usuarios, productos y ordenes, login y sistema de autorización y autenticación de usuarios realizado con Json Web Tokens.</p>
                     </div>
                 </div>
-                <div className={classes.otherProject}>
+                <div className={classes.otherProject} onMouseEnter={()=>otherProjectsMouseEnterHandler("image3")} onMouseLeave={()=>otherProjectsMouseLeaveHandler("image3")}>
                     <button type="button" className={classes.otherProjectPanelHeading} onClick={()=>togglePanelHandler('3')}>
                         <div>
                             <p>Resto Backend</p>

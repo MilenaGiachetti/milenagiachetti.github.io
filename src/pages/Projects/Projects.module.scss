@@ -209,38 +209,29 @@ h3 {
     .otherProjects {
         position: relative;
         min-height: 100vh;
-        .otherProject {
+        .otherProject {            
+            align-items: center;
             border-bottom: 2px solid #b0b3bb;
+            color: var(--color);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
             margin-left: auto;
+            padding: 2.5rem 0;
+            text-align: left;
+            transition: color 1.2s ease;
             width: 80%;
-            .otherProjectPanelHeading {
-                align-items: center;
-                color: var(--color);
-                cursor: pointer;
-                display: flex;
-                justify-content: space-between;
-                padding: 2.5rem 0;
-                text-align: left;
-                transition: color 1.2s ease;
-                width: 100%;
-                &:focus, &:active {
-                    outline: none;
-                }
+            &:focus, &:active {
+                outline: none;
             }
-            .otherProjectPanelContent {
-                height: 0;
-                padding: 0 5rem;
-                p {
-                    transform: scaleY(0);
-                    transform-origin: top;
+            &:hover .codeLink {
+                &:before {
+                    height: 4rem;
+                    width: 4rem;
                 }
-            }
-            .otherProjectPanelOpen {
-                height: auto;
-                padding: 0 10rem 2.5rem 5rem;
-                p {
-                    transform: scaleY(1);
-                    transition: transform .3s ease;
+                & {
+                    transition: transform .3s, background-color .3s;
+                    transform: rotate(-45deg);
                 }
             }
         }

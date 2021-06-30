@@ -7,7 +7,6 @@ import CustomCanvas from '../../Components/ImageCanvas/ImageCanvas';
 function Projects(props) {
     const canvasCtn = useRef()
     const [proyect, setProyect] = useState(0);
-    const [panel, setPanel] = useState(false);
     const [otherProyect, setOtherProyect] = useState("image1");
     const [otherProyectFading, setOtherProyectFading] = useState(true);
 
@@ -20,16 +19,6 @@ function Projects(props) {
                 return projectsData.length - 1;
             }
             return previousState + n;
-        })
-    }
-
-    const togglePanelHandler = (panel) => {
-        setPanel((previousState)=>{
-            if(previousState === panel) {
-                return false;
-            } else {
-                return panel;
-            }
         })
     }
 
@@ -86,43 +75,27 @@ function Projects(props) {
             <div className={classes.otherProjects} ref={canvasCtn}>
                 <CustomCanvas otherProyect={otherProyect} otherProyectFading={otherProyectFading}/>
                 <h3>Otros Proyectos</h3>
-                {/* onClick open text with more info -> link shouldnt activate button */}
-                <div className={classes.otherProject} onMouseEnter={()=>otherProjectsMouseEnterHandler("image1")} onMouseLeave={()=>otherProjectsMouseLeaveHandler("image1")}>
-                    <button type="button" className={classes.otherProjectPanelHeading} onClick={()=>togglePanelHandler('1')}>
-                        <div>
-                            <p>Resto Backend</p>
-                            <small>NODE | EXPRESS | MySQL</small>
-                        </div>
-                        <a href="/#top" target="_blank" rel="noreferrer" className={classes.codeLink}><span></span></a>
-                    </button>
-                    <div className={panel === '1' ?  `${classes.otherProjectPanelContent} ${classes.otherProjectPanelOpen}` : classes.otherProjectPanelContent}>
-                        <p>Desarrollo de un backend para un restaurante ficticio utilizando NodeJS, Express y MySQL. CRUD de usuarios, productos y ordenes, login y sistema de autorización y autenticación de usuarios realizado con Json Web Tokens.</p>
+                <a href="/#top" target="_blank" rel="noreferrer" className={classes.otherProject} onMouseEnter={()=>otherProjectsMouseEnterHandler("image1")} onMouseLeave={()=>otherProjectsMouseLeaveHandler("image1")}>
+                    <div>
+                        <p>Resto Backend</p>
+                        <small>NODE | EXPRESS | MySQL</small>
                     </div>
-                </div>
-                <div className={classes.otherProject} onMouseEnter={()=>otherProjectsMouseEnterHandler("image2")} onMouseLeave={()=>otherProjectsMouseLeaveHandler("image2")}>
-                    <button type="button" className={classes.otherProjectPanelHeading} onClick={()=>togglePanelHandler('2')}>
-                        <div>
-                            <p>Resto Backend</p>
-                            <small>NODE | EXPRESS | MySQL</small>
-                        </div>
-                        <a href="/#top" target="_blank" rel="noreferrer" className={classes.codeLink}><span></span></a>
-                    </button>
-                    <div className={panel === '2' ?  `${classes.otherProjectPanelContent} ${classes.otherProjectPanelOpen}` : classes.otherProjectPanelContent}>
-                        <p>Desarrollo de un backend para un restaurante ficticio utilizando NodeJS, Express y MySQL. CRUD de usuarios, productos y ordenes, login y sistema de autorización y autenticación de usuarios realizado con Json Web Tokens.</p>
+                    <div className={classes.codeLink}><span></span></div>
+                </a>
+                <a href="/#top" target="_blank" rel="noreferrer" className={classes.otherProject} onMouseEnter={()=>otherProjectsMouseEnterHandler("image2")} onMouseLeave={()=>otherProjectsMouseLeaveHandler("image2")}>
+                    <div>
+                        <p>Resto Backend</p>
+                        <small>NODE | EXPRESS | MySQL</small>
                     </div>
-                </div>
-                <div className={classes.otherProject} onMouseEnter={()=>otherProjectsMouseEnterHandler("image3")} onMouseLeave={()=>otherProjectsMouseLeaveHandler("image3")}>
-                    <button type="button" className={classes.otherProjectPanelHeading} onClick={()=>togglePanelHandler('3')}>
-                        <div>
-                            <p>Resto Backend</p>
-                            <small>NODE | EXPRESS | MySQL</small>
-                        </div>
-                        <a href="/#top" target="_blank" rel="noreferrer" className={classes.codeLink}><span></span></a>
-                    </button>
-                    <div className={panel === '3' ?  `${classes.otherProjectPanelContent} ${classes.otherProjectPanelOpen}` : classes.otherProjectPanelContent}>
-                        <p>Desarrollo de un backend para un restaurante ficticio utilizando NodeJS, Express y MySQL. CRUD de usuarios, productos y ordenes, login y sistema de autorización y autenticación de usuarios realizado con Json Web Tokens.</p>
+                    <div className={classes.codeLink}><span></span></div>
+                </a>
+                <a href="/#top" target="_blank" rel="noreferrer" className={classes.otherProject} onMouseEnter={()=>otherProjectsMouseEnterHandler("image3")} onMouseLeave={()=>otherProjectsMouseLeaveHandler("image3")}>
+                    <div>
+                        <p>Resto Backend</p>
+                        <small>NODE | EXPRESS | MySQL</small>
                     </div>
-                </div>
+                    <div className={classes.codeLink}><span></span></div>
+                </a>
             </div>
         </section>
 	);

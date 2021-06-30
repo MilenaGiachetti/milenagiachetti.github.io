@@ -4,7 +4,6 @@
 header {
 	// background-color: var(--backgroundColor);
 	height: 100vh;
-	-webkit-transition: background-color 1s ease;
 	left: 0;
 	position: sticky;
 	top: 0;
@@ -12,15 +11,16 @@ header {
 	width: 10rem;
 	z-index: 2;
 	.logo {
-		background-color: $accent_color_secondary;
+		background-color: rgba($accent_color_secondary, 0.05);
 		border-radius: 0 0 50% 0;
 		display: block;
 		height: 7rem;
 		text-align: center;
 		width: 7rem;
 		.logoText {
-			color: $light_color;
+			color: var(--color);
 			font-size: 4rem;
+			transition: color 1.2s ease;
 		}
 	}	
 	.burgerBtn {

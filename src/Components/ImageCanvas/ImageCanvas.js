@@ -15,7 +15,7 @@ export default function Model(props) {
         }}>
         <ambientLight intensity={0.5} />
         <spotLight intensity={0.8} color={0x00ff00} position={[3, 3, 4]} />
-        <Suspense fallback={null}>{<ImagePreview image={props.otherProyect} fading={props.otherProyectFading} cursor={props.cursor} />}</Suspense>
+        <Suspense fallback={null}>{<ImagePreview image={props.otherProyect} fading={props.otherProyectFading}/>}</Suspense>
     </Canvas>
     )
 }

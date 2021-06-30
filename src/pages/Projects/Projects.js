@@ -10,7 +10,6 @@ function Projects(props) {
     const [panel, setPanel] = useState(false);
     const [otherProyect, setOtherProyect] = useState("image1");
     const [otherProyectFading, setOtherProyectFading] = useState(true);
-    const [cursor, setCursor] = useState({x: 0, y:0});
 
     // var style = { '--bg-image': `url(${projectsData[proyect].screenPath})`};
     const clickHandler = (n) => {
@@ -43,17 +42,6 @@ function Projects(props) {
     const otherProjectsMouseLeaveHandler = (image) => {
         setOtherProyect(image)
         setOtherProyectFading(true);
-    }
-
-    const mouseMoveHandler = (e) => {
-        // const x = e.clientX / canvasCtn.current.clientWidth - 0.5;
-        // const y = -(e.clientY  / canvasCtn.current.clientHeight - 0.5);
-        
-        const x = e.clientX / window.innerWidth - 0.5;
-        const y = -(e.clientY  / window.innerHeight - 0.5);
-        // const x = (e.clientX / canvasCtn.current.clientWidth) * 2 - 1; 
-        // const y = -(e.clientY / canvasCtn.current.clientHeight) * 2 + 1;
-        setCursor({x,y});
     }
 
 	return (
@@ -95,8 +83,8 @@ function Projects(props) {
                     </div>
                 </div>
             </div>
-            <div className={classes.otherProjects} ref={canvasCtn} onMouseMove={(e)=>mouseMoveHandler(e)}>
-                <CustomCanvas otherProyect={otherProyect} cursor={cursor} otherProyectFading={otherProyectFading}/>
+            <div className={classes.otherProjects} ref={canvasCtn}>
+                <CustomCanvas otherProyect={otherProyect} otherProyectFading={otherProyectFading}/>
                 <h3>Otros Proyectos</h3>
                 {/* onClick open text with more info -> link shouldnt activate button */}
                 <div className={classes.otherProject} onMouseEnter={()=>otherProjectsMouseEnterHandler("image1")} onMouseLeave={()=>otherProjectsMouseLeaveHandler("image1")}>

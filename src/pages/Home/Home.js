@@ -11,9 +11,9 @@ function Home(props) {
                 <p className={classes.titlePosition}>Desarrolladora Web</p>
                 <a href="mailto:giachettimilena@gmail.com?Subject=Contacto%20desde%20portfolio" target="_blank" rel="noreferrer" className={classes.titleEmail}aria-label="Mail">giachettimilena@gmail.com</a>
             </div>
-            <Canvas camera={{ position: [6, 2, 10] }} gl={{ antialias: true }} className={classes.Canvas}>
+            <Canvas camera={{ position: [3, 2, 4] }} gl={{ antialias: true }} className={classes.Canvas}>
                 <ambientLight intensity={0.5} />
-                <spotLight intensity={0.8} color={0x00ff00} position={[3, 3, 4]} />
+                <spotLight intensity={0.8} color={0xFFFF99} position={[5, 5, 6]} />
                 <Suspense fallback={null}>{<Porfolio />}</Suspense>
             </Canvas>
         </section>

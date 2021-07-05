@@ -15,7 +15,6 @@ a {
 button:active, button:focus {
 	border: none;
 	cursor: pointer;
-	/* outline: none; */
 }
 
 ul {

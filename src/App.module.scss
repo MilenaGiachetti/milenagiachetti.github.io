@@ -2,7 +2,6 @@
 
 /* Header */
 header {
-	// background-color: var(--backgroundColor);
 	height: 100vh;
 	left: 0;
 	position: sticky;
@@ -69,48 +68,6 @@ header {
 			stroke-width: 6;
 		}
 	}
-	.nav {
-		height: calc(100% - 7rem);
-		max-height: 50rem;
-		text-orientation: sideways;
-		transform: rotate(-180deg);
-		writing-mode: vertical-lr;
-		.navList {
-			display: flex;
-			flex-direction: row-reverse;
-			font-weight: bold;
-			justify-content: space-between;
-			padding: 7rem 2rem;
-			text-transform: uppercase;
-			.navLink {
-				position: relative;
-				&:before, &.currentNavLink:before {
-					background-color: rgba($accent_color, .5);
-					border-radius: 50%;
-					content: '';
-					height: 0;
-					left: 50%;
-					position: absolute;
-					top: 50%;
-					transform: translate(-50%, -50%);
-					transition: all .3s;
-					width: 0;
-					z-index: -1;
-				}
-				&:hover:before, &.currentNavLink:before {
-					height: 4rem;
-					width: 4rem;
-				}
-				&.currentNavLink:before {
-					background-color: rgba($accent_color_secondary, .25);
-					transition: all .3s;
-				}
-				&.currentNavLink:hover:before {
-					background-color: rgba($accent_color, .5);
-				}
-			}
-		}
-	}
 }
 
 @media (max-width: 767px) { 
@@ -127,34 +84,8 @@ header {
 				font-size: 3rem;
 			}
 		}
-		.mobileNav {
-			background-color: var(--backgroundColor);
-			box-shadow: -4px 2px 19px 1px rgba($dark_color, .15);
-			-moz-box-shadow: -4px 2px 19px 1px rgba($dark_color, .15);
-			-webkit-box-shadow: -4px 2px 19px 1px rgba($dark_color, .15);
-			height: 100vh;
-			position:absolute;
-			right: 0;
-			top: 0;
-			width: 80%;
-			z-index: 1;
-			.navList {
-				align-items: center;
-				display: flex;
-				flex-direction: column;
-				height: 100%;
-				justify-content: space-between;
-				max-height: 40rem;
-				padding: 10rem 2rem;
-				text-transform: uppercase;
-			}
-		}
 	}
 }
-
-// @media (max-width: 575px) { 
-
-// }
 
 /* Main */
 main {
@@ -174,8 +105,6 @@ main {
 	main {
 		height: auto;
 		min-height: unset;
-		// min-height: calc(100vh - 5rem - 10rem);
-		// overflow: hidden;
 		padding: 3rem 2rem 0 3rem;
 		width: 100vw;
 	}

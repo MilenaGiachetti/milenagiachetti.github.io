@@ -1,9 +1,9 @@
-import classes from './ImageCanvas.module.scss';
+import classes from './ProjectCanvas.module.scss';
 import {Suspense} from 'react';
 import {Canvas} from '@react-three/fiber';
-import ImagePreview from '../ImageMesh/ImageMesh';
+import ProjectMesh from './ProjectMesh/ProjectMesh';
 
-export default function Model(props) {
+export default function ProjectCanvas(props) {
     return(
         <Canvas 
         gl={{ antialias: true }} 
@@ -15,7 +15,7 @@ export default function Model(props) {
         }}>
         <ambientLight intensity={0.5} />
         <spotLight intensity={0.8} color={0x00ff00} position={[3, 3, 4]} />
-        <Suspense fallback={null}>{<ImagePreview image={props.otherProyect} fading={props.otherProyectFading}/>}</Suspense>
+        <Suspense fallback={null}>{<ProjectMesh image={props.otherProyect} fading={props.otherProyectFading}/>}</Suspense>
     </Canvas>
     )
 }

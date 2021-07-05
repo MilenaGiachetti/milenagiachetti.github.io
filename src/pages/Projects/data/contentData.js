@@ -8,7 +8,6 @@ const projectsData = [
         proyectDescription: 'Experiencia Web 3D construída con three.js y cannon-es y modelo y animaciones de mixamo. En proceso.',
         liveLink: 'https://milenagiachetti.github.io/mixamo-three.js/',
         githubLink: 'https://github.com/MilenaGiachetti/mixamo-three.js',
-        bgPath: images.guifoBg,
         screenPath: images.mixamoBg
     },
     {
@@ -18,7 +17,6 @@ const projectsData = [
         proyectDescription: 'Proyecto construído con la API de giphy, librería RecordRTC y Media Capture and Streams API.',
         liveLink: 'https://milenagiachetti.github.io/guifos/',
         githubLink: 'https://github.com/MilenaGiachetti/guifos',
-        bgPath: images.guifoBg,
         screenPath: images.guifoScreen
     },
     {
@@ -26,8 +24,7 @@ const projectsData = [
         proyectName: 'React Chat',
         proyectTech: 'REACT | NODE | EXPRESS | MySQL | SOCKET.IO',
         proyectDescription: 'Proyecto chat en React para aprender sobre WebSockets y Socket.io',
-        liveLink: 'https://github.com/MilenaGiachetti/react-chat',
-        bgPath: images.guifoBg,
+        githubLink: 'https://github.com/MilenaGiachetti/react-chat',
         screenPath: images.mixamoBg
     }
     // {
@@ -36,7 +33,6 @@ const projectsData = [
     //     proyectTech: 'NODE | EXPRESS | MySQL',
     //     proyectDescription: 'Desarrollo de un backend para un restaurante ficticio utilizando NodeJS, Express y MySQL. CRUD de usuarios, productos y ordenes, login y sistema de autorización y autenticación de usuarios realizado con Json Web Tokens.',
     //     githubLink: 'https://github.com/MilenaGiachetti/delilahresto_back',
-    //     bgPath: images.guifoBg,
     //     screenPath: images.mixamoBg
     // }
 ];

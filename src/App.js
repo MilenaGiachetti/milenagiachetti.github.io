@@ -12,7 +12,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 // import history from './history';
 gsap.registerPlugin(ScrollTrigger);
 
-function App(props) {
+function App() {
 	const [theme, setTheme] = useState("light");
 	const [menuOpen, setMenuOpen] = useState(false);
 	const [isMobile, setIsMobile] = useState(window.innerWidth <= 767);

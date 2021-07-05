@@ -49,39 +49,6 @@ h3 {
             height: 100%;
             padding: 7rem;
             position: relative;
-            .proyectBg {
-                height: calc(100vh - 5rem);
-                position: absolute;
-                right: 0;
-                top: 0;
-                width: 100%;
-                z-index: -1;
-                // .proyectImage {
-                //     background-image: var(--bg-image);  
-                //     background-position: center; 
-                //     background-repeat: no-repeat;
-                //     background-size: contain; 
-                //     height: 100%;
-                //     opacity: 0.4;
-                //     width: 100%;
-                //     z-index: -1;
-                // }
-                .proyectNumber { 
-                    bottom: 1rem;
-                    font-size: 13rem;
-                    position: absolute;
-                    right: 0;
-                    &:after {
-                        bottom: -75%;
-                        color: rgba($accent_color_secondary, .05);
-                        content: attr(data-number);
-                        font-size: 23rem;
-                        font-weight: bold;
-                        position: absolute;
-                        right: 0;    
-                    }
-                }
-            }
             .proyectTextContent {
                 padding: 3rem;
                 width: 100%;

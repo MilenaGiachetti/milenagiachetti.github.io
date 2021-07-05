@@ -2,7 +2,7 @@ import classes from './Projects.module.scss';
 import {useState, useRef} from 'react';
 import projectsData from './data/contentData';
 import ScreenImage from '../../Components/ScreenImage/ScreenImage';
-import CustomCanvas from '../../Components/ImageCanvas/ImageCanvas';
+import ProjectCanvas from '../../Components/ProjectCanvas/ProjectCanvas';
 
 function Projects(props) {
     const canvasCtn = useRef()
@@ -10,7 +10,6 @@ function Projects(props) {
     const [otherProyect, setOtherProyect] = useState("image1");
     const [otherProyectFading, setOtherProyectFading] = useState(true);
 
-    // var style = { '--bg-image': `url(${projectsData[proyect].screenPath})`};
     const clickHandler = (n) => {
         setProyect(previousState => {
             if (n === 1 && previousState === (projectsData.length - 1)) {
@@ -35,7 +34,6 @@ function Projects(props) {
 
 	return (
         <section className={classes.Proyects} id="projects" ref={props.refFx}>
-            {/* <div className={classes.title} data-point='ProyectosProyectosProyectosProyectos'></div> */}
             <div className={classes.content}>
                 <h2>Proyectos</h2>
                 <div className={classes.proyect}>
@@ -73,7 +71,7 @@ function Projects(props) {
                 </div>
             </div>
             <div className={classes.otherProjects} ref={canvasCtn}>
-                <CustomCanvas otherProyect={otherProyect} otherProyectFading={otherProyectFading}/>
+                <ProjectCanvas otherProyect={otherProyect} otherProyectFading={otherProyectFading}/>
                 <h3>Otros Proyectos</h3>
                 <a href="/#top" target="_blank" rel="noreferrer" className={classes.otherProject} onMouseEnter={()=>otherProjectsMouseEnterHandler("image1")} onMouseLeave={()=>otherProjectsMouseLeaveHandler("image1")}>
                     <div>

@@ -1,14 +1,15 @@
 import React, { useRef } from 'react';
 import * as THREE from 'three';
 import { useFrame, useLoader, useThree } from '@react-three/fiber';
-import { TextureLoader } from 'three/src/loaders/TextureLoader'
-import useMouseCoordinates from '../../hooks/mouseCoordinates';
+import { TextureLoader } from 'three/src/loaders/TextureLoader';
+import useMouseCoordinates from '../../../hooks/mouseCoordinates';
 
 export default function Model({image, fading}) {
     const { x, y } = useMouseCoordinates();
     const mesh = useRef();
     const { camera } = useThree();
-    const [colorMap] = useLoader(TextureLoader, [`${process.env.PUBLIC_URL}/images/${image}.jpg`])
+    const [colorMap] = useLoader(TextureLoader, [`${process.env.PUBLIC_URL}/images/${image}.jpg`]);
+
     useFrame(() => {
         mesh.current.material.opacity = THREE.MathUtils.lerp(mesh.current.material.opacity, fading ? 0 : 1, 0.1);
         var vector = new THREE.Vector3(x, y, 0).unproject(camera);

@@ -17,7 +17,7 @@ export default function Model(props) {
     const { nodes, materials } = useGLTF(`${process.env.PUBLIC_URL}/home.glb`)
 	const [hovered, setHover] = useState(false)
     useFrame(() => {
-        group.current.rotation.y = Math.PI * 1.5 + x * 0.5;
+        group.current.rotation.y = Math.PI * 1.4 + x * 0.5;
         group.current.rotation.x = -y * 0.2;
         phoneWireframe.current.position.x = THREE.MathUtils.lerp(phoneWireframe.current.position.x, hovered ? 2.2 : 0.2, 0.1);
 		tabletWireframe.current.position.x = THREE.MathUtils.lerp(tabletWireframe.current.position.x, hovered ? 2.5 : 1, 0.1);
@@ -29,8 +29,8 @@ useEffect(() => {
 
 	return (
 		// [viewport.width, viewport.height]
-		<group ref={group} {...props} rotation={[0, 0.5, 0.2]}
-		position={[ viewport.width / 8, - 3, 0]}
+		<group ref={group} {...props} rotation={[0, 0, 0.2]}
+		position={[ viewport.width / 8 + 2, - 3, 0]}
 		// scale={[viewport.height / viewport.width]}
 		onPointerOver={() => setHover(true)}
 		onPointerOut={() => setHover(false)}>

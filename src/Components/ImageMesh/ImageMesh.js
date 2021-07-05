@@ -1,7 +1,6 @@
 import React, { useRef } from 'react';
 import * as THREE from 'three';
-import { useThree } from '@react-three/fiber';
-import { useFrame, useLoader } from '@react-three/fiber';
+import { useFrame, useLoader, useThree } from '@react-three/fiber';
 import { TextureLoader } from 'three/src/loaders/TextureLoader'
 import useMouseCoordinates from '../../hooks/mouseCoordinates';
 

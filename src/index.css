@@ -92,6 +92,19 @@ h1, .srOnly {
     position: relative;
 }
 
+.canvas-root {
+	height: 50vw;
+	left: 50%;
+	margin: 0 auto;
+	max-height: 700px;
+    max-width: 1400px;
+	position: absolute;
+	top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+	z-index: 2;
+}
+
 @media (max-width: 767px) { 
 	.root {	
 		flex-flow: column;

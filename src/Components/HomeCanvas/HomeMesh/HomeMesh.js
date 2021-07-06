@@ -5,23 +5,23 @@ import React, { useRef, useState } from 'react';
 import { useFrame, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
 import useMouseCoordinates from '../../../hooks/mouseCoordinates';
-import { useGLTF } from '@react-three/drei'
+import { useGLTF } from '@react-three/drei';
 
 export default function Model(props) {
     const { x, y } = useMouseCoordinates();
-    const group = useRef()
-	const phoneWireframe = useRef()
-    const tabletWireframe = useRef()
-    const computerWireframe = useRef()
+    const group = useRef();
+	const phoneWireframe = useRef();
+    const tabletWireframe = useRef();
+    const computerWireframe = useRef();
 	const {viewport} = useThree();
-    const { nodes, materials } = useGLTF(`${process.env.PUBLIC_URL}/home.glb`)
-	const [hovered, setHover] = useState(false)
+    const { nodes, materials } = useGLTF(`${process.env.PUBLIC_URL}/home.glb`);
+	const [hovered, setHover] = useState(false);
     useFrame(() => {
         group.current.rotation.y = Math.PI * 1.4 + x * 0.5;
         group.current.rotation.x = -y * 0.2;
-        phoneWireframe.current.position.x = THREE.MathUtils.lerp(phoneWireframe.current.position.x, hovered ? 3.2 : 0.2, 0.1);
-		tabletWireframe.current.position.x = THREE.MathUtils.lerp(tabletWireframe.current.position.x, hovered ? 3.5 : 1, 0.1);
-        computerWireframe.current.position.x = THREE.MathUtils.lerp(computerWireframe.current.position.x, hovered ? 3.39 : 1.39, 0.1);
+        phoneWireframe.current.position.x = THREE.MathUtils.lerp(phoneWireframe.current.position.x, hovered ? 4.2 : 0.2, 0.1);
+		tabletWireframe.current.position.x = THREE.MathUtils.lerp(tabletWireframe.current.position.x, hovered ? 3 : 1, 0.1);
+        computerWireframe.current.position.x = THREE.MathUtils.lerp(computerWireframe.current.position.x, hovered ? 2.89 : 1.39, 0.1);
     })
 
 	return (

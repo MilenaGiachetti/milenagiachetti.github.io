@@ -24,7 +24,7 @@ export default function Model({image, fading}) {
         ref={mesh}
         position={[0,0,0]}
         >
-            <planeGeometry args={[2, 2]}/>
+            <planeGeometry args={[3, 3]}/>
             <meshBasicMaterial map={colorMap} transparent={true} opacity={0}/>
         </mesh>
     )

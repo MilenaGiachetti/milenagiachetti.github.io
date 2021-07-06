@@ -15,6 +15,7 @@
         text-transform: uppercase;
         .navLink {
             position: relative;
+            font-size: 1.4rem;
             &:before, &.currentNavLink:before {
                 background-color: rgba($accent_color, .5);
                 border-radius: 50%;
@@ -29,8 +30,8 @@
                 z-index: -1;
             }
             &:hover:before, &.currentNavLink:before {
-                height: 4rem;
-                width: 4rem;
+                height: 3rem;
+                width: 3rem;
             }
             &.currentNavLink:before {
                 background-color: rgba($accent_color_secondary, .25);
@@ -59,6 +60,7 @@
         .navList {
             align-items: center;
             display: flex;
+            font-size: 1.8rem;
             flex-direction: column;
             height: 100%;
             justify-content: center;

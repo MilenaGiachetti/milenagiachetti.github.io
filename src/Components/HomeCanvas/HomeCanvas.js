@@ -1,6 +1,6 @@
 import {Canvas} from '@react-three/fiber';
 // import HomeMesh from './HomeMesh/HomeMesh';
-import { EffectComposer,Noise } from '@react-three/postprocessing';
+// import { EffectComposer,Noise } from '@react-three/postprocessing';
 
 export default function Model() {
     return(
@@ -41,9 +41,9 @@ export default function Model() {
                 <sphereGeometry args={[1, 32, 32]} />
                 <meshStandardMaterial color="0xe4e6eb" />
             </mesh>
-            <EffectComposer>
+            {/* <EffectComposer>
                 <Noise opacity={0.3} />
-            </EffectComposer>
+            </EffectComposer> */}
         </Canvas>
     )
 }

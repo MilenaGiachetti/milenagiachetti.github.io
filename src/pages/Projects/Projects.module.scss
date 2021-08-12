@@ -10,28 +10,8 @@ h3 {
     transition: color 1.2s ease;
 }
 
-.Proyects {
+.Projects {
     width: 100%;
-    .title {
-        color: rgba($accent_color, .5);
-        height: 100%;
-        left: 7rem;
-        position: absolute;
-        text-orientation: sideways;
-        top: 0;
-        transform: rotate(-180deg);
-        width: 10rem;
-        writing-mode: vertical-lr;
-        &:before  {
-            content: attr(data-point);
-            display: block;
-            font-size: 7rem;   
-            position: absolute;
-            right: 0;
-            text-transform: uppercase;
-            top: 0;
-        }
-    }
     .content {
         display: flex;
         flex-flow: column;
@@ -42,43 +22,49 @@ h3 {
         h2 {
             text-align: right;
         }
-        .proyect {
+        .project {
             display: flex;
             justify-content: center;
             height: 100%;
             position: relative;
             &:nth-child(2n) {
-                .proyectContent {
+                .projectContent {
                     order: -1;
                 }
-                .proyectTextContent {
-                    .proyectName, .proyectTech {
+                .projectTextContent {
+                    .projectName, .projectTech {
                         text-align: right;
                     }
-                    .proyectBtnCtn {
+                    .projectBtnCtn {
                         justify-content: flex-start;
                     }
                 }
             }
-            .proyectTextContent {
+            .projectContent {
+                max-width: 50%;
+                min-height: 100%;
+                order: 2;
+                width: 100%;
+            }
+            .projectTextContent {
                 padding: 3rem;
                 max-width: 50%;
                 width: 100%;
-                .proyectName {
+                .projectName {
                     color: $accent_color;
                     font-size: 6rem;
                     text-align: left;
                 }
-                .proyectTech {
+                .projectTech {
                     font-family: 'Open Sans Condensed', sans-serif;
                     font-size: 1.2rem;
                     margin-bottom: 1rem;
                 }
-                .proyectBtnCtn {
+                .projectBtnCtn {
                     display: flex;
                     justify-content: flex-end;
                     padding: 3rem 0 0 0;
-                    .proyectBtn {
+                    .projectBtn {
                         color: var(--color);
                         display: inline-block;
                         font-size: 1.4rem;
@@ -104,12 +90,6 @@ h3 {
                         }
                     }
                 }
-            }
-            .proyectContent {
-                max-width: 50%;
-                min-height: 100%;
-                order: 2;
-                width: 100%;
             }
         }
     }
@@ -204,67 +184,38 @@ h3 {
     }
 }
 
-@media (max-width: 992px) { 
-	.Proyects {
+@media (max-width: 991px) { 
+	.Projects {
         min-height: unset;
         .content {
             min-height: unset;
-            .proyect {
-                .proyectBg {
-                    display: none;
-                }
-                .proyectContent {
-                    flex-direction: column;
+            .project {
+                display: unset;
+                .projectContent {
                     max-width: unset;
-                    .proyectTextContent {
-                        padding-right: 0;
+                    order: -1;
+                    padding: 0;
+                }
+                .projectTextContent {
+                    max-width: unset;
+                    padding: 0;
+                    .projectName, .projectTech {
+                        text-align: left!important;
                     }
-                    .proyectScreen {
-                        margin-bottom: 3rem;
-                        margin-top: 0;
-                        max-width: 100%;
-                        order: 0;
+                    .projectBtnCtn {
+                        justify-content: flex-end!important;
                     }
                 }
             }
-        }
-	}
-}
-
-@media (max-width: 767px) { 
-	.Proyects {
-        .title {
-            display: none;
-        }
-        .content {
-            padding: 1rem;
         }
 	}
 }
 
 @media (max-width: 575px) { 
-    .Proyects {
+    .Projects {
         .content {
             h2 {
                 text-align: center;
-            }
-            .proyect {
-                .proyectContent {
-                    max-width: unset;
-                    padding: 2rem;
-                    .proyectTextContent {
-                        .proyectBtnCtn {
-                            padding: 3rem 0;
-                            .proyectBtn {
-                                display: block;
-                                margin-bottom: 1rem;
-                                padding: 1rem 0.75rem;
-                                text-align: center;
-                                width: 100%;
-                            }
-                        }
-                    }
-                }
             }
         }
     }    

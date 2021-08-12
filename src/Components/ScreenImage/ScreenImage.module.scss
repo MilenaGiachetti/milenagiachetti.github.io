@@ -1,7 +1,14 @@
-.proyectScreen {
+.projectScreen {
     height: 100%;
     order: 2;
     width: 100%;
     padding: 3rem;
     border-radius: 3.5rem;
+}
+
+@media (max-width: 991px) { 
+	.projectScreen {
+        padding: 0;
+        border-radius: 0.5rem;
+	}
 }

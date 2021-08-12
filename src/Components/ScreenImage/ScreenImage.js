@@ -3,7 +3,7 @@ import classes from './ScreenImage.module.scss';
 
 function ScreenImage(props) {
 	return (
-        <img src={props.screenPath} alt={`Screenshot de ${props.proyectName}`} className={classes.proyectScreen}/> 
+        <img src={props.screenPath} alt={`Screenshot de ${props.projectName}`} className={classes.projectScreen}/> 
 	)
 }
 

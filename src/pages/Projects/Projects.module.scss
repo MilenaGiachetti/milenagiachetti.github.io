@@ -44,20 +44,30 @@ h3 {
         }
         .proyect {
             display: flex;
-            align-items: center;
             justify-content: center;
             height: 100%;
-            padding: 7rem;
             position: relative;
+            &:nth-child(2n) {
+                .proyectContent {
+                    order: -1;
+                }
+                .proyectTextContent {
+                    .proyectName, .proyectTech {
+                        text-align: right;
+                    }
+                    .proyectBtnCtn {
+                        justify-content: flex-start;
+                    }
+                }
+            }
             .proyectTextContent {
                 padding: 3rem;
+                max-width: 50%;
                 width: 100%;
                 .proyectName {
                     color: $accent_color;
-                    font-size: 4rem;
-                    left: -25%;
-                    position: relative;
-                    width: 125%;
+                    font-size: 6rem;
+                    text-align: left;
                 }
                 .proyectTech {
                     font-family: 'Open Sans Condensed', sans-serif;
@@ -66,13 +76,13 @@ h3 {
                 }
                 .proyectBtnCtn {
                     display: flex;
+                    justify-content: flex-end;
                     padding: 3rem 0 0 0;
                     .proyectBtn {
                         color: var(--color);
                         display: inline-block;
                         font-size: 1.4rem;
                         text-transform: uppercase;
-                        margin-left: auto;
                         margin-right: 2rem;
                         padding: 1.5rem 0;
                         position: relative;
@@ -95,81 +105,11 @@ h3 {
                     }
                 }
             }
-            .changeProyectBtnCtn {
-                .changeProyect {
-                    cursor: pointer;
-                    right: 0;
-                    padding: 3rem;
-                    position: absolute;
-                    top: 0;
-                    height: 100%;
-                    width: 5rem;
-                    z-index: 3;
-                    &:hover .titleCtaArrow::after, &:hover .titleCtaArrow::before {
-                        background-color: $accent_color;   
-                    }
-                    &:hover .titleCtaArrow {
-                        animation: moveArrow .8s infinite ease-in-out alternate;
-                        transform: translateX(1.2rem);
-                    }
-                    &:active, &:focus {
-                        outline: none;
-                        .titleCtaArrow::after, .titleCtaArrow::before {
-                            background-color: $accent_color;   
-                        }
-                    }
-                    .titleCtaArrow {
-                        // background-color: var(--color);
-                        display: block;
-                        transform: translateX(0);
-                        transition: transform .3s, background-color .3s;
-                        // width: 25%;
-                        &::after, &::before {
-                            background-color: var(--color);
-                            content: '';
-                            height: 3px;
-                            position: absolute;
-                            right: -7px;
-                            transition: background-color .3s;
-                            width: 30px;
-                        }
-                        &::after {
-                            top: -7px;
-                            transform: rotate(45deg);
-                        }
-                        &::before {
-                            top: 13px;
-                            transform: rotate(-45deg);
-                        }
-                    }
-                }
-                .changeProyect.left {
-                    left: 0;
-                    right: unset;
-                    &:hover .titleCtaArrow {
-                        animation: moveArrow .8s infinite ease-in-out alternate;
-                        transform: translateX(-1.2rem);
-                    }
-                    .titleCtaArrow {
-                        margin-right: 2rem;
-                        &::after, &::before {
-                            left: -7px;
-                        }
-                        &::after {
-                            top: -7px;
-                            transform: rotate(135deg);
-                        }
-                        &::before {
-                            top: 13px;
-                            transform: rotate(-135deg);
-                        }
-                    }
-                }
-            }
             .proyectContent {
-                .proyectScreen {
-                    order: 2;
-                }
+                max-width: 50%;
+                min-height: 100%;
+                order: 2;
+                width: 100%;
             }
         }
     }
@@ -284,9 +224,6 @@ h3 {
                         margin-top: 0;
                         max-width: 100%;
                         order: 0;
-                    }
-                    .changeProyectBtnCtn {
-                        max-width: unset;
                     }
                 }
             }

@@ -116,6 +116,14 @@ h1, .srOnly {
 	}
 }
 
+.circled {
+    position: relative;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='799.9999999999999' height='600' xmlns='http://www.w3.org/2000/svg'%3e%3cg%3e%3ctitle%3eLayer 1%3c/title%3e%3cpath stroke-width='20' fill-opacity='0' d='m712.51315,220.58786c-4.52518,-3.39526 -8.45663,-9.61003 -25.64269,-20.37158c-78.9989,-49.4674 -197.51304,-86.44617 -295.64517,-81.48632c-160.04827,8.08927 -257.24346,56.00355 -307.71232,96.765c-54.65476,44.1422 -73.79264,90.88427 -73.91129,120.53184c-0.21594,53.95104 52.90695,114.76115 96.5372,130.71763c124.77318,45.63214 321.97122,7.67535 422.35025,-42.44079c159.16169,-79.46452 196.09119,-166.36789 220.22549,-203.71579l22.62591,-49.23132l18.10072,-45.83605l3.01679,-13.58105' id='svg_22' stroke='%237f7f7f' fill='%23ffffff'/%3e%3c/g%3e%3c/svg%3e");
+	background-size: 100% 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
 /* 
 // Medium devices (tablets, 768px and up)
 @media (max-width: 767px) { ... }

@@ -7,6 +7,7 @@ import SocialLinks from './Components/SocialLinks/SocialLinks';
 import Home from './pages/Home/Home';
 import Projects from './pages/Projects/Projects';
 import Tech from './pages/Tech/Tech';
+import About from './pages/About/About';
 import { gsap } from "gsap";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 // import history from './history';
@@ -95,6 +96,7 @@ function App() {
 				<Home theme={theme} refFx={addToRefs}/>
 				<Projects refFx={addToRefs}/>
 				<Tech refFx={addToRefs}/>
+				<About/>
 			</main>
 			<footer>
 				{

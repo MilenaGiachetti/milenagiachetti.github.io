@@ -1,7 +1,5 @@
 import classes from './Home.module.scss';
 import {useRef, useEffect} from 'react';
-import ReactDom from 'react-dom';
-import HomeCanvas from '../../Components/HomeCanvas/HomeCanvas';
 
 function Home(props) {
     const svgBgref =  useRef();
@@ -40,7 +38,6 @@ function Home(props) {
                 <p className={classes.titlePosition}>Desarrolladora Web</p>
                 <a href="mailto:giachettimilena@gmail.com?Subject=Contacto%20desde%20portfolio" target="_blank" rel="noreferrer" className={classes.titleEmail}aria-label="Mail">giachettimilena@gmail.com</a>
             </div>
-            {/* {ReactDom.createPortal(<HomeCanvas/>, document.getElementById("canvas-root"))} */}
         </section>
 	);
 }

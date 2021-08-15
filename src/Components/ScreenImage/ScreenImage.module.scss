@@ -1,9 +1,14 @@
 .projectScreen {
+    border-radius: 3.5rem;
+    filter: grayscale(1);
     height: 100%;
     order: 2;
-    width: 100%;
     padding: 3rem;
-    border-radius: 3.5rem;
+    transition: filter 1s ease;
+    width: 100%;
+    &:hover {
+        filter: grayscale(0);
+    }
 }
 
 @media (max-width: 991px) { 

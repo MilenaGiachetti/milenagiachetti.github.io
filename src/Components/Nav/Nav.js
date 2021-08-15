@@ -7,13 +7,13 @@ function Nav(props) {
         <nav className={props.isMobile ? classes.mobileNav : classes.nav}>
 			<ul className={classes.navList}>
                 <li {...(props.isMobile && {onClick: props.menuHandler})}>
-                    <NavHashLink to="#top" smooth activeClassName={classes.currentNavLink} className={classes.navLink}>Home</NavHashLink>
+                    <NavHashLink to="#home" smooth activeClassName={classes.currentNavLink} className={classes.navLink} onClick={() => props.clickHandler("#home")}>Home</NavHashLink>
                 </li>
                 <li {...(props.isMobile && {onClick: props.menuHandler})}>
-                    <NavHashLink to="#projects" smooth activeClassName={classes.currentNavLink} className={classes.navLink}>Proyectos</NavHashLink>
+                    <NavHashLink to="#projects" smooth activeClassName={classes.currentNavLink} className={classes.navLink} onClick={() => props.clickHandler("#projects")}>Proyectos</NavHashLink>
                 </li>
                 <li {...(props.isMobile && {onClick: props.menuHandler})}>
-                    <NavHashLink to="#tech" smooth activeClassName={classes.currentNavLink} className={classes.navLink}>Tech</NavHashLink>   
+                    <NavHashLink to="#tech" smooth activeClassName={classes.currentNavLink} className={classes.navLink} onClick={() => props.clickHandler("#tech")}>Tech</NavHashLink>   
                 </li>
                 {
                     props.isMobile 

@@ -10,7 +10,8 @@ import Tech from './pages/Tech/Tech';
 import About from './pages/About/About';
 import { gsap } from "gsap";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-// import history from './history';
+import history from './history';
+
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
@@ -18,20 +19,54 @@ function App() {
 	const [menuOpen, setMenuOpen] = useState(false);
 	const [isMobile, setIsMobile] = useState(window.innerWidth <= 767);
     const revealRefs = useRef([]);
+	let isLinkScroll = useRef({scroll: false, page: "#home"});
     revealRefs.current = [];
+
     const addToRefs = el => {
         if (el && !revealRefs.current.includes(el)) {
             revealRefs.current.push(el);
         }
     };
+	
 	useEffect(() => {
-		window.addEventListener("resize", () => setIsMobile(window.innerWidth <= 767));
+		const handleTrigger = el => {
+			if(!isLinkScroll.current.scroll && history.location.hash !== "#" + el.id) {
+				history.push("/#" + el.id);
+				history.push("/#" + el.id);
+				history.goBack();
+			} else if(isLinkScroll.current.scroll && (isLinkScroll.current.page === "#" + el.id)) {
+				isLinkScroll.current = {scroll: false, page: isLinkScroll.current.page};
+			}
+		}
+		
+		revealRefs.current.forEach((el) => {
+			ScrollTrigger.create({
+				trigger: el,
+				onEnter: () => handleTrigger(el),
+				onEnterBack: () => handleTrigger(el)
+			});
+		});
+
+		if ( localStorage.getItem('theme') === 'dark') {
+			setTheme('dark');
+			document.documentElement.setAttribute('data-theme', 'dark');	
+		} else {
+			setTheme('light');
+			document.documentElement.setAttribute('data-theme', 'light');	
+		}
+
+		window.addEventListener("resize", () => setIsMobile(window.innerWidth <= 767));     
+		
+		return () => {
+			window.removeEventListener("resize", () => setIsMobile(window.innerWidth <= 767));
+		}
 	}, []);
 
 	const toggleThemeHandler = () => {
         var newTheme = (theme === "dark" ? "light" : "dark");
         setTheme(newTheme);
-        document.documentElement.setAttribute('data-theme', newTheme)
+        document.documentElement.setAttribute('data-theme', newTheme);
+		localStorage.setItem('theme', newTheme);
     }
 	
 	const menuHandler = () => {
@@ -40,43 +75,11 @@ function App() {
 		})
 	}
 
-	
-    // useEffect(() => {
- 
-    //     revealRefs.current.forEach((el, index) => {
-	// 		// gsap.to(el, {
-	// 		// 	scrollTrigger: el, 
-	// 		// 	duration: 2, 
-	// 		// 	onStart: () => {
-	// 		// 		history.push("/#" + el.id);
-	// 		// 		history.push("/#" + el.id);
-	// 		// 		history.goBack();
-	// 		// 	},
-	// 		// 	toggleActions: "restart pause reverse pause"
-	// 		// });
-			
-    //         gsap.from(el,  {
-    //             scrollTrigger: {
-    //                 trigger: el,
-    //             },
-	// 			onStart: () => {
-	// 				if(history.location.hash !== "#" + el.id) {
-	// 					history.push("/#" + el.id);
-	// 					history.push("/#" + el.id);
-	// 					history.goBack();
-	// 				}
-	// 			}
-    //         });
-    //     });
-     
-    // }, [props.history]);
-
-
 	return (
 		<>
 			<header>
 				<h1>Milena Giachetti</h1>
-				<HashLink to="#top" smooth className={classes.logo}>
+				<HashLink to="#home" smooth className={classes.logo} onClick={() => isLinkScroll.current = {scroll: true, page: "#home"}}>
 					<p className={classes.logoText}>g_</p>
 				</HashLink>
 				{
@@ -90,13 +93,13 @@ function App() {
 					</button>
 					: null
 				}
-				{ !isMobile || menuOpen ? <Nav isMobile={isMobile} theme={theme} toggleThemeHandler={toggleThemeHandler}  menuHandler={menuHandler}/> : null }
+				{ !isMobile || menuOpen ? <Nav isMobile={isMobile} theme={theme} toggleThemeHandler={toggleThemeHandler}  menuHandler={menuHandler} clickHandler={(page) => isLinkScroll.current = {scroll: true, page}}/> : null }
 			</header>
 			<main>
 				<Home theme={theme} refFx={addToRefs}/>
 				<Projects refFx={addToRefs}/>
 				<Tech refFx={addToRefs}/>
-				<About/>
+				<About refFx={addToRefs}/>
 			</main>
 			<footer>
 				{

@@ -14,6 +14,10 @@ const techStack = [
         name: 'SCSS'
     },
     {
+        icon: images.bootstrap,
+        name: 'Bootstrap'
+    },
+    {
         icon: images.javascript,
         name: 'JavaScript'
     },
@@ -22,12 +26,12 @@ const techStack = [
         name: 'JQuery'
     },
     {
-        icon: images.react,
-        name: 'React'
-    },
-    {
         icon: images.threejs,
         name: 'Three.js'
+    },
+    {
+        icon: images.react,
+        name: 'React'
     },
     {
         icon: images.git,
@@ -37,14 +41,10 @@ const techStack = [
         icon: images.github,
         name: 'Github'
     },
-    {
-        icon: images.node,
-        name: 'Node.js'
-    },
-    {
-        icon: images.bootstrap,
-        name: 'Bootstrap'
-    }
+    // {
+    //     icon: images.node,
+    //     name: 'Node.js'
+    // },
 ]
 
 export default techStack;

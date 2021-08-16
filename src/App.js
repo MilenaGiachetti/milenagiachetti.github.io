@@ -1,6 +1,9 @@
 import classes from './App.module.scss';
 import {useState, useEffect, useRef} from 'react';
 import {HashLink} from 'react-router-hash-link';
+import { gsap } from "gsap";
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import history from './history';
 import Nav from './Components/Nav/Nav';
 import ThemeBtn from './Components/ThemeBtn/ThemeBtn';
 import SocialLinks from './Components/SocialLinks/SocialLinks';
@@ -8,15 +11,14 @@ import Home from './pages/Home/Home';
 import Projects from './pages/Projects/Projects';
 import Tech from './pages/Tech/Tech';
 import About from './pages/About/About';
-import { gsap } from "gsap";
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import history from './history';
+import CollapseButton from './Components/UI/CollapseButton';
 
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
 	const [theme, setTheme] = useState("light");
 	const [menuOpen, setMenuOpen] = useState(false);
+	const [endOfPage, setEndOfPage] = useState(false);
 	const [isMobile, setIsMobile] = useState(window.innerWidth <= 767);
     const revealRefs = useRef([]);
 	let isLinkScroll = useRef({scroll: false, page: "#home"});
@@ -27,7 +29,20 @@ function App() {
             revealRefs.current.push(el);
         }
     };
+
+	const toggleThemeHandler = () => {
+        var newTheme = (theme === "dark" ? "light" : "dark");
+        setTheme(newTheme);
+        document.documentElement.setAttribute('data-theme', newTheme);
+		localStorage.setItem('theme', newTheme);
+    }
 	
+	const menuHandler = () => {
+		setMenuOpen(prevState => {
+			return !prevState;
+		})
+	}
+
 	useEffect(() => {
 		const handleTrigger = el => {
 			if(!isLinkScroll.current.scroll && history.location.hash !== "#" + el.id) {
@@ -38,15 +53,29 @@ function App() {
 				isLinkScroll.current = {scroll: false, page: isLinkScroll.current.page};
 			}
 		}
-		
-		revealRefs.current.forEach((el) => {
-			ScrollTrigger.create({
-				trigger: el,
-				onEnter: () => handleTrigger(el),
-				onEnterBack: () => handleTrigger(el)
-			});
-		});
 
+		ScrollTrigger.matchMedia({
+			// bottom of the page animation
+			"(min-width: 992px)": function() {
+				ScrollTrigger.create({
+					trigger: "document",
+					start: `${document.documentElement.scrollHeight + 200}px bottom`,
+					onEnter: () => setEndOfPage(true),
+				});
+			},
+			"all": function() {
+				revealRefs.current.forEach((el) => {
+					ScrollTrigger.create({
+						trigger: el,
+						onEnter: () => handleTrigger(el),
+						onEnterBack: () => handleTrigger(el)
+					});
+				});
+			}
+			  
+		}); 
+
+		
 		if ( localStorage.getItem('theme') === 'dark') {
 			setTheme('dark');
 			document.documentElement.setAttribute('data-theme', 'dark');	
@@ -62,19 +91,6 @@ function App() {
 		}
 	}, []);
 
-	const toggleThemeHandler = () => {
-        var newTheme = (theme === "dark" ? "light" : "dark");
-        setTheme(newTheme);
-        document.documentElement.setAttribute('data-theme', newTheme);
-		localStorage.setItem('theme', newTheme);
-    }
-	
-	const menuHandler = () => {
-		setMenuOpen(prevState => {
-			return !prevState;
-		})
-	}
-
 	return (
 		<>
 			<header>
@@ -84,13 +100,7 @@ function App() {
 				</HashLink>
 				{
 					isMobile 
-					? <button className={`${classes.burgerBtn} ${menuOpen ? classes.opened : ''}`} onClick={menuHandler} aria-label="Main Menu">
-						<svg width="100" height="100" viewBox="0 0 100 100">
-							<path className={`${classes.line} ${classes.line1}`} d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" aria-expanded={menuOpen ? 'true': 'false'}/>
-							<path className={`${classes.line} ${classes.line2}`} d="M 20,50 H 80" aria-expanded={menuOpen ? 'true': 'false'}/>
-							<path className={`${classes.line} ${classes.line3}`} d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" aria-expanded={menuOpen ? 'true': 'false'}/>
-						</svg>
-					</button>
+					? <CollapseButton menuOpen={menuOpen} menuHandler={menuHandler}/>
 					: null
 				}
 				{ !isMobile || menuOpen ? <Nav isMobile={isMobile} theme={theme} toggleThemeHandler={toggleThemeHandler}  menuHandler={menuHandler} clickHandler={(page) => isLinkScroll.current = {scroll: true, page}}/> : null }
@@ -99,7 +109,7 @@ function App() {
 				<Home theme={theme} refFx={addToRefs}/>
 				<Projects refFx={addToRefs}/>
 				<Tech refFx={addToRefs}/>
-				<About refFx={addToRefs}/>
+				<About refFx={addToRefs} animationActive={endOfPage}/>
 			</main>
 			<footer>
 				{

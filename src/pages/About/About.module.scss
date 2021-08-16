@@ -1,12 +1,9 @@
 @import '../../assets/variables/scss_variables';
 
 .About {
-    height: 100%;
-    min-height: 100vh;
     width: 100%;
     z-index: 3;
     .content {
-        height: 100%;
         margin: 0 auto;
         max-width: 1100px;
         padding: 2rem 0;
@@ -14,14 +11,15 @@
         h2 {
             padding-bottom: 4rem;
         }
+        .svgCtn {
+            text-align: right;
+        }
     }
 }
 
 @media (max-width: 767px) { 
 	.About {
-        min-height: calc(100vh - 5rem - 8rem);
         .content {
-            min-height: calc(100vh - 5rem - 8rem);
             padding: 1rem;
         }
 	}

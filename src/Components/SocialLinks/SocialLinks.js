@@ -7,7 +7,7 @@ function SocialLinks() {
                 <p className={classes.socialLinkExtra}>Email</p>
                 <i className={`${classes.smallIcon} fas fa-envelope`}></i>
             </a>
-            <a href="https://www.linkedin.com/in/milena-giachetti-7640a21b8/" target="_blank" rel="noreferrer" className={classes.socialLink} aria-label="Linkedin">
+            <a href="https://www.linkedin.com/in/milena-giachetti" target="_blank" rel="noreferrer" className={classes.socialLink} aria-label="Linkedin">
                 <p className={classes.socialLinkExtra}>Linkedin</p>
                 <i className={`${classes.smallIcon} fab fa-linkedin-in`}></i>
             </a>

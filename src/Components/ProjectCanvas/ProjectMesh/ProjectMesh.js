@@ -12,7 +12,7 @@ export default function Model({image, fading}) {
 
     useFrame(() => {
         mesh.current.material.opacity = THREE.MathUtils.lerp(mesh.current.material.opacity, fading ? 0 : 1, 0.1);
-        var vector = new THREE.Vector3(x, y, 0).unproject(camera);
+        let vector = new THREE.Vector3(x, y, 0).unproject(camera);
         if (mesh.current.position.x !== vector.x * 2 || mesh.current.position.y !== vector.y * 2){
             mesh.current.position.x = vector.x * 2;
             mesh.current.position.y = vector.y * 2;

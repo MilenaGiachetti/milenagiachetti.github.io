@@ -12,10 +12,16 @@
             padding-bottom: 4rem;
         }
         .svgCtn {
+            opacity: 1;
             text-align: right;
+            transition: opacity 5s ease;
+        }
+        .hide {
+            opacity: 0;
         }
     }
 }
+
 
 @media (max-width: 767px) { 
 	.About {

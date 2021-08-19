@@ -20,20 +20,12 @@ export default function Model(props) {
 	useFrame(() => {
 		if (group.current.position.x < (coordinates.x - coordinates.x * 0.1)) {
 			actions.walking.play();
-			group.current.position.x += 0.025;
-			actions.right_turn.weight = 0.3;
+			group.current.position.x += 0.035;
 		} else if (group.current.rotation.z < 0) {
-			actions.walking.weight -= 0.1;
-			actions.right_turn.weight += 0.1;
-			actions.right_turn.play();
-
-			actions.walking.stop();
-			group.current.rotation.z += 0.025;
-		} else {
-			actions.right_turn.weight -= 0.1;
-			actions.walking.stop();
-
-			actions.wave.play();
+			actions.pointing.loop = THREE.LoopOnce;
+			actions.pointing.clampWhenFinished = true;
+			actions.turning.crossFadeFrom(actions.walking, 1, true).crossFadeTo( actions.pointing, 0, true).play()
+			group.current.rotation.z += 0.05;
 		}
 	})
 	return (
@@ -44,4 +36,4 @@ export default function Model(props) {
 	)
 }
 
-useGLTF.preload('/mannequin.glb')
+useGLTF.preload(`${process.env.PUBLIC_URL}/model/mannequin.glb`)

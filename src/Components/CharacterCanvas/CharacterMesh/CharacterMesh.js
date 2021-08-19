@@ -9,7 +9,7 @@ import { useGLTF, useAnimations } from '@react-three/drei'
 
 export default function Model(props) {
 	const group = useRef();
-	const [coordinates, setCoordinates] = useState({x: 0, y:0});
+	const [coordinates, setCoordinates] = useState({x: false, y:false});
 	const {nodes, materials, animations} = useGLTF(`${process.env.PUBLIC_URL}/model/mannequin.glb`);
 	const {actions} = useAnimations(animations, group);
 	const {camera} = useThree();
@@ -18,7 +18,7 @@ export default function Model(props) {
 		setCoordinates({x: vector.x, y: vector.y});
 	}, [camera])
 	useFrame(() => {
-		if (group.current.position.x < (coordinates.x - coordinates.x * 0.1)) {
+		if (coordinates.x && group.current.position.x < (coordinates.x - coordinates.x * 0.1)) {
 			actions.walking.play();
 			group.current.position.x += 0.035;
 		} else if (group.current.rotation.z < 0) {

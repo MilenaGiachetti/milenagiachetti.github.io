@@ -4,5 +4,6 @@
     position: absolute!important;
     bottom: 0;
     width: calc(100vw - 15rem)!important;
+    max-width: calc(1400px - 15rem);
     z-index: -5;
 }

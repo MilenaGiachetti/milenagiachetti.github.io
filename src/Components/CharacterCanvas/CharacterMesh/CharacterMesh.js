@@ -21,7 +21,7 @@ export default function Model(props) {
 		if (coordinates.x && group.current.position.x < (coordinates.x - coordinates.x * 0.1)) {
 			actions.walking.play();
 			group.current.position.x += 0.035;
-		} else if (group.current.rotation.z < 0) {
+		} else if (coordinates.x && group.current.rotation.z < 0) {
 			actions.pointing.loop = THREE.LoopOnce;
 			actions.pointing.clampWhenFinished = true;
 			actions.turning.crossFadeFrom(actions.walking, 1, true).crossFadeTo( actions.pointing, 0, true).play()

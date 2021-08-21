@@ -24,16 +24,15 @@ h2 {
     width: 100%;
     z-index: 3;
     .svgBg {
+        left: 0;
         position: absolute;
         width: 100%;
-        left: 0;
     }
     h2 {
         font-size: 7rem;
         line-height: 0.8;
     }
     .title {
-        // min-width: 50%;
         width: 100%;
         text-align: center;
         position: relative;

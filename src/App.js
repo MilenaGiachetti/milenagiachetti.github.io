@@ -58,8 +58,8 @@ function App() {
 			// bottom of the page animation
 			"(min-width: 992px)": function() {
 				ScrollTrigger.create({
-					trigger: "document",
-					start: `${document.documentElement.scrollHeight + 200}px bottom`,
+					trigger: "body",
+					start: `bottom bottom`,
 					onEnter: () => setEndOfPage(true),
 				});
 			},
@@ -67,6 +67,7 @@ function App() {
 				revealRefs.current.forEach((el) => {
 					ScrollTrigger.create({
 						trigger: el,
+						start: "top",
 						onEnter: () => handleTrigger(el),
 						onEnterBack: () => handleTrigger(el)
 					});

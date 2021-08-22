@@ -75,11 +75,59 @@ p {
 	font-size: 1.6rem;
 }
 
-h1, .srOnly {
+.srOnly {
 	height: 0;
 	text-indent: -1000rem;
 	visibility: hidden;
 	width: 0;
+}
+
+h1 {
+	color: var(--color);
+	font-family: 'Playfair Display', serif;
+	font-weight: normal;
+	font-size: 7rem;
+	letter-spacing: 0.3rem;
+	line-height: 0.8;
+	padding: 1.5rem 0;
+	transition: color 1.2s ease;
+}
+
+h2 {
+	color: var(--color);
+	font-family: 'Playfair Display', serif;
+	font-weight: normal;
+	font-size: 6rem;
+	letter-spacing: 0.3rem;
+	line-height: 0.8;
+	padding: 3rem 0;
+	transition: color 1.2s ease;
+}
+
+h2.right {
+	text-align: right;
+}
+
+h3 {
+    color: var(--color);
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 5rem;
+    letter-spacing: 0.3rem;
+    padding: 1.5rem 0;
+    transition: color 1.2s ease;
+}
+
+@media (max-width: 575px) { 
+	h1 {
+		font-size: 6rem;
+		letter-spacing: 0.3rem;
+	}
+	h2, h2.right {
+		font-size: 5rem;
+		letter-spacing: 0.3rem;
+		padding-bottom: 5rem;
+		text-align: center;
+	}
 }
 
 .root {	

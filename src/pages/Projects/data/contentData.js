@@ -37,4 +37,29 @@ const projectsData = [
     // }
 ];
 
-export default projectsData;
+const otherProjectsData = [
+    {
+        number: '01',
+        projectName: 'Resto Backend',
+        projectTech: 'NODE | EXPRESS | MySQL',
+        githubLink: 'https://github.com/MilenaGiachetti/delilahresto_back',
+        image: "image1"
+    },
+    {
+        number: '02',
+        projectName: 'Resto Backend',
+        projectTech: 'NODE | EXPRESS | MySQL',
+        githubLink: 'https://github.com/MilenaGiachetti/delilahresto_back',
+        image: "image2"
+    },
+    {
+        number: '03',
+        projectName: 'Resto Backend',
+        projectTech: 'NODE | EXPRESS | MySQL',
+        githubLink: 'https://github.com/MilenaGiachetti/delilahresto_back',
+        image: "image3"
+    },
+];
+
+
+export {projectsData, otherProjectsData};

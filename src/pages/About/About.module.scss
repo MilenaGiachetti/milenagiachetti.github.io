@@ -3,40 +3,15 @@
 .About {
     width: 100%;
     z-index: 3;
-    .content {
-        margin: 0 auto;
-        max-width: 1100px;
-        padding: 2rem 0;
-        width: 100%;    
-        h2 {
-            padding-bottom: 4rem;
-        }
-        .svgCtn {
-            opacity: 1;
-            text-align: right;
-            transition: opacity 5s ease;
-        }
-        .hide {
-            opacity: 0;
-        }
+    p {
+        padding-bottom: 4rem;
     }
-}
-
-
-@media (max-width: 767px) { 
-	.About {
-        .content {
-            padding: 1rem;
-        }
-	}
-}
-
-@media (max-width: 575px) { 
-    .About {
-        .content {
-            h2 {
-                text-align: center;
-            }
-        }
-    }    
+    .svgCtn {
+        opacity: 1;
+        text-align: right;
+        transition: opacity 5s ease;
+    }
+    .hide {
+        opacity: 0;
+    }
 }

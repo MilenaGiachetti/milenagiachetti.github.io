@@ -95,7 +95,6 @@ function App() {
 	return (
 		<>
 			<header>
-				<h1>Milena Giachetti</h1>
 				<HashLink to="#home" smooth className={classes.logo} onClick={() => isLinkScroll.current = {scroll: true, page: "#home"}}>
 					<p className={classes.logoText}>g_</p>
 				</HashLink>

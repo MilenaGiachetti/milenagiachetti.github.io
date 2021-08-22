@@ -5,18 +5,16 @@ import TechStackItem from '../../Components/TechStackItem/TechStackItem';
 function Tech(props) {
 	return (
         <section className={classes.Tech} id="tech" ref={props.refFx}>
-            <div className={classes.content}>
-                <h2>Tech</h2>
-                <div className={classes.techCtn}>
-                    {
-                        techStackData.map((tech) => {
-                            return (
-                                <TechStackItem key={tech.name} tech={tech}/>
-                            )
-                        })
-                    }
-                </div>
-            </div>
+            <h2 className="right">Tech</h2>
+            <ul className={classes.techCtn}>
+                {
+                    techStackData.map((tech) => {
+                        return (
+                            <TechStackItem key={tech.name} tech={tech}/>
+                        )
+                    })
+                }
+            </ul>
         </section>
 	);
 }

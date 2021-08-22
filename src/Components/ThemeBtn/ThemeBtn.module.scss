@@ -1,40 +1,37 @@
 @import '../../assets/variables/scss_variables';
 
-.pageBtnCtn {
+.themeBtn {
+    padding: 2rem;
+    position: relative;
+    color: var(--color);
+    font-size: 2rem;
     margin-bottom: auto;
     text-align: center;
-    &:hover .themeBtn:after {
+    &:after {
+        background-color: rgba($accent_color, .5);
+        border-radius: 50%;
+        content: '';
+        height: 0;
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        transition: all .3s;
+        width: 0;
+        z-index: -1;
+    }
+    &:hover:after {
         height: 5rem;
         width: 5rem;
     }
-    .themeBtn {
-        padding: 2rem;
-        position: relative;
-        color: var(--color);
-        font-size: 2rem;
-        &:after {
-            background-color: rgba($accent_color, .5);
-            border-radius: 50%;
-            content: '';
-            height: 0;
-            left: 50%;
-            position: absolute;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            transition: all .3s;
-            width: 0;
-            z-index: -1;
-        }
-    }
-    
 }
 
 @media (max-width: 767px) { 
-    .pageBtnCtn {
+    .themeBtn {
         position: absolute;
         bottom: 3rem;
         right: 3rem;
-        &:hover .themeBtn:after {
+        &:hover:after {
             height: 6rem;
             width: 6rem;
         }        

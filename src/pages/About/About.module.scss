@@ -3,10 +3,12 @@
 .About {
     width: 100%;
     z-index: 3;
+    padding-bottom: 0;
     p {
         padding-bottom: 4rem;
     }
     .svgCtn {
+        min-height: 160px;
         opacity: 1;
         text-align: right;
         transition: opacity 5s ease;

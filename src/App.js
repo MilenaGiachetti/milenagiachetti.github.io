@@ -1,16 +1,18 @@
 import classes from './App.module.scss';
-import {useState, useEffect, useRef} from 'react';
+import {useState, useEffect, useLayoutEffect, useRef} from 'react';
 import {HashLink} from 'react-router-hash-link';
 import { gsap } from "gsap";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import history from './history';
-import Nav from './Components/Nav/Nav';
-import ThemeBtn from './Components/ThemeBtn/ThemeBtn';
-import SocialLinks from './Components/SocialLinks/SocialLinks';
+
 import Home from './pages/Home/Home';
 import Projects from './pages/Projects/Projects';
 import Tech from './pages/Tech/Tech';
 import About from './pages/About/About';
+
+import Nav from './Components/Nav/Nav';
+import ThemeBtn from './Components/ThemeBtn/ThemeBtn';
+import SocialLinks from './Components/SocialLinks/SocialLinks';
 import CollapseButton from './Components/UI/CollapseButton';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -20,23 +22,23 @@ function App() {
 	const [menuOpen, setMenuOpen] = useState(false);
 	const [endOfPage, setEndOfPage] = useState(false);
 	const [isMobile, setIsMobile] = useState(window.innerWidth <= 767);
-    const revealRefs = useRef([]);
-	let isLinkScroll = useRef({scroll: false, page: "#home"});
-    revealRefs.current = [];
 
-    const addToRefs = el => {
-        if (el && !revealRefs.current.includes(el)) {
-            revealRefs.current.push(el);
-        }
-    };
+  const revealRefs = useRef([]);
+	const isLinkScroll = useRef({scroll: false, page: "#home"});
+
+  const addToRefs = el => {
+		if (el && !revealRefs.current.includes(el)) {
+			revealRefs.current.push(el);
+		}
+	};
 
 	const toggleThemeHandler = () => {
-        var newTheme = (theme === "dark" ? "light" : "dark");
-        setTheme(newTheme);
-        document.documentElement.setAttribute('data-theme', newTheme);
+		let newTheme = (theme === "dark" ? "light" : "dark");
+		setTheme(newTheme);
+		document.documentElement.setAttribute('data-theme', newTheme);
 		localStorage.setItem('theme', newTheme);
-    }
-	
+  }
+
 	const menuHandler = () => {
 		setMenuOpen(prevState => {
 			return !prevState;
@@ -44,6 +46,22 @@ function App() {
 	}
 
 	useEffect(() => {
+		if ( localStorage.getItem('theme') === 'dark') {
+			setTheme('dark');
+			document.documentElement.setAttribute('data-theme', 'dark');	
+		} else {
+			setTheme('light');
+			document.documentElement.setAttribute('data-theme', 'light');	
+		}
+
+		window.addEventListener("resize", () => setIsMobile(window.innerWidth <= 767));     
+		
+		return () => {
+			window.removeEventListener("resize", () => setIsMobile(window.innerWidth <= 767));
+		}
+	}, []);
+
+	useLayoutEffect(() => {
 		const handleTrigger = el => {
 			if(!isLinkScroll.current.scroll && history.location.hash !== "#" + el.id) {
 				history.push("/#" + el.id);
@@ -58,7 +76,7 @@ function App() {
 			// bottom of the page animation
 			"(min-width: 992px)": function() {
 				ScrollTrigger.create({
-					trigger: "body",
+					trigger: "#about",
 					start: `bottom bottom`,
 					onEnter: () => setEndOfPage(true),
 				});
@@ -73,22 +91,9 @@ function App() {
 					});
 				});
 			}
-			  
-		}); 
-
-		
-		if ( localStorage.getItem('theme') === 'dark') {
-			setTheme('dark');
-			document.documentElement.setAttribute('data-theme', 'dark');	
-		} else {
-			setTheme('light');
-			document.documentElement.setAttribute('data-theme', 'light');	
-		}
-
-		window.addEventListener("resize", () => setIsMobile(window.innerWidth <= 767));     
-		
+		});
 		return () => {
-			window.removeEventListener("resize", () => setIsMobile(window.innerWidth <= 767));
+			ScrollTrigger.getAll().forEach(st => st.kill());
 		}
 	}, []);
 
@@ -109,7 +114,7 @@ function App() {
 				<Home theme={theme} refFx={addToRefs}/>
 				<Projects refFx={addToRefs}/>
 				<Tech refFx={addToRefs}/>
-				<About refFx={addToRefs} animationActive={endOfPage}/>
+				<About refFx={addToRefs} animationActive={endOfPage} ScrollTrigger={ScrollTrigger}/>
 			</main>
 			<footer>
 				{

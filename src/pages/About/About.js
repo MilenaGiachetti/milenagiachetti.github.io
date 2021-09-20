@@ -1,8 +1,8 @@
 import classes from './About.module.scss';
 import CharacterCanvas from '../../Components/CharacterCanvas/CharacterCanvas';
-import {useEffect, useRef} from 'react';
+import {useLayoutEffect, useRef} from 'react';
 
- function About(props) {
+function About(props) {
     const svg = useRef();
 
     const activateSvg = () => {
@@ -21,9 +21,10 @@ import {useEffect, useRef} from 'react';
         })
     }
 
-    useEffect (()=> {
+    useLayoutEffect (()=> {
         if(props.animationActive) activateSvg();
-    },[props.animationActive])
+        props.ScrollTrigger.refresh();
+    },[props.animationActive, props.ScrollTrigger])
 
 	return (
         <section className={classes.About} id="about" ref={props.refFx}>

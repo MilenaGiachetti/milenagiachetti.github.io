@@ -1,11 +1,13 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next';
+import { firstExperienceDate } from '../data/workExperiences';
+import { getYearsDifference } from '../utils/date';
 
 type Props = {}
 
 function Home({}: Props) {
   const [t, i18n] = useTranslation();
-  const yearsOfExperience = 2.5
+  const yearsOfExperience = getYearsDifference(new Date(), firstExperienceDate)
 
   return (
     // title

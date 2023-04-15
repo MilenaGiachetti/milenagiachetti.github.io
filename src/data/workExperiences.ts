@@ -5,7 +5,7 @@ const workExperiences: WorkExperience[] = [
     position: "web ui developer, ssr. adv.",
     company: "Globant",
     company_website: "",
-    initial_date: "12/2022",
+    initial_date: new Date("12/01/2022"),
     final_date: null,
     stack: ["ReactJS", "Redux"],
     description: null,
@@ -15,8 +15,8 @@ const workExperiences: WorkExperience[] = [
     position: "frontend web developer",
     company: "ConsultR",
     company_website: "",
-    initial_date: "02/2022",
-    final_date: "12/2022",
+    initial_date: new Date("02/01/2022"),
+    final_date: new Date("12/01/2022"),
     stack: ["React", "TypeScript", "Redux toolkit", "RTK Query", "SCSS"],
     description: null,
     description_list: null,
@@ -25,8 +25,8 @@ const workExperiences: WorkExperience[] = [
     position: "frontend web developer",
     company: "The 8Agency",
     company_website: "",
-    initial_date: "06/2020",
-    final_date: "02/2022",
+    initial_date: new Date("06/01/2020"),
+    final_date: new Date("02/01/2022"),
     stack: ["ReactJS", "Redux"],
     description: "Development of frontend and various backend features using the following stacks:",
     description_list: [
@@ -36,5 +36,7 @@ const workExperiences: WorkExperience[] = [
     ],
   },
 ]
+
+export const firstExperienceDate: Date = new Date("06/01/2020");
 
 export default workExperiences;

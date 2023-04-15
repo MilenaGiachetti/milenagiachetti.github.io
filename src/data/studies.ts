@@ -4,9 +4,9 @@ const studies: Study[] = [
   {
     name: "phyton full stack",
     institution: "codo a codo",
-    initial_date: "08/2021",
+    initial_date: new Date("08/01/2021"),
     // if there's no final date it's because it's value is "Present"
-    final_date: "12/2021",
+    final_date: new Date("12/01/2021"),
     // if an array it should be a list, if it's a string it's just a plain text description
     // think maybe about how to mix them
     description: "",
@@ -21,8 +21,8 @@ const studies: Study[] = [
   {
     name: "full stack web development",
     institution: "acamica",
-    initial_date: "08/2019",
-    final_date: "03/2020",
+    initial_date: new Date("08/01/2019"),
+    final_date: new Date("03/01/2020"),
     description: "Globant's scholarship 'Code Your Future'",
     description_list: [
       "Web layout (HTML5, CSS3, SASS)",

@@ -1,14 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import routes from '../constants/routes'
 
 type Props = {}
 
 function Header({ }: Props) {
   return (
     <nav>
-      <Link to="">Home</Link>
-      <Link to="projects/portfolio">Portfolio</Link>
-      <Link to="projects/3d_experience">3D experience</Link>
+      <Link to={routes.HOME}>Home</Link>
+      <Link to={`${routes.PROJECT_BASE}portfolio`}>Portfolio</Link>
+      <Link to={`${routes.PROJECT_BASE}3d_experience`}>3D experience</Link>
     </nav>
   )
 }

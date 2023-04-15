@@ -9,6 +9,7 @@ import {
 import Home from "./pages/Home";
 import Project from "./pages/Project";
 import Header from "./components/Header";
+import routes from './constants/routes';
 
 const router = createBrowserRouter([
   {
@@ -20,11 +21,11 @@ const router = createBrowserRouter([
     ),
     children: [
       {
-        path: "/",
+        path: routes.HOME,
         element: <Home />,
       },
       {
-        path: "projects/:projectId",
+        path: routes.PROJECT,
         element: <Project />,
       },
     ]

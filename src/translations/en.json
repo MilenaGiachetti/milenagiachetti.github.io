@@ -1,0 +1,28 @@
+{
+  "hero": {
+    "name": "Milena Giachetti",
+    "position": "front end web developer"
+  },
+  "about_me": {
+    "text": "Hi, I'm a front end web developer with more than {{years}} years of experience. I work mostly with react but I have a particular interest in animations and web 3d experiences."
+  },
+  "contact": {
+    "github": "github",
+    "linkedin": "linkedin",
+    "email": "email",
+    "curriculum": "curriculum"
+  },
+  "projects": {
+    "title": "projects",
+    "all_filter": "all"
+  },
+  "technologies": {
+    "title": "technologies"
+  },
+  "experience": {
+    "title": "experience"
+  },
+  "education": {
+    "title": "education"
+  }
+}

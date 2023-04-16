@@ -9,6 +9,7 @@ import technologies from '../data/technologies'
 import DataCard from '../components/DataCard'
 import studies from '../data/studies'
 import Projects from '../components/Projects'
+import Scene from '../components/Scene'
 
 function Home (): ReactElement {
   const [t] = useTranslation()
@@ -18,6 +19,7 @@ function Home (): ReactElement {
     <MainContainerStyled>
       <NameStyled>{t('hero.name')}</NameStyled>
       <PositionStyled><PositionHighlightStyled>{t('hero.specialization')}</PositionHighlightStyled> {t('hero.position')}</PositionStyled>
+      <Scene />
       <AboutMeStyled>
         {t('about_me.text', { years: yearsOfExperience })}
       </AboutMeStyled>

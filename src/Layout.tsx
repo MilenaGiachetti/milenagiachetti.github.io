@@ -11,7 +11,7 @@ import { useState } from "react";
 type Props = {}
 
 const Layout = (props: Props) => {
-  const [selectedTheme, setSelectedTheme] = useState(light);
+  const [selectedTheme, setSelectedTheme] = useState(dark);
 
   const toggleSelectedTheme = () => {
     setSelectedTheme(prevTheme => prevTheme === light ? dark : light)

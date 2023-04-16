@@ -1,7 +1,8 @@
 {
   "hero": {
     "name": "Milena Giachetti",
-    "position": "front end web developer"
+    "specialization": "front end",
+    "position": "web developer"
   },
   "about_me": {
     "text": "Hi, I'm a front end web developer with more than {{years}} years of experience. I work mostly with react but I have a particular interest in animations and web 3d experiences."
@@ -20,9 +21,25 @@
     "title": "technologies"
   },
   "experience": {
-    "title": "experience"
+    "title": "experience",
+    "the_8agency_description": "Development of frontend and various backend features using the following stacks:",
+    "the_8agency_description_item_1": "SCSS | React / NextJS | Redux | NodeJS | Express | MySQL.",
+    "the_8agency_description_item_2": "HTML | CSS | PHP | CodeIgniter | MySQL | phpMyAdmin.",
+    "the_8agency_description_item_3": "Creation of 3d interactive demos with Three.js."
   },
   "education": {
-    "title": "education"
+    "title": "education",
+    "certificate": "See certificate",
+    "acamica_description": "Globant's scholarship 'Code Your Future'",
+    "acamica_description_item_1": "Web layout (HTML5, CSS3, SASS)",
+    "acamica_description_item_2": "Programming with JavaScript",
+    "acamica_description_item_3": "Usage of libraries & frameworks: Jquery, Bootstrap",
+    "acamica_description_item_4": "Node.JS",
+    "acamica_description_item_5": "API creation & consumption",
+    "acamica_description_item_6": "Databases",
+    "acamica_description_item_7": "Version control system GIT",
+    "cac_description_item_1": "Front-end: HTML, CSS, Bootstrap, JavaScript, Vue",
+    "cac_description_item_2": "Tools & Methodologies: GIT, Scrum",
+    "cac_description_item_3": "Back-end: MySQL, Python (POO), Flask, Django"
   }
 }

@@ -1,14 +1,14 @@
-import React from 'react'
+import React, { type ReactElement } from 'react'
 import { Link } from 'react-router-dom'
 import routes from '../constants/routes'
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next'
 
-type Props = {
-  toggleSelectedTheme: () => void,
+interface Props {
+  toggleSelectedTheme: () => void
 }
 
-function Header({ toggleSelectedTheme }: Props) {
-  const [t, i18n] = useTranslation();
+function Header ({ toggleSelectedTheme }: Props): ReactElement {
+  const [, i18n] = useTranslation()
 
   return (
     <nav>
@@ -16,12 +16,12 @@ function Header({ toggleSelectedTheme }: Props) {
       <Link to={`${routes.PROJECT_BASE}portfolio`}>Portfolio</Link>
       <Link to={`${routes.PROJECT_BASE}3d_experience`}>3D experience</Link>
       <button onClick={toggleSelectedTheme}>Theme</button>
-      {/* 
+      {/*
         Style selected option differently
         i18n.language to get current language
       */}
-      <button onClick={() => i18n.changeLanguage('es')}>es</button>
-      <button onClick={() => i18n.changeLanguage('en')}>en</button>
+      <button onClick={() => { void i18n.changeLanguage('es') }}>es</button>
+      <button onClick={() => { void i18n.changeLanguage('en') }}>en</button>
     </nav>
   )
 }

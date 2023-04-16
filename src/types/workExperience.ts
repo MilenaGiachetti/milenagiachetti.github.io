@@ -1,10 +1,10 @@
-export type WorkExperience = {
-  title: string;
-  institution: string;
-  institution_website: string;
-  initial_date: Date;
-  final_date: Date | null;
-  stack?: string[];
-  description?: string;
-  description_list?: string[];
+export interface WorkExperience {
+  title: string
+  institution: string
+  institutionWebsite: string
+  initialDate: Date
+  finalDate: Date | null
+  stack?: string[]
+  description?: string
+  descriptionList?: string[]
 }

@@ -1,5 +1,5 @@
-export type Technology = {
-  name: string;
-  icon: string;
-  isProjectFilter: boolean;
+export interface Technology {
+  name: string
+  icon: string
+  isProjectFilter: boolean
 }

@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import styled from "styled-components";
+import { Link } from 'react-router-dom'
+import styled from 'styled-components'
 
 export const FiltersContainer = styled.div`
   display: flex;
@@ -8,7 +8,7 @@ export const FiltersContainer = styled.div`
 `
 
 interface FilterProps {
-  active: boolean;
+  active: boolean
 }
 
 export const Filter = styled.button<FilterProps>`
@@ -28,12 +28,12 @@ export const ProjectStyled = styled.div`
   justify-content: space-between;
   padding: 20px 0;
   &:not(:last-child) {
-    border-bottom: 1px solid ${({ theme }) => theme.colors.text };
+    border-bottom: 1px solid ${({ theme }) => theme.colors.text};
   }
 `
 
 export const Arrow = styled.div`
-  background-color: ${({ theme }) => theme.colors.text };;
+  background-color: ${({ theme }) => theme.colors.text};;
   display: block;
   height: 22px;
   position: relative;
@@ -41,7 +41,7 @@ export const Arrow = styled.div`
   transform: rotate(-90deg);
   transition: transform .3s ease;
   &:after {
-      background-color: ${({ theme }) => theme.colors.text };
+      background-color: ${({ theme }) => theme.colors.text};
       bottom: -2px;
       content: '';
       display: block;
@@ -52,7 +52,7 @@ export const Arrow = styled.div`
       width: 2px;
   }
   &:before {
-      background-color: ${({ theme }) => theme.colors.text };;
+      background-color: ${({ theme }) => theme.colors.text};;
       bottom: -2px;
       content: '';
       display: block;
@@ -72,7 +72,7 @@ export const ArrowButton = styled(Link)`
   transition: background-color .3s ease;
   width: 30px;
   &:hover {
-    background-color: ${({ theme }) => theme.colors.highlightBackground };
+    background-color: ${({ theme }) => theme.colors.highlightBackground};
     ${Arrow} {
         transform: rotate(-135deg);
     }

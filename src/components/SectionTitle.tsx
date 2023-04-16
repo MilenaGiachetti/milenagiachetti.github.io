@@ -1,12 +1,12 @@
-import React from 'react'
+import React, { type ReactElement } from 'react'
 import { SectionTitleNumberStyled, SectionTitleStyled } from '../styles/sectionTitle.styled'
 
-type Props = {
-  number: string,
+interface Props {
+  number: string
   title: string
 }
 
-function SectionTitle({ number, title }: Props) {
+function SectionTitle ({ number, title }: Props): ReactElement {
   return (
     <SectionTitleStyled>
       <SectionTitleNumberStyled>{number}</SectionTitleNumberStyled>

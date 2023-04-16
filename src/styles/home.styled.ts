@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { PillStyled } from "./pill.styled";
+import styled from 'styled-components'
+import { PillStyled } from './pill.styled'
 
 export const MainContainerStyled = styled.main`
   max-width: 640px;

@@ -1,19 +1,17 @@
-import { Outlet } from "react-router-dom";
-import Header from "./components/Header";
-import { GlobalStyles } from './styles/globalStyles';
-import { ThemeProvider } from "styled-components";
+import React, { type ReactElement, useState } from 'react'
+import { Outlet } from 'react-router-dom'
+import Header from './components/Header'
+import { GlobalStyles } from './styles/globalStyles'
+import { ThemeProvider } from 'styled-components'
 import {
-  light,
-  dark
-} from "./styles/theme.styled";
-import { useState } from "react";
+  dark,
+  light
+} from './styles/theme.styled'
 
-type Props = {}
+const Layout = (): ReactElement => {
+  const [selectedTheme, setSelectedTheme] = useState(dark)
 
-const Layout = (props: Props) => {
-  const [selectedTheme, setSelectedTheme] = useState(dark);
-
-  const toggleSelectedTheme = () => {
+  const toggleSelectedTheme = (): void => {
     setSelectedTheme(prevTheme => prevTheme === light ? dark : light)
   }
 

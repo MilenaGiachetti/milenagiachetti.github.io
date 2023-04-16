@@ -1,19 +1,17 @@
-import React from 'react'
-import { useTranslation } from 'react-i18next';
-import workExperiences, { firstExperienceDate } from '../data/workExperiences';
-import { getYearsDifference } from '../utils/date';
-import { AboutMeStyled, MainContainerStyled, NameStyled, PillContainer, PositionHighlightStyled, PositionStyled } from '../styles/home.styled';
-import SectionTitle from '../components/SectionTitle';
-import Pill from '../components/Pill';
-import technologies from '../data/technologies';
-import DataCard from '../components/DataCard';
-import studies from '../data/studies';
-import Projects from '../components/Projects';
+import React, { type ReactElement } from 'react'
+import { useTranslation } from 'react-i18next'
+import workExperiences, { firstExperienceDate } from '../data/workExperiences'
+import { getYearsDifference } from '../utils/date'
+import { AboutMeStyled, MainContainerStyled, NameStyled, PillContainer, PositionHighlightStyled, PositionStyled } from '../styles/home.styled'
+import SectionTitle from '../components/SectionTitle'
+import Pill from '../components/Pill'
+import technologies from '../data/technologies'
+import DataCard from '../components/DataCard'
+import studies from '../data/studies'
+import Projects from '../components/Projects'
 
-type Props = {}
-
-function Home({}: Props) {
-  const [t] = useTranslation();
+function Home (): ReactElement {
+  const [t] = useTranslation()
   const yearsOfExperience = getYearsDifference(new Date(), firstExperienceDate)
 
   return (
@@ -21,14 +19,14 @@ function Home({}: Props) {
       <NameStyled>{t('hero.name')}</NameStyled>
       <PositionStyled><PositionHighlightStyled>{t('hero.specialization')}</PositionHighlightStyled> {t('hero.position')}</PositionStyled>
       <AboutMeStyled>
-        {t('about_me.text', {years: yearsOfExperience})}
+        {t('about_me.text', { years: yearsOfExperience })}
       </AboutMeStyled>
       <SectionTitle number="00" title={t('projects.title')} />
-      <Projects/>
+      <Projects />
       <SectionTitle number="01" title={t('technologies.title')} />
       <PillContainer>
         {
-          technologies.map(({icon, name}) => (
+          technologies.map(({ icon, name }) => (
             <Pill icon={icon} name={name} key={name} />
           ))
         }

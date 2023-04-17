@@ -23,28 +23,36 @@ function Home (): ReactElement {
       <AboutMeStyled>
         {t('about_me.text', { years: yearsOfExperience })}
       </AboutMeStyled>
-      <SectionTitle number="00" title={t('projects.title')} />
-      <Projects />
-      <SectionTitle number="01" title={t('technologies.title')} />
-      <PillContainer>
+      <section id="projects">
+        <SectionTitle number="00" title={t('projects.title')} />
+        <Projects />
+      </section>
+      <section id="technologies">
+        <SectionTitle number="01" title={t('technologies.title')} />
+        <PillContainer>
+          {
+            technologies.map(({ icon, name }) => (
+              <Pill icon={icon} name={name} key={name} />
+            ))
+          }
+        </PillContainer>
+      </section>
+      <section id="work">
+        <SectionTitle number="02" title={t('experience.title')} />
         {
-          technologies.map(({ icon, name }) => (
-            <Pill icon={icon} name={name} key={name} />
+          workExperiences.map((data) => (
+            <DataCard {...data} key={`${data.title}-${data.institution}`} />
           ))
         }
-      </PillContainer>
-      <SectionTitle number="02" title={t('experience.title')} />
-      {
-        workExperiences.map((data) => (
-          <DataCard {...data} key={`${data.title}-${data.institution}`} />
-        ))
-      }
-      <SectionTitle number="03" title={t('education.title')} />
-      {
-        studies.map((data) => (
-          <DataCard {...data} key={`${data.title}-${data.institution}`} />
-        ))
-      }
+      </section>
+      <section id="studies">
+        <SectionTitle number="03" title={t('education.title')} />
+        {
+          studies.map((data) => (
+            <DataCard {...data} key={`${data.title}-${data.institution}`} />
+          ))
+        }
+      </section>
     </MainContainerStyled>
   )
 }

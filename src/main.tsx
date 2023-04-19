@@ -1,14 +1,16 @@
 import React from 'react'
+
+import i18next from 'i18next'
 import ReactDOM from 'react-dom/client'
 import { I18nextProvider } from 'react-i18next'
-import i18next from 'i18next'
-import translations_es from './translations/es.json'
-import translations_en from './translations/en.json'
-import Layout from './Layout'
-import routes from './constants/routes'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+
+import routes from './constants/routes'
+import Layout from './Layout'
 import Home from './pages/Home'
 import Project from './pages/Project'
+import translations_en from './translations/en.json'
+import translations_es from './translations/es.json'
 
 const resources = {
   en: {

@@ -1,9 +1,10 @@
 import React, { type ReactElement, useEffect, useState } from 'react'
+
+import routes from '../constants/routes'
 import projects from '../data/projects'
 import technologies from '../data/technologies'
-import { type Project } from '../types/project'
 import { Arrow, ArrowButton, Filter, FiltersContainer, NoResults, ProjectStyled } from '../styles/projects.styled'
-import routes from '../constants/routes'
+import { type Project } from '../types/project'
 
 const Projects = (): ReactElement => {
   const [filter, setFilter] = useState('all')

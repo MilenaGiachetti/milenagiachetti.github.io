@@ -1,13 +1,15 @@
 import React, { type ReactElement, useState, useEffect } from 'react'
+
 import { Outlet, useLocation } from 'react-router-dom'
+import { ThemeProvider } from 'styled-components'
+
 import Header from './components/Header'
 import { GlobalStyles } from './styles/globalStyles'
-import { ThemeProvider } from 'styled-components'
+import { MainContainerStyled } from './styles/layout,styled'
 import {
   dark,
   light
 } from './styles/theme.styled'
-import { MainContainerStyled } from './styles/layout,styled'
 
 const Layout = (): ReactElement => {
   const [selectedTheme, setSelectedTheme] = useState(dark)

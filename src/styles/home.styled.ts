@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+
 import { PillStyled } from './pill.styled'
 
 export const AboutMeStyled = styled.div`

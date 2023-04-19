@@ -1,4 +1,5 @@
 import React, { type ReactElement } from 'react'
+
 import { SectionTitleNumberStyled, SectionTitleStyled } from '../styles/sectionTitle.styled'
 
 interface Props {

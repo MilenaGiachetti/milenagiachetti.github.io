@@ -4,12 +4,13 @@ Command: npx gltfjsx@6.1.4 ./public/models/desk.glb --types
 */
 /* eslint react/no-unknown-property: 0 */
 
-import type * as THREE from 'three'
 import React, { useState, type ReactElement } from 'react'
+
 import { useGLTF } from '@react-three/drei'
-import { type GLTF } from 'three-stdlib'
-import { MeshStandardMaterial } from 'three'
 import { useNavigate } from 'react-router-dom'
+import { MeshStandardMaterial } from 'three'
+import type * as THREE from 'three'
+import { type GLTF } from 'three-stdlib'
 
 type GLTFResult = GLTF & {
   nodes: {

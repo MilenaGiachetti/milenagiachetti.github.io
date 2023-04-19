@@ -1,9 +1,11 @@
 import React, { type ReactElement } from 'react'
-import routes from '../constants/routes'
+
 import { useTranslation } from 'react-i18next'
-import { HeaderStyled, LanguageButton, LinkNumber, LinkStyled, NavButtons, NavStyled, ThemeButton } from '../styles/header.styled'
 import { BsSun, BsFillMoonStarsFill } from 'react-icons/bs'
 import { useTheme } from 'styled-components'
+
+import routes from '../constants/routes'
+import { HeaderStyled, LanguageButton, LinkNumber, LinkStyled, NavButtons, NavStyled, ThemeButton } from '../styles/header.styled'
 
 interface Props {
   toggleSelectedTheme: () => void

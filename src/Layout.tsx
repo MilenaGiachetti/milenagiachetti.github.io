@@ -7,6 +7,7 @@ import {
   dark,
   light
 } from './styles/theme.styled'
+import { MainContainerStyled } from './styles/layout,styled'
 
 const Layout = (): ReactElement => {
   const [selectedTheme, setSelectedTheme] = useState(dark)
@@ -18,7 +19,8 @@ const Layout = (): ReactElement => {
       const elementRef = document.getElementById(hash)
       if (elementRef != null) {
         window.scrollTo({
-          top: elementRef.offsetTop - 20,
+          // spacing & header height
+          top: elementRef.offsetTop - 20 - 80,
           behavior: 'smooth'
         })
       }
@@ -33,7 +35,9 @@ const Layout = (): ReactElement => {
     <ThemeProvider theme={selectedTheme}>
       <GlobalStyles />
       <Header toggleSelectedTheme={toggleSelectedTheme} />
-      <Outlet />
+      <MainContainerStyled>
+        <Outlet />
+      </MainContainerStyled>
       <p>Footer</p>
     </ThemeProvider>
   )

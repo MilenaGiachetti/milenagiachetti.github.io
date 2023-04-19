@@ -1,12 +1,6 @@
 import styled from 'styled-components'
 import { PillStyled } from './pill.styled'
 
-export const MainContainerStyled = styled.main`
-  max-width: 640px;
-  padding: 20px;
-  margin: 0 auto;
-`
-
 export const AboutMeStyled = styled.div`
   background: ${({ theme }) => theme.colors.highlightBackground};
   border-radius: 10px;

@@ -14,21 +14,21 @@
     "curriculum": "curriculum"
   },
   "projects": {
-    "title": "projects",
+    "title": "proyectos",
     "all_filter": "all"
   },
   "technologies": {
-    "title": "technologies"
+    "title": "technologías"
   },
   "experience": {
-    "title": "experience",
+    "title": "experiencia laboral",
     "the_8agency_description": "Desarrollo de front-end y de varias funcionalidades de back-end utilizando los siguientes stacks:",
     "the_8agency_description_item_1": "SCSS | React / NextJS | Redux | NodeJS | Express | MySQL.",
     "the_8agency_description_item_2": "HTML | CSS | PHP | CodeIgniter | MySQL | phpMyAdmin.",
     "the_8agency_description_item_3": "Creación de demos 3D interactivas en Three.js."
   },
   "education": {
-    "title": "education",
+    "title": "estudios",
     "certificate": "Ver certificado",
     "acamica_description": "Beca Globant \"Code Your Future\".",
     "acamica_description_item_1": "Maquetado (HTML5, CSS3, SASS)",

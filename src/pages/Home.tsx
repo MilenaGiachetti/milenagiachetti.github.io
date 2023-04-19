@@ -2,7 +2,7 @@ import React, { type ReactElement } from 'react'
 import { useTranslation } from 'react-i18next'
 import workExperiences, { firstExperienceDate } from '../data/workExperiences'
 import { getYearsDifference } from '../utils/date'
-import { AboutMeStyled, MainContainerStyled, NameStyled, PillContainer, PositionHighlightStyled, PositionStyled } from '../styles/home.styled'
+import { AboutMeStyled, NameStyled, PillContainer, PositionHighlightStyled, PositionStyled } from '../styles/home.styled'
 import SectionTitle from '../components/SectionTitle'
 import Pill from '../components/Pill'
 import technologies from '../data/technologies'
@@ -16,7 +16,7 @@ function Home (): ReactElement {
   const yearsOfExperience = getYearsDifference(new Date(), firstExperienceDate)
 
   return (
-    <MainContainerStyled>
+    <>
       <NameStyled>{t('hero.name')}</NameStyled>
       <PositionStyled><PositionHighlightStyled>{t('hero.specialization')}</PositionHighlightStyled> {t('hero.position')}</PositionStyled>
       <Scene />
@@ -53,7 +53,7 @@ function Home (): ReactElement {
           ))
         }
       </section>
-    </MainContainerStyled>
+    </>
   )
 }
 

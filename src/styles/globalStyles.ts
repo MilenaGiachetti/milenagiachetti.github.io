@@ -12,10 +12,17 @@ export const GlobalStyles = createGlobalStyle`
     font-synthesis: none;
     font-weight: 400;
     line-height: 1.5;
+    min-height: 100vh;
     // to avoid layout jump when changing from no scrollbar to scrollbar or viceversa
     overflow-y: overlay;
     scrollbar-gutter: stable;
     text-rendering: optimizeLegibility;
+  }
+
+  #root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
   }
   
   * {

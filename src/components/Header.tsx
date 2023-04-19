@@ -1,7 +1,7 @@
 import React, { type ReactElement } from 'react'
 
 import { useTranslation } from 'react-i18next'
-import { BsSun, BsFillMoonStarsFill } from 'react-icons/bs'
+import { FiSun, FiMoon } from 'react-icons/fi'
 import { useTheme } from 'styled-components'
 
 import routes from '../constants/routes'
@@ -49,8 +49,8 @@ function Header ({ toggleSelectedTheme }: Props): ReactElement {
           <ThemeButton onClick={toggleSelectedTheme}>
             {
               theme.name === 'dark-theme'
-                ? <BsSun color={theme.colors.text} size="24px" />
-                : <BsFillMoonStarsFill color={theme.colors.text} size="24px" />
+                ? <FiSun color={theme.colors.text} size="24px" />
+                : <FiMoon color={theme.colors.text} size="24px" />
             }
           </ThemeButton>
         </NavButtons>

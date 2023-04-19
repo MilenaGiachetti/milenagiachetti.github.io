@@ -3,6 +3,7 @@ import React, { type ReactElement, useState, useEffect } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
 
+import Footer from './components/Footer'
 import Header from './components/Header'
 import { GlobalStyles } from './styles/globalStyles'
 import { MainContainerStyled } from './styles/layout,styled'
@@ -40,7 +41,7 @@ const Layout = (): ReactElement => {
       <MainContainerStyled>
         <Outlet />
       </MainContainerStyled>
-      <p>Footer</p>
+      <Footer />
     </ThemeProvider>
   )
 }

@@ -2,6 +2,7 @@ import React, { type ReactElement } from 'react'
 
 import { useTranslation } from 'react-i18next'
 
+import Contact from '../components/Contact'
 import DataCard from '../components/DataCard'
 import Pill from '../components/Pill'
 import Projects from '../components/Projects'
@@ -25,6 +26,7 @@ function Home (): ReactElement {
       <AboutMeStyled>
         {t('about_me.text', { years: yearsOfExperience })}
       </AboutMeStyled>
+      <Contact />
       <section id="projects">
         <SectionTitle number="00" title={t('projects.title')} />
         <Projects />

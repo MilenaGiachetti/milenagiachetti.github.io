@@ -5,6 +5,7 @@ import { PillStyled } from './pill.styled'
 export const AboutMeStyled = styled.div`
   background: ${({ theme }) => theme.colors.highlightBackground};
   border-radius: 10px;
+  margin-bottom: 10px;
   padding: 20px;
 `
 

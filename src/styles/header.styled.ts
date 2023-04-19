@@ -48,7 +48,7 @@ export const NavStyled = styled.nav`
   gap: 20px;
   margin: 0 auto;
   max-width: 1200px;
-  padding: 10px;
+  padding: 10px 20px;
   width: 100%;
 `
 

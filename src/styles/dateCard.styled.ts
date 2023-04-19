@@ -8,10 +8,17 @@ export const CardContainer = styled.div`
   margin-bottom: 32px;
 `
 
-export const InvertTitle = styled.div`
-  display: flex;
-  flex-flow: column-reverse;
-  gap: 6px;;
+export const Certificate = styled.button`
+  background: ${({ theme }) => theme.colors.highlightBackground};
+  border-radius: 15px;
+  color: ${({ theme }) => theme.colors.text};
+  cursor: pointer;
+  font-family: ${({ theme }) => theme.fonts.primaryCondensed};
+  font-size: 14px;
+  letter-spacing: 2.4px;
+  margin-top: 18px;
+  padding: 5px 15px;
+  text-transform: uppercase;
 `
 
 export const Dates = styled.p`
@@ -20,6 +27,26 @@ export const Dates = styled.p`
   font-size: 14px;
   letter-spacing: 2.4px;
   font-family: ${({ theme }) => theme.fonts.primaryCondensed};
+`
+
+export const DescriptionItem = styled.li`
+  position: relative;
+  &:before {
+    content: "・";
+    left: -20px;
+    position: absolute;
+  }
+`
+
+export const DescriptionList = styled.ul`
+  padding-left: 20px;
+  list-style: none;
+`
+
+export const InvertTitle = styled.div`
+  display: flex;
+  flex-flow: column-reverse;
+  gap: 6px;;
 `
 
 export const Position = styled.h3`
@@ -34,31 +61,4 @@ export const Stack = styled.p`
   letter-spacing: 2.4px;
   font-family: ${({ theme }) => theme.fonts.primaryCondensed};
 
-`
-
-export const DescriptionList = styled.ul`
-  padding-left: 20px;
-  list-style: none;
-`
-
-export const DescriptionItem = styled.li`
-  position: relative;
-  &:before {
-    content: "・";
-    position: absolute;
-    left: -20px;
-  }
-`
-
-export const Certificate = styled.button`
-  margin-top: 18px;
-  text-transform: uppercase;
-  padding: 5px 15px;
-  font-size: 14px;
-  font-family: ${({ theme }) => theme.fonts.primaryCondensed};
-  cursor: pointer;
-  color: ${({ theme }) => theme.colors.text};
-  border-radius: 15px;
-  letter-spacing: 2.4px;
-  background: ${({ theme }) => theme.colors.highlightBackground};
 `

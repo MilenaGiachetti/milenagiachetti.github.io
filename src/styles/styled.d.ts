@@ -6,11 +6,11 @@ declare module 'styled-components' {
     colors: {
       background: string
       headerBackground: string
-      text: string
+      highlightBackground: string
       lightText: string
+      text: string
       textHighlight: string
       textLightHighlight: string
-      highlightBackground: string
     }
     fonts: {
       primary: string

@@ -12,27 +12,29 @@ export const NameStyled = styled.h2`
   line-height: 58px;
 `
 
-export const PositionStyled = styled.p`
-  color: ${({ theme }) => theme.colors.textLightHighlight};
-  text-transform: uppercase;
-  margin-bottom: 10px;
+export const PillContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  justify-content: space-between;
+
+  ${PillStyled} {
+    flex-grow: 1;
+    max-width: unset;
+  }
+
+  & > ${PillStyled}:last-child {
+    flex-grow: unset;
+    margin-right: auto;
+  }
 `
 
 export const PositionHighlightStyled = styled.span`
   color: ${({ theme }) => theme.colors.textHighlight};
 `
 
-export const PillContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
-  justify-content: space-between;
-  ${PillStyled} {
-    max-width: unset;
-    flex-grow: 1;
-  }
-  & > ${PillStyled}:last-child {
-    margin-right: auto;
-    flex-grow: unset;
-  }
+export const PositionStyled = styled.p`
+  color: ${({ theme }) => theme.colors.textLightHighlight};
+  margin-bottom: 10px;
+  text-transform: uppercase;
 `

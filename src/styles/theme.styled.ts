@@ -5,11 +5,11 @@ export const light: DefaultTheme = {
   colors: {
     background: '#FEFFFE',
     headerBackground: 'rgba(254, 255, 254, 0.5)',
-    text: '#0B0D17',
+    highlightBackground: 'linear-gradient(90deg, hsla(358, 85%, 68%, 0.15) 0%, hsla(29, 100%, 50%, 0.15) 100%)',
     lightText: 'rgba(11, 13, 23, 0.25)',
+    text: '#0B0D17',
     textHighlight: '#FF7A00',
-    textLightHighlight: '#A0B1D2',
-    highlightBackground: 'linear-gradient(90deg, hsla(358, 85%, 68%, 0.15) 0%, hsla(29, 100%, 50%, 0.15) 100%)'
+    textLightHighlight: '#A0B1D2'
   },
   fonts: {
     primary: "'Barlow', sans-serif",
@@ -22,11 +22,11 @@ export const dark: DefaultTheme = {
   colors: {
     background: '#0B0D17',
     headerBackground: 'rgba(11, 13, 23, 0.5)',
-    text: '#FEFFFE',
+    highlightBackground: 'rgba(160, 177, 210, 0.2)',
     lightText: 'rgba(254, 255, 254, 0.6)',
+    text: '#FEFFFE',
     textHighlight: '#FF7A00',
-    textLightHighlight: '#A0B1D2',
-    highlightBackground: 'rgba(160, 177, 210, 0.2)'
+    textLightHighlight: '#A0B1D2'
   },
   fonts: {
     primary: "'Barlow', sans-serif",

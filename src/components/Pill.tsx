@@ -1,6 +1,6 @@
 import React, { type ReactElement } from 'react'
 
-import { PillIcon, PillName, PillStyled } from '../styles/pill.styled'
+import { PillIcon, PillName, PillStyled } from '@/styles/pill.styled'
 
 interface Props {
   icon: string

@@ -2,7 +2,7 @@ import React, { type ReactElement } from 'react'
 
 import { FiGithub, FiFileText, FiLinkedin, FiMail } from 'react-icons/fi'
 
-import { ContactButton, ContactContainer } from '../styles/contact.styled'
+import { ContactButton, ContactContainer } from '@/styles/contact.styled'
 
 const Contact = (): ReactElement => {
   return (

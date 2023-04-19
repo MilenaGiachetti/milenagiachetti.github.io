@@ -1,4 +1,4 @@
-import { type Study } from '../types/study'
+import { type Study } from '@/types/study'
 
 const studies: Study[] = [
   {

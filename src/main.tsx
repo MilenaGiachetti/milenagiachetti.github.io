@@ -5,12 +5,12 @@ import ReactDOM from 'react-dom/client'
 import { I18nextProvider } from 'react-i18next'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 
-import routes from './constants/routes'
-import Layout from './Layout'
-import Home from './pages/Home'
-import Project from './pages/Project'
-import translations_en from './translations/en.json'
-import translations_es from './translations/es.json'
+import routes from '@/constants/routes'
+import Layout from '@/Layout'
+import Home from '@/pages/Home'
+import Project from '@/pages/Project'
+import translations_en from '@/translations/en.json'
+import translations_es from '@/translations/es.json'
 
 const resources = {
   en: {

@@ -1,5 +1,14 @@
 {
   "compilerOptions": {
+    "types": [
+      "node"
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    },
     "target": "ESNext",
     "useDefineForClassFields": true,
     "lib": [

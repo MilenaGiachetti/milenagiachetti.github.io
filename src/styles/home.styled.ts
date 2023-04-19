@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { PillStyled } from './pill.styled'
+import { PillStyled } from '@/styles/pill.styled'
 
 export const AboutMeStyled = styled.div`
   background: ${({ theme }) => theme.colors.highlightBackground};

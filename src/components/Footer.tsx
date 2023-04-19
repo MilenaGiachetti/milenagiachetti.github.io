@@ -1,7 +1,7 @@
 import React, { type ReactElement } from 'react'
 
-import Contact from './Contact'
-import { FooterStyled } from '../styles/footer.styled'
+import Contact from '@/components/Contact'
+import { FooterStyled } from '@/styles/footer.styled'
 
 const Footer = (): ReactElement => {
   return (

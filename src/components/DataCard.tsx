@@ -2,7 +2,7 @@ import React, { type ReactElement } from 'react'
 
 import { useTranslation } from 'react-i18next'
 
-import { CardContainer, Certificate, Dates, DescriptionItem, DescriptionList, InvertTitle, Position, Stack } from '../styles/dateCard.styled'
+import { CardContainer, Certificate, Dates, DescriptionItem, DescriptionList, InvertTitle, Position, Stack } from '@/styles/dateCard.styled'
 
 interface Props {
   title: string

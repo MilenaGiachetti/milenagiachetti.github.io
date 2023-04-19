@@ -3,14 +3,14 @@ import React, { type ReactElement, useState, useEffect } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
 
-import Footer from './components/Footer'
-import Header from './components/Header'
-import { GlobalStyles } from './styles/globalStyles'
-import { MainContainerStyled } from './styles/layout,styled'
+import Footer from '@/components/Footer'
+import Header from '@/components/Header'
+import { GlobalStyles } from '@/styles/globalStyles'
+import { MainContainerStyled } from '@/styles/layout,styled'
 import {
   dark,
   light
-} from './styles/theme.styled'
+} from '@/styles/theme.styled'
 
 const Layout = (): ReactElement => {
   const [selectedTheme, setSelectedTheme] = useState(dark)

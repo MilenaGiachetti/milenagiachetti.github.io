@@ -2,17 +2,17 @@ import React, { type ReactElement } from 'react'
 
 import { useTranslation } from 'react-i18next'
 
-import Contact from '../components/Contact'
-import DataCard from '../components/DataCard'
-import Pill from '../components/Pill'
-import Projects from '../components/Projects'
-import Scene from '../components/Scene'
-import SectionTitle from '../components/SectionTitle'
-import studies from '../data/studies'
-import technologies from '../data/technologies'
-import workExperiences, { firstExperienceDate } from '../data/workExperiences'
-import { AboutMeStyled, NameStyled, PillContainer, PositionHighlightStyled, PositionStyled } from '../styles/home.styled'
-import { getYearsDifference } from '../utils/date'
+import Contact from '@/components/Contact'
+import DataCard from '@/components/DataCard'
+import Pill from '@/components/Pill'
+import Projects from '@/components/Projects'
+import Scene from '@/components/Scene'
+import SectionTitle from '@/components/SectionTitle'
+import studies from '@/data/studies'
+import technologies from '@/data/technologies'
+import workExperiences, { firstExperienceDate } from '@/data/workExperiences'
+import { AboutMeStyled, NameStyled, PillContainer, PositionHighlightStyled, PositionStyled } from '@/styles/home.styled'
+import { getYearsDifference } from '@/utils/date'
 
 function Home (): ReactElement {
   const [t] = useTranslation()

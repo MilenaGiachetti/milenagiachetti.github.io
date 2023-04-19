@@ -1,4 +1,4 @@
-import { type WorkExperience } from '../types/workExperience'
+import { type WorkExperience } from '@/types/workExperience'
 
 const workExperiences: WorkExperience[] = [
   {

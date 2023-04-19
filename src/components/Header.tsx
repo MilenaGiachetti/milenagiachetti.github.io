@@ -4,8 +4,8 @@ import { useTranslation } from 'react-i18next'
 import { FiSun, FiMoon } from 'react-icons/fi'
 import { useTheme } from 'styled-components'
 
-import routes from '../constants/routes'
-import { HeaderStyled, LanguageButton, LinkNumber, LinkStyled, NavButtons, NavStyled, ThemeButton } from '../styles/header.styled'
+import routes from '@/constants/routes'
+import { HeaderStyled, LanguageButton, LinkNumber, LinkStyled, NavButtons, NavStyled, ThemeButton } from '@/styles/header.styled'
 
 interface Props {
   toggleSelectedTheme: () => void

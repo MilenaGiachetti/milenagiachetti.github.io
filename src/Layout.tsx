@@ -6,7 +6,7 @@ import { ThemeProvider } from 'styled-components'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import { GlobalStyles } from '@/styles/globalStyles'
-import { MainContainerStyled } from '@/styles/layout,styled'
+import { MainContainerStyled } from '@/styles/layout.styled'
 import {
   dark,
   light

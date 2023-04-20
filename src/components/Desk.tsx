@@ -7,10 +7,12 @@ Command: npx gltfjsx@6.1.4 ./public/models/desk.glb --types
 import React, { useState, type ReactElement } from 'react'
 
 import { useGLTF } from '@react-three/drei'
-import { useNavigate } from 'react-router-dom'
+import { useFrame, useThree } from '@react-three/fiber'
 import { MeshStandardMaterial } from 'three'
-import type * as THREE from 'three'
+import * as THREE from 'three'
 import { type GLTF } from 'three-stdlib'
+
+import ModelButtons from '@/components/ModelButtons'
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -42,29 +44,25 @@ type GLTFResult = GLTF & {
   }
 }
 
-export function Desk (props: JSX.IntrinsicElements['group']): ReactElement {
+export function Desk(props: JSX.IntrinsicElements['group']): ReactElement {
   const { nodes, materials } = useGLTF('/models/desk.glb') as GLTFResult
   const [hovered, setHovered] = useState<string | null>(null)
-  const navigate = useNavigate()
 
   const hoverMaterial = new MeshStandardMaterial({ color: 0xFF7A00 })
   const handleHover = (value: string | null): void => {
     setHovered(value)
   }
 
-  const handleClick = (value: string): void => {
-    navigate(`/#${value}`)
-  }
-
   return (
     <group {...props} dispose={null} rotation={[0.06 * Math.PI, 0.75 * Math.PI, 0]} position={[-0.5, -0.75, 0]}>
-      <mesh geometry={nodes.Computer.geometry} material={hovered === 'work' ? hoverMaterial : materials.Metallic} onPointerOver={() => { handleHover('work') }} onPointerOut={() => { handleHover(null) }} onClick={() => { handleClick('work') }} />
+      <ModelButtons />
+      <mesh geometry={nodes.Computer.geometry} material={hovered === 'work' ? hoverMaterial : materials.Metallic} onPointerOver={() => { handleHover('work') }} onPointerOut={() => { handleHover(null) }} />
       <mesh geometry={nodes.React.geometry} material={materials.react} />
-      <mesh geometry={nodes.Rubik.geometry} material={hovered === 'projects' ? hoverMaterial : materials.Red} onPointerOver={() => { handleHover('projects') }} onPointerOut={() => { handleHover(null) }} onClick={() => { handleClick('projects') }} />
+      <mesh geometry={nodes.Rubik.geometry} material={hovered === 'projects' ? hoverMaterial : materials.Red} onPointerOver={() => { handleHover('projects') }} onPointerOut={() => { handleHover(null) }} />
       <mesh geometry={nodes.Rug.geometry} material={materials.Orange} />
       <mesh geometry={nodes.Table.geometry} material={materials.Wood} />
       <mesh geometry={nodes.Three.geometry} material={materials.White} />
-      <mesh geometry={nodes.TypeScript.geometry} material={hovered === 'technologies' ? hoverMaterial : materials.TypeScript} onPointerOver={() => { handleHover('technologies') }} onPointerOut={() => { handleHover(null) }} onClick={() => { handleClick('technologies') }} />
+      <mesh geometry={nodes.TypeScript.geometry} material={hovered === 'technologies' ? hoverMaterial : materials.TypeScript} onPointerOver={() => { handleHover('technologies') }} onPointerOut={() => { handleHover(null) }} />
       <mesh geometry={nodes.Cylinder007.geometry} material={materials.Black} />
       <mesh geometry={nodes.Cylinder007_1.geometry} material={materials.White} />
       <mesh geometry={nodes.Cube009.geometry} material={materials['light blue']} />

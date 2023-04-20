@@ -18,7 +18,7 @@ function Header ({ toggleSelectedTheme }: Props): ReactElement {
   return (
     <HeaderStyled>
       <NavStyled>
-        <LinkStyled to={routes.HOME}>
+        <LinkStyled to={`${routes.HOME}#home`}>
           <svg width="48" height="57" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g id="logo">
               <circle id="Oval" cx="24" cy="24" r="24" fill={theme.colors.text} />

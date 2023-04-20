@@ -4,6 +4,9 @@
     "specialization": "front end",
     "position": "web developer"
   },
+  "model": {
+    "view": "Ver"
+  },
   "about_me": {
     "text": "Hola, soy una desarrolladora web front-end con más de {{years}} años de experiencia. Trabajo mayormente con React y tengo especial interés en animaciones y en 3d en la web con ThreeJS y React three fiber."
   },

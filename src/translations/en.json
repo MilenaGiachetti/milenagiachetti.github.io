@@ -4,6 +4,9 @@
     "specialization": "front end",
     "position": "web developer"
   },
+  "model": {
+    "view": "See"
+  },
   "about_me": {
     "text": "Hi, I'm a front end web developer with more than {{years}} years of experience. I work mostly with react but I have a particular interest in animations and web 3d experiences."
   },

@@ -1,6 +1,7 @@
 import React, { type ReactElement } from 'react'
 
 import { useTranslation } from 'react-i18next'
+import { ThemeContext } from 'styled-components'
 
 import Contact from '@/components/Contact'
 import DataCard from '@/components/DataCard'
@@ -20,13 +21,15 @@ function Home (): ReactElement {
 
   return (
     <>
-      <NameStyled>{t('hero.name')}</NameStyled>
-      <PositionStyled><PositionHighlightStyled>{t('hero.specialization')}</PositionHighlightStyled> {t('hero.position')}</PositionStyled>
-      <Scene />
-      <AboutMeStyled>
-        {t('about_me.text', { years: yearsOfExperience })}
-      </AboutMeStyled>
-      <Contact />
+      <section id="home">
+        <NameStyled>{t('hero.name')}</NameStyled>
+        <PositionStyled><PositionHighlightStyled>{t('hero.specialization')}</PositionHighlightStyled> {t('hero.position')}</PositionStyled>
+        <Scene ThemeContext={ThemeContext} />
+        <AboutMeStyled>
+          {t('about_me.text', { years: yearsOfExperience })}
+        </AboutMeStyled>
+        <Contact />
+      </section>
       <section id="projects">
         <SectionTitle number="00" title={t('projects.title')} />
         <Projects />

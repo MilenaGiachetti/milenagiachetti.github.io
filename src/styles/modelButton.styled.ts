@@ -12,8 +12,9 @@ export const ButtonIcon = styled.span`
   height: 32px;
   justify-content: center;
   min-width: 32px;
-  transform: rotate(0deg);
-  transition: color .3s ease, transform 1s ease;
+  /* transform: rotate(0deg); */
+  /* transition: color .3s ease, transform 1s ease; */
+  transition: color .3s ease;
 `
 
 export const Button = styled.button`
@@ -39,7 +40,7 @@ export const Button = styled.button`
     max-width: 500px;
     ${ButtonIcon} {
       color: ${({ theme }) => theme.colors.textHighlight};
-      transform: rotate(360deg);
+      /* transform: rotate(360deg); */
     }
   }
 `
